@@ -1,0 +1,8 @@
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE DATABASE "meal_mate_development" ENCODING = 'unicode'[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE DATABASE "meal_mate_test" ENCODING = 'unicode'[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (24.1ms)[0m  [1m[35mDROP DATABASE IF EXISTS "meal_mate_development"[0m
+  [1m[35m (20.6ms)[0m  [1m[35mDROP DATABASE IF EXISTS "meal_mate_test"[0m
+  [1m[35m (89.5ms)[0m  [1m[35mCREATE DATABASE "meal_mate_development" ENCODING = 'unicode'[0m
+  [1m[35m (86.1ms)[0m  [1m[35mCREATE DATABASE "meal_mate_test" ENCODING = 'unicode'[0m
