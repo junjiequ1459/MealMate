@@ -1,9 +1,8 @@
 {
   "name": "meal_mate",
   "version": "1.0.0",
-  "description": "",
   "engines": {
-    "node": "16.x"
+    "node": "16.19.0"
   },
   "directories": {
     "lib": "lib"
@@ -13,5 +12,15 @@
   },
   "keywords": [],
   "author": "",
-  "license": "ISC"
+  "license": "ISC",
+  "main": "index.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/junjiequ1459/fullstackProject.git"
+  },
+  "bugs": {
+    "url": "https://github.com/junjiequ1459/fullstackProject/issues"
+  },
+  "homepage": "https://github.com/junjiequ1459/fullstackProject#readme",
+  "description": ""
 }
