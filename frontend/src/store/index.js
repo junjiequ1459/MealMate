@@ -1,12 +1,14 @@
-import { createStore, applyMiddleware } from "redux";
+import { createStore, combineReducers, applyMiddleware, compose } from "redux";
 import thunk from "redux-thunk";
-import { createUser, loginUser, logoutUser } from "./store/userReducer";
+import sessionReducer from "./session";
+// import { createUser, loginUser, logoutUser } from "./store/userReducer";
 // import rootReducer from "../reducers/root_reducer";
-import session from "./session";
+// import session from "./session";
 
 const rootReducer = combineReducers({
   user: userReducer,
-  session,
+  session: sessionReducer,
+  // session,
 });
 
 let enhancer;
@@ -25,7 +27,3 @@ const configureStore = (preloadedState = {}) => {
 };
 
 export default configureStore;
-
-window.createUser = createUser;
-window.loginUser = loginUser;
-window.logoutUser = logoutUser;

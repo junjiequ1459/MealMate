@@ -4,7 +4,7 @@ import "./index.css";
 import App from "./App";
 import { restoreSession } from "./store/csrf";
 import { Provider } from "react-redux";
-import { BrowserRouter } from "react-router-dom"; 
+import { BrowserRouter } from "react-router-dom";
 import configureStore from "./store";
 import * as sessionActions from "./store/session";
 
