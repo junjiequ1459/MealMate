@@ -68,3 +68,254 @@ Started GET "/favicon.ico" for 127.0.0.1 at 2023-02-06 11:20:45 -0500
   
 ActionController::RoutingError (No route matches [GET] "/favicon.ico"):
   
+Started GET "/api/session" for 127.0.0.1 at 2023-02-06 11:31:41 -0500
+Processing by Api::SessionsController#show as JSON
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."session_token" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:16:in `current_user'
+Completed 200 OK in 10ms (Views: 0.1ms | ActiveRecord: 2.3ms | Allocations: 4018)
+
+
+Started GET "/api/session" for 127.0.0.1 at 2023-02-06 11:33:05 -0500
+Processing by Api::SessionsController#show as JSON
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."session_token" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:16:in `current_user'
+Completed 200 OK in 2ms (Views: 0.1ms | ActiveRecord: 0.1ms | Allocations: 926)
+
+
+Started GET "/api/session" for 127.0.0.1 at 2023-02-06 11:33:19 -0500
+Processing by Api::SessionsController#show as JSON
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."session_token" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:16:in `current_user'
+Completed 200 OK in 2ms (Views: 0.1ms | ActiveRecord: 0.2ms | Allocations: 933)
+
+
+Started GET "/api/session" for 127.0.0.1 at 2023-02-06 11:33:20 -0500
+Processing by Api::SessionsController#show as JSON
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."session_token" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:16:in `current_user'
+Completed 200 OK in 2ms (Views: 0.1ms | ActiveRecord: 0.2ms | Allocations: 903)
+
+
+Started GET "/api/session" for 127.0.0.1 at 2023-02-06 11:34:44 -0500
+Processing by Api::SessionsController#show as JSON
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."session_token" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:16:in `current_user'
+Completed 200 OK in 2ms (Views: 0.1ms | ActiveRecord: 0.2ms | Allocations: 915)
+
+
+Started GET "/favicon.ico" for 127.0.0.1 at 2023-02-06 11:34:44 -0500
+  
+ActionController::RoutingError (No route matches [GET] "/favicon.ico"):
+  
+Started GET "/api/session" for 127.0.0.1 at 2023-02-06 11:35:52 -0500
+Processing by Api::SessionsController#show as JSON
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."session_token" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:16:in `current_user'
+Completed 200 OK in 2ms (Views: 0.1ms | ActiveRecord: 0.1ms | Allocations: 897)
+
+
+Started POST "/api/users" for 127.0.0.1 at 2023-02-06 11:37:59 -0500
+Processing by Api::UsersController#create as JSON
+  Parameters: {"username"=>"rexqu", "email"=>"junjiequ123@gmail.con", "password"=>"[FILTERED]", "user"=>{"email"=>"junjiequ123@gmail.con", "username"=>"rexqu", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."session_token" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:16:in `current_user'
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/models/user.rb:52:in `generate_unique_session_token'
+  [1m[36mUser Exists? (0.4ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "[FILTERED]"], ["LIMIT", 1]]
+  ↳ app/models/user.rb:52:in `generate_unique_session_token'
+  [1m[36mUser Exists? (0.3ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "junjiequ123@gmail.con"], ["LIMIT", 1]]
+  ↳ app/controllers/api/users_controller.rb:8:in `create'
+  [1m[36mUser Create (2.9ms)[0m  [1m[32mINSERT INTO "users" ("email", "username", "fname", "lname", "zipcode", "password_digest", "session_token", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9) RETURNING "id"[0m  [["email", "junjiequ123@gmail.con"], ["username", "rexqu"], ["fname", nil], ["lname", nil], ["zipcode", nil], ["password_digest", "[FILTERED]"], ["session_token", "[FILTERED]"], ["created_at", "2023-02-06 16:37:59.616275"], ["updated_at", "2023-02-06 16:37:59.616275"]]
+  ↳ app/controllers/api/users_controller.rb:8:in `create'
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[31mROLLBACK[0m
+  ↳ app/controllers/api/users_controller.rb:8:in `create'
+Completed 500 Internal Server Error in 234ms (ActiveRecord: 7.2ms | Allocations: 17450)
+
+
+
+ActionView::MissingTemplate - Missing template api/errors/internal_server_error with {:locale=>[:en], :formats=>[:json], :variants=>[], :handlers=>[:raw, :erb, :html, :builder, :ruby, :jbuilder]}.
+Searched in:
+  * "/home/rexqu/Desktop/fullstackProject/app/views"
+  * "/home/rexqu/.rbenv/versions/3.1.1/lib/ruby/gems/3.1.0/gems/actiontext-7.0.4.2/app/views"
+  * "/home/rexqu/.rbenv/versions/3.1.1/lib/ruby/gems/3.1.0/gems/actionmailbox-7.0.4.2/app/views"
+Did you mean?  layouts/mailer
+               rails/conductor/action_mailbox/inbound_emails/new
+               rails/conductor/action_mailbox/inbound_emails/index
+               rails/conductor/action_mailbox/inbound_emails/sources/new
+               layouts/rails/conductor
+               rails/conductor/action_mailbox/inbound_emails/show:
+  app/controllers/application_controller.rb:67:in `unhandled_error'
+
+Started GET "/api/session" for 127.0.0.1 at 2023-02-06 11:38:32 -0500
+Processing by Api::SessionsController#show as JSON
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."session_token" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:16:in `current_user'
+Completed 200 OK in 2ms (Views: 0.1ms | ActiveRecord: 0.2ms | Allocations: 1124)
+
+
+Started POST "/api/users" for 127.0.0.1 at 2023-02-06 11:41:07 -0500
+Processing by Api::UsersController#create as JSON
+  Parameters: {"username"=>"rexqu123", "email"=>"rexqu@gmail.com", "password"=>"[FILTERED]", "user"=>{"email"=>"rexqu@gmail.com", "username"=>"rexqu123", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."session_token" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:16:in `current_user'
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/models/user.rb:52:in `generate_unique_session_token'
+  [1m[36mUser Exists? (0.3ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "[FILTERED]"], ["LIMIT", 1]]
+  ↳ app/models/user.rb:52:in `generate_unique_session_token'
+  [1m[36mUser Exists? (0.3ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "rexqu@gmail.com"], ["LIMIT", 1]]
+  ↳ app/controllers/api/users_controller.rb:8:in `create'
+  [1m[36mUser Create (0.8ms)[0m  [1m[32mINSERT INTO "users" ("email", "username", "fname", "lname", "zipcode", "password_digest", "session_token", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9) RETURNING "id"[0m  [["email", "rexqu@gmail.com"], ["username", "rexqu123"], ["fname", nil], ["lname", nil], ["zipcode", nil], ["password_digest", "[FILTERED]"], ["session_token", "[FILTERED]"], ["created_at", "2023-02-06 16:41:07.918971"], ["updated_at", "2023-02-06 16:41:07.918971"]]
+  ↳ app/controllers/api/users_controller.rb:8:in `create'
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[31mROLLBACK[0m
+  ↳ app/controllers/api/users_controller.rb:8:in `create'
+Completed 500 Internal Server Error in 219ms (ActiveRecord: 2.0ms | Allocations: 7311)
+
+
+
+ActionView::MissingTemplate - Missing template api/errors/internal_server_error with {:locale=>[:en], :formats=>[:json], :variants=>[], :handlers=>[:raw, :erb, :html, :builder, :ruby, :jbuilder]}.
+Searched in:
+  * "/home/rexqu/Desktop/fullstackProject/app/views"
+  * "/home/rexqu/.rbenv/versions/3.1.1/lib/ruby/gems/3.1.0/gems/actiontext-7.0.4.2/app/views"
+  * "/home/rexqu/.rbenv/versions/3.1.1/lib/ruby/gems/3.1.0/gems/actionmailbox-7.0.4.2/app/views"
+Did you mean?  layouts/mailer
+               rails/conductor/action_mailbox/inbound_emails/new
+               rails/conductor/action_mailbox/inbound_emails/index
+               rails/conductor/action_mailbox/inbound_emails/sources/new
+               layouts/rails/conductor
+               rails/conductor/action_mailbox/inbound_emails/show:
+  app/controllers/application_controller.rb:67:in `unhandled_error'
+
+Started GET "/api/session" for 127.0.0.1 at 2023-02-06 11:43:31 -0500
+Processing by Api::SessionsController#show as JSON
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."session_token" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:16:in `current_user'
+Completed 200 OK in 1ms (Views: 0.1ms | ActiveRecord: 0.1ms | Allocations: 886)
+
+
+Started POST "/api/users" for 127.0.0.1 at 2023-02-06 11:43:43 -0500
+Processing by Api::UsersController#create as JSON
+  Parameters: {"username"=>"rexqu", "email"=>"rexqu@gmail.com", "password"=>"[FILTERED]", "fname"=>"rex", "lname"=>"qu", "zipcode"=>"11355", "user"=>{"email"=>"rexqu@gmail.com", "username"=>"rexqu", "fname"=>"rex", "lname"=>"qu", "zipcode"=>"11355", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."session_token" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:16:in `current_user'
+[31mUnpermitted parameters: :fname, :lname, :zipcode. Context: { controller: Api::UsersController, action: create, request: #<ActionDispatch::Request:0x00007f4a5848c638>, params: {"username"=>"rexqu", "email"=>"rexqu@gmail.com", "password"=>"[FILTERED]", "fname"=>"rex", "lname"=>"qu", "zipcode"=>"11355", "format"=>:json, "controller"=>"api/users", "action"=>"create", "user"=>{"email"=>"rexqu@gmail.com", "username"=>"rexqu", "fname"=>"rex", "lname"=>"qu", "zipcode"=>"11355", "password"=>"[FILTERED]"}} }[0m
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/models/user.rb:52:in `generate_unique_session_token'
+  [1m[36mUser Exists? (0.4ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "[FILTERED]"], ["LIMIT", 1]]
+  ↳ app/models/user.rb:52:in `generate_unique_session_token'
+  [1m[36mUser Exists? (0.3ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "rexqu@gmail.com"], ["LIMIT", 1]]
+  ↳ app/controllers/api/users_controller.rb:8:in `create'
+  [1m[36mUser Create (0.7ms)[0m  [1m[32mINSERT INTO "users" ("email", "username", "fname", "lname", "zipcode", "password_digest", "session_token", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9) RETURNING "id"[0m  [["email", "rexqu@gmail.com"], ["username", "rexqu"], ["fname", nil], ["lname", nil], ["zipcode", nil], ["password_digest", "[FILTERED]"], ["session_token", "[FILTERED]"], ["created_at", "2023-02-06 16:43:44.199041"], ["updated_at", "2023-02-06 16:43:44.199041"]]
+  ↳ app/controllers/api/users_controller.rb:8:in `create'
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[31mROLLBACK[0m
+  ↳ app/controllers/api/users_controller.rb:8:in `create'
+Completed 500 Internal Server Error in 218ms (ActiveRecord: 2.3ms | Allocations: 7300)
+
+
+
+ActionView::MissingTemplate - Missing template api/errors/internal_server_error with {:locale=>[:en], :formats=>[:json], :variants=>[], :handlers=>[:raw, :erb, :html, :builder, :ruby, :jbuilder]}.
+Searched in:
+  * "/home/rexqu/Desktop/fullstackProject/app/views"
+  * "/home/rexqu/.rbenv/versions/3.1.1/lib/ruby/gems/3.1.0/gems/actiontext-7.0.4.2/app/views"
+  * "/home/rexqu/.rbenv/versions/3.1.1/lib/ruby/gems/3.1.0/gems/actionmailbox-7.0.4.2/app/views"
+Did you mean?  layouts/mailer
+               rails/conductor/action_mailbox/inbound_emails/new
+               rails/conductor/action_mailbox/inbound_emails/index
+               rails/conductor/action_mailbox/inbound_emails/sources/new
+               layouts/rails/conductor
+               rails/conductor/action_mailbox/inbound_emails/show:
+  app/controllers/application_controller.rb:67:in `unhandled_error'
+
+Started GET "/api/session" for 127.0.0.1 at 2023-02-06 11:52:50 -0500
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by Api::SessionsController#show as JSON
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."session_token" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:16:in `current_user'
+Completed 200 OK in 6ms (Views: 0.1ms | ActiveRecord: 1.1ms | Allocations: 5670)
+
+
+Started POST "/api/session" for 127.0.0.1 at 2023-02-06 11:52:53 -0500
+Processing by Api::SessionsController#create as JSON
+  Parameters: {"credential"=>"rexqu2000@gmail.com", "password"=>"[FILTERED]", "session"=>{"credential"=>"rexqu2000@gmail.com", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."username" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/models/user.rb:38:in `find_by_credentials'
+Completed 422 Unprocessable Entity in 2ms (Views: 0.2ms | ActiveRecord: 0.4ms | Allocations: 760)
+
+
+Started POST "/api/session" for 127.0.0.1 at 2023-02-06 11:52:55 -0500
+Processing by Api::SessionsController#create as JSON
+  Parameters: {"credential"=>"rexqu2000@gmail.com", "password"=>"[FILTERED]", "session"=>{"credential"=>"rexqu2000@gmail.com", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."username" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/models/user.rb:38:in `find_by_credentials'
+Completed 422 Unprocessable Entity in 3ms (Views: 0.2ms | ActiveRecord: 0.4ms | Allocations: 720)
+
+
+Started POST "/api/users" for 127.0.0.1 at 2023-02-06 11:53:12 -0500
+Processing by Api::UsersController#create as JSON
+  Parameters: {"username"=>"rexqu", "email"=>"rexqu2000@gmail.com", "password"=>"[FILTERED]", "fname"=>"rex", "lname"=>"qu", "zipcode"=>"11355", "user"=>{"email"=>"rexqu2000@gmail.com", "username"=>"rexqu", "fname"=>"rex", "lname"=>"qu", "zipcode"=>"11355"}}
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/models/user.rb:52:in `generate_unique_session_token'
+  [1m[36mUser Exists? (0.4ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "[FILTERED]"], ["LIMIT", 1]]
+  ↳ app/models/user.rb:52:in `generate_unique_session_token'
+  [1m[36mUser Exists? (0.3ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "rexqu2000@gmail.com"], ["LIMIT", 1]]
+  ↳ app/controllers/api/users_controller.rb:8:in `create'
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[31mROLLBACK[0m
+  ↳ app/controllers/api/users_controller.rb:8:in `create'
+Completed 422 Unprocessable Entity in 624ms (Views: 0.1ms | ActiveRecord: 3.1ms | Allocations: 963309)
+
+
+Started POST "/api/users" for 127.0.0.1 at 2023-02-06 11:53:21 -0500
+Processing by Api::UsersController#create as JSON
+  Parameters: {"username"=>"rexqu", "email"=>"rexqu2000@gmail.com", "password"=>"[FILTERED]", "fname"=>"rex", "lname"=>"qu", "zipcode"=>"11355", "user"=>{"email"=>"rexqu2000@gmail.com", "username"=>"rexqu", "fname"=>"rex", "lname"=>"qu", "zipcode"=>"11355"}}
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/models/user.rb:52:in `generate_unique_session_token'
+  [1m[36mUser Exists? (0.3ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "[FILTERED]"], ["LIMIT", 1]]
+  ↳ app/models/user.rb:52:in `generate_unique_session_token'
+  [1m[36mUser Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "rexqu2000@gmail.com"], ["LIMIT", 1]]
+  ↳ app/controllers/api/users_controller.rb:8:in `create'
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mROLLBACK[0m
+  ↳ app/controllers/api/users_controller.rb:8:in `create'
+Completed 422 Unprocessable Entity in 5ms (Views: 0.1ms | ActiveRecord: 0.7ms | Allocations: 3443)
+
+
+Started POST "/api/users" for 127.0.0.1 at 2023-02-06 11:53:22 -0500
+Processing by Api::UsersController#create as JSON
+  Parameters: {"username"=>"rexqu", "email"=>"rexqu2000@gmail.com", "password"=>"[FILTERED]", "fname"=>"rex", "lname"=>"qu", "zipcode"=>"11355", "user"=>{"email"=>"rexqu2000@gmail.com", "username"=>"rexqu", "fname"=>"rex", "lname"=>"qu", "zipcode"=>"11355"}}
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/models/user.rb:52:in `generate_unique_session_token'
+  [1m[36mUser Exists? (0.3ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "[FILTERED]"], ["LIMIT", 1]]
+  ↳ app/models/user.rb:52:in `generate_unique_session_token'
+  [1m[36mUser Exists? (0.4ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "rexqu2000@gmail.com"], ["LIMIT", 1]]
+  ↳ app/controllers/api/users_controller.rb:8:in `create'
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mROLLBACK[0m
+  ↳ app/controllers/api/users_controller.rb:8:in `create'
+Completed 422 Unprocessable Entity in 6ms (Views: 0.1ms | ActiveRecord: 1.1ms | Allocations: 3413)
+
+
+Started POST "/api/users" for 127.0.0.1 at 2023-02-06 11:54:45 -0500
+Processing by Api::UsersController#create as JSON
+  Parameters: {"username"=>"rexqu", "email"=>"rexqu2000@gmail.com", "password"=>"[FILTERED]", "fname"=>"rex", "lname"=>"qu", "zipcode"=>"11355", "user"=>{"email"=>"rexqu2000@gmail.com", "username"=>"rexqu", "fname"=>"rex", "lname"=>"qu", "zipcode"=>"11355"}}
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/models/user.rb:51:in `generate_unique_session_token'
+  [1m[36mUser Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "[FILTERED]"], ["LIMIT", 1]]
+  ↳ app/models/user.rb:51:in `generate_unique_session_token'
+  [1m[36mUser Exists? (0.3ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "rexqu2000@gmail.com"], ["LIMIT", 1]]
+  ↳ app/controllers/api/users_controller.rb:8:in `create'
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[31mROLLBACK[0m
+  ↳ app/controllers/api/users_controller.rb:8:in `create'
+Completed 422 Unprocessable Entity in 6ms (Views: 0.1ms | ActiveRecord: 2.7ms | Allocations: 6094)
+
+
+Started POST "/api/users" for 127.0.0.1 at 2023-02-06 11:54:46 -0500
+Processing by Api::UsersController#create as JSON
+  Parameters: {"username"=>"rexqu", "email"=>"rexqu2000@gmail.com", "password"=>"[FILTERED]", "fname"=>"rex", "lname"=>"qu", "zipcode"=>"11355", "user"=>{"email"=>"rexqu2000@gmail.com", "username"=>"rexqu", "fname"=>"rex", "lname"=>"qu", "zipcode"=>"11355"}}
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/models/user.rb:51:in `generate_unique_session_token'
+  [1m[36mUser Exists? (0.6ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "[FILTERED]"], ["LIMIT", 1]]
+  ↳ app/models/user.rb:51:in `generate_unique_session_token'
+  [1m[36mUser Exists? (0.6ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "rexqu2000@gmail.com"], ["LIMIT", 1]]
+  ↳ app/controllers/api/users_controller.rb:8:in `create'
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[31mROLLBACK[0m
+  ↳ app/controllers/api/users_controller.rb:8:in `create'
+Completed 422 Unprocessable Entity in 8ms (Views: 0.1ms | ActiveRecord: 1.7ms | Allocations: 3414)
+
+

@@ -36,7 +36,6 @@ class User < ApplicationRecord
 
   def self.find_by_credentials(username, password)
     user = User.find_by(username: username)
-    # has_secure_password gives us the authenticate method
     if user&.authenticate(password)
       return user
     else
