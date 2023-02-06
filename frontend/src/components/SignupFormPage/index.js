@@ -10,7 +10,6 @@ function SignupFormPage() {
   const [email, setEmail] = useState("");
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
-  const [confirmPassword, setConfirmPassword] = useState("");
   const [fname, setFname] = useState("");
   const [lname, setLname] = useState("");
   const [zipcode, setZipcode] = useState("");
@@ -20,32 +19,26 @@ function SignupFormPage() {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    if (password === confirmPassword) {
-      setErrors([]);
-      return dispatch(
-        sessionActions.signup({
-          email,
-          username,
-          password,
-          fname,
-          lname,
-          zipcode,
-        })
-      ).catch(async (res) => {
-        let data;
-        try {
-          data = await res.clone().json();
-        } catch {
-          data = await res.text();
-        }
-        if (data?.errors) setErrors(data.errors);
-        else if (data) setErrors([data]);
-        else setErrors([res.statusText]);
-      });
-    }
-    return setErrors([
-      "Confirm Password field must be the same as the Password field",
-    ]);
+    return dispatch(
+      sessionActions.signup({
+        email,
+        username,
+        password,
+        fname,
+        lname,
+        zipcode,
+      })
+    ).catch(async (res) => {
+      let data;
+      try {
+        data = await res.clone().json();
+      } catch {
+        data = await res.text();
+      }
+      if (data?.errors) setErrors(data.errors);
+      else if (data) setErrors([data]);
+      else setErrors([res.statusText]);
+    });
   };
 
   return (
@@ -79,15 +72,6 @@ function SignupFormPage() {
           type="text"
           value={password}
           onChange={(e) => setPassword(e.target.value)}
-          required
-        />
-      </label>
-      <label>
-        Confirm Password
-        <input
-          type="password"
-          value={confirmPassword}
-          onChange={(e) => setConfirmPassword(e.target.value)}
           required
         />
       </label>
