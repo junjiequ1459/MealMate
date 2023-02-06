@@ -41,9 +41,9 @@ function LoginFormPage() {
               <li key={error}>{error}</li>
             ))}
           </ul>
-          <p>Log in to yelp</p>
-          <p>New to yelp? </p>
-          <p>
+          <p class="red-text">Log in to yelp</p>
+          <p class="new-text">New to yelp? </p>
+          <p class="terms-text">
             By logging in, you agree to Yelp's Terms of Service and Privacy
             Policy.
           </p>
@@ -70,7 +70,10 @@ function LoginFormPage() {
           </button>
         </form>
       </div>
-      <img class="sign-in-image" src="https://s3-media0.fl.yelpcdn.com/assets/2/www/img/7922e77f338d/signup/signup_illustration.png"></img>
+      <img
+        class="sign-in-image"
+        src="https://s3-media0.fl.yelpcdn.com/assets/2/www/img/7922e77f338d/signup/signup_illustration.png"
+      ></img>
     </>
   );
 }

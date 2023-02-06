@@ -8,7 +8,6 @@ function SignupFormPage() {
   const dispatch = useDispatch();
   const sessionUser = useSelector((state) => state.session.user);
   const [email, setEmail] = useState("");
-  const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
   const [fname, setFname] = useState("");
   const [lname, setLname] = useState("");
@@ -22,7 +21,6 @@ function SignupFormPage() {
     return dispatch(
       sessionActions.signup({
         email,
-        username,
         password,
         fname,
         lname,
@@ -49,9 +47,9 @@ function SignupFormPage() {
             <li key={error}>{error}</li>
           ))}
         </ul>
-        <p>Sign Up for Yelp</p>
-        <p>Connect with great local businesses</p>
-        <p>
+        <p class="red-text">Sign Up for Yelp</p>
+        <p class="new-text">Connect with great local businesses</p>
+        <p class="terms-text">
           By continuing, you agree to Yelp's Terms of Service and ackowlege
           Yelp's Private Policy
         </p>
@@ -80,15 +78,6 @@ function SignupFormPage() {
             type="text"
             value={email}
             onChange={(e) => setEmail(e.target.value)}
-            required
-          />
-        </label>
-        <label>
-          <input
-            placeholder="Username"
-            type="text"
-            value={username}
-            onChange={(e) => setUsername(e.target.value)}
             required
           />
         </label>
