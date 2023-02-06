@@ -26,19 +26,6 @@ const storeCurrentUser = (user) => {
   else sessionStorage.removeItem("currentUser");
 };
 
-export const login =
-  ({ credential, password }) =>
-  async (dispatch) => {
-    const response = await csrfFetch("/api/session", {
-      method: "POST",
-      body: JSON.stringify({ credential, password }),
-    });
-    const data = await response.json();
-    storeCurrentUser(data.user);
-    dispatch(setCurrentUser(data.user));
-    return response;
-  };
-
 export const signup = (user) => async (dispatch) => {
   const { username, email, password, fname, lname, zipcode } = user;
   const response = await csrfFetch("/api/users", {
@@ -58,6 +45,21 @@ export const signup = (user) => async (dispatch) => {
   return response;
 };
 
+export const login = (user) => async (dispatch) => {
+  const { credential, password } = user;
+  const response = await csrfFetch("/api/session", {
+    method: "POST",
+    body: JSON.stringify({
+      credential,
+      password,
+    }),
+  });
+  const data = await response.json();
+  storeCurrentUser(data.user);
+  dispatch(setCurrentUser(data.user));
+  return response;
+};
+
 export const logout = () => async (dispatch) => {
   const response = await csrfFetch("/api/session", {
     method: "DELETE",
@@ -66,7 +68,9 @@ export const logout = () => async (dispatch) => {
   dispatch(removeCurrentUser());
   return response;
 };
+
 export const restoreSession = () => async (dispatch) => {
+  //this method replaces restoreCSRF
   const response = await csrfFetch("/api/session");
   storeCSRFToken(response);
   const data = await response.json();
@@ -74,8 +78,6 @@ export const restoreSession = () => async (dispatch) => {
   dispatch(setCurrentUser(data.user));
   return response;
 };
-
-// ...
 
 const initialState = {
   user: JSON.parse(sessionStorage.getItem("currentUser")),

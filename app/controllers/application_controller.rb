@@ -1,14 +1,14 @@
 class ApplicationController < ActionController::API
   # include ActionController::Cookies
   # include ActionController::Helpers
-  # include ActionController::RequestForgeryProtection
+  include ActionController::RequestForgeryProtection
 
   # rescue_from StandardError, with: :unhandled_error
   # rescue_from ActionController::InvalidAuthenticityToken,
   #             with: :invalid_authenticity_token
 
-  # protect_from_forgery with: :exception
-  # before_action :attach_authenticity_token, :snake_case_params
+  protect_from_forgery with: :exception
+  before_action :attach_authenticity_token, :snake_case_params
 
   helper_method :current_user, :logged_in?
 
@@ -46,10 +46,10 @@ class ApplicationController < ActionController::API
     params.deep_transform_keys!(&:underscore)
   end
 
-  # def attach_authenticity_token
-  #   headers["X-CSRF-Token"] = masked_authenticity_token(session)
-  #   # headers['X-CSRF-Token'] = form_authenticity_token
-  # end
+  def attach_authenticity_token
+    headers["X-CSRF-Token"] = masked_authenticity_token(session)
+    # headers['X-CSRF-Token'] = form_authenticity_token
+  end
 
   # def invalid_authenticity_token
   #   render json: { message: "Invalid authenticity token" },

@@ -16,6 +16,8 @@
 class User < ApplicationRecord
   has_secure_password
   before_validation :ensure_session_token
+
+  validates :fname, :lname, :zipcode, presence: true
   validates :password, length: { minimum: 6 }, allow_nil: true
   validates :email, uniqueness: true, format: { with: URI::MailTo::EMAIL_REGEXP }
 
@@ -23,10 +25,6 @@ class User < ApplicationRecord
            foreign_key: :author_id,
            primary_key: :id,
            class_name: :Review
-
-  def ensure_session_token
-    self.session_token ||= generate_unique_session_token
-  end
 
   def reset_session_token!
     self.session_token = generate_unique_session_token
@@ -50,5 +48,9 @@ class User < ApplicationRecord
       token = SecureRandom.urlsafe_base64
       return token unless User.exists?(session_token: token)
     end
+  end
+
+  def ensure_session_token
+    self.session_token ||= generate_unique_session_token
   end
 end
