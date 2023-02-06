@@ -42,68 +42,83 @@ function SignupFormPage() {
   };
 
   return (
-    <form onSubmit={handleSubmit}>
-      <ul>
-        {errors.map((error) => (
-          <li key={error}>{error}</li>
-        ))}
-      </ul>
-      <label>
-        Email
-        <input
-          type="text"
-          value={email}
-          onChange={(e) => setEmail(e.target.value)}
-          required
-        />
-      </label>
-      <label>
-        Username
-        <input
-          type="text"
-          value={username}
-          onChange={(e) => setUsername(e.target.value)}
-          required
-        />
-      </label>
-      <label>
-        Password
-        <input
-          type="text"
-          value={password}
-          onChange={(e) => setPassword(e.target.value)}
-          required
-        />
-      </label>
-      <label>
-        First Name
-        <input
-          type="text"
-          value={fname}
-          onChange={(e) => setFname(e.target.value)}
-          required
-        />
-      </label>
-      <label>
-        Last Name
-        <input
-          type="text"
-          value={lname}
-          onChange={(e) => setLname(e.target.value)}
-          required
-        />
-      </label>
-      <label>
-        Zipcode
-        <input
-          type="text"
-          value={zipcode}
-          onChange={(e) => setZipcode(e.target.value)}
-          required
-        />
-      </label>
-      <button type="submit">Sign Up</button>
-    </form>
+    <div class="signup-form-container">
+      <form onSubmit={handleSubmit}>
+        <ul>
+          {errors.map((error) => (
+            <li key={error}>{error}</li>
+          ))}
+        </ul>
+        <p>Sign Up for Yelp</p>
+        <p>Connect with great local businesses</p>
+        <p>
+          By continuing, you agree to Yelp's Terms of Service and ackowlege
+          Yelp's Private Policy
+        </p>
+        <label>
+          <input
+            id="first-name"
+            placeholder="FirstName"
+            type="text"
+            value={fname}
+            onChange={(e) => setFname(e.target.value)}
+            required
+          />
+        </label>
+        <label>
+          <input
+            placeholder="LastName"
+            type="text"
+            value={lname}
+            onChange={(e) => setLname(e.target.value)}
+            required
+          />
+        </label>
+        <label>
+          <input
+            placeholder="Email"
+            type="text"
+            value={email}
+            onChange={(e) => setEmail(e.target.value)}
+            required
+          />
+        </label>
+        <label>
+          <input
+            placeholder="Username"
+            type="text"
+            value={username}
+            onChange={(e) => setUsername(e.target.value)}
+            required
+          />
+        </label>
+        <label>
+          <input
+            placeholder="Password"
+            type="text"
+            value={password}
+            onChange={(e) => setPassword(e.target.value)}
+            required
+          />
+        </label>
+        <label>
+          <input
+            placeholder="Zipcode"
+            type="text"
+            value={zipcode}
+            onChange={(e) => setZipcode(e.target.value)}
+            required
+          />
+        </label>
+        <button class="signup-button" type="submit">
+          Sign Up
+        </button>
+      </form>
+      <img
+        class="sign-up-image"
+        src="https://s3-media0.fl.yelpcdn.com/assets/2/www/img/7922e77f338d/signup/signup_illustration.png"
+      ></img>
+    </div>
   );
 }
 

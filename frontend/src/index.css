@@ -1,1 +1,66 @@
-/* TODO Add site wide styles */
+body {
+  font-family: 'Abel', sans-serif;
+  font-size: 16px;
+}
+
+div#root {
+  width: 80%;
+  margin: 0 auto;
+}
+
+h1 {
+  font-weight: bold;
+  font-size: 1.5rem;
+}
+
+h2 {
+  font-weight: bold;
+  font-size: 1.1rem;
+}
+
+.button {
+  text-decoration: none;
+  color: inherit;
+  background: rgb(240,240,240);
+  border-radius: 5px;
+  padding: 5px 10px;
+  cursor: pointer;
+}
+
+.link {
+  text-decoration: underline;
+  color: #0000EE;
+  cursor: pointer;
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+}
+
+.form label {
+  width: 100%;
+  margin: 5px 0;
+}
+
+.form input, 
+.form textarea {
+  margin-left: 10px;
+  float: right;
+}
+
+.form .button {
+  margin-top: 20px;
+  align-self: center;
+}
+
+.form-errors {
+  color: darkred;
+  margin-bottom: 10px;
+}
+
+.form-errors li {
+  margin: 5px 0;
+}

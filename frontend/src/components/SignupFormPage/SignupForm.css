@@ -1,0 +1,21 @@
+.signup-form-container {
+  width: 20%;
+  margin-left: 20%;
+  margin-top: 23%;
+}
+
+.signup-button {
+  border-radius: 4px;
+  cursor: pointer;
+  height: 40px;
+  margin: 0px;
+  padding: 8px 16px;
+  width: 100%;
+  background-color: rgb(224, 7, 7);
+  color: rgb(255, 255, 255);
+}
+
+.sign-up-image {
+  margin-left: 200%;
+  margin-top: -100%;
+}

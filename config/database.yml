@@ -29,7 +29,7 @@ development:
   # To create additional roles in postgres see `$ createuser --help`.
   # When left blank, postgres will use the default role. This is
   # the same name as the operating system user running Rails.
-  #username: meal_mate
+
 
   # The password associated with the postgres role (username).
   #password:
@@ -81,6 +81,4 @@ test:
 #
 production:
   <<: *default
-  database: meal_mate_production
-  username: meal_mate
-  password: <%= ENV["MEAL_MATE_DATABASE_PASSWORD"] %>
+  url: <%= ENV['DATABASE_URL'] %>
