@@ -6,6 +6,7 @@ import SignupFormPage from "./components/SignupFormPage";
 function App() {
   return (
     <Switch>
+      <h1>HI</h1>
       <Route path="/login">
         <LoginFormPage />
       </Route>

@@ -24,7 +24,7 @@ const storeCSRFToken = (response) => {
 const storeCurrentUser = (user) => {
   if (user) sessionStorage.setItem("currentUser", JSON.stringify(user));
   else sessionStorage.removeItem("currentUser");
-};
+};  
 
 export const signup = (user) => async (dispatch) => {
   const { username, email, password, fname, lname, zipcode } = user;

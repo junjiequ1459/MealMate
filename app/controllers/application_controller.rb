@@ -1,3 +1,4 @@
+
 class ApplicationController < ActionController::API
   before_action :snake_case_params
   helper_method :current_user, :logged_in?
