@@ -25,7 +25,9 @@ class Api::SessionsController < ApplicationController
   end
 
   def destroy
-    logout
-    head :no_content # populate http response with no content => no body
+    if current_user
+      logout!
+    end
+    render json: { message: "success" }
   end
 end

@@ -50,3 +50,21 @@ Processing by Rails::WelcomeController#index as HTML
 Completed 200 OK in 7ms (Views: 2.4ms | ActiveRecord: 0.0ms | Allocations: 3135)
 
 
+Started GET "/" for 127.0.0.1 at 2023-02-06 10:57:35 -0500
+Processing by Rails::WelcomeController#index as HTML
+  Rendering /home/rexqu/.rbenv/versions/3.1.1/lib/ruby/gems/3.1.0/gems/railties-7.0.4.2/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /home/rexqu/.rbenv/versions/3.1.1/lib/ruby/gems/3.1.0/gems/railties-7.0.4.2/lib/rails/templates/rails/welcome/index.html.erb (Duration: 0.7ms | Allocations: 278)
+Completed 200 OK in 2ms (Views: 1.5ms | Allocations: 922)
+
+
+Started GET "/api/session" for 127.0.0.1 at 2023-02-06 11:20:45 -0500
+Processing by Api::SessionsController#show as JSON
+  [1m[36mUser Load (1.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."session_token" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:16:in `current_user'
+Completed 200 OK in 17ms (Views: 0.1ms | ActiveRecord: 5.7ms | Allocations: 8570)
+
+
+Started GET "/favicon.ico" for 127.0.0.1 at 2023-02-06 11:20:45 -0500
+  
+ActionController::RoutingError (No route matches [GET] "/favicon.ico"):
+  
