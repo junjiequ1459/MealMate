@@ -1,6 +1,6 @@
 .nav-bar {
   position: absolute;
-  top: 1.25rem;
+  top: 1.5rem;
   left: 0;
   right: 0;
 }
@@ -17,8 +17,8 @@
   border-radius: 5px;
   font-size: 16px;
   color: white;
-  margin-left: 20%;
-  margin-right: 2%;
+  margin-left: 17rem;
+  margin-right: 1rem;
 }
 
 .sign-up-button {
@@ -47,8 +47,8 @@
 }
 
 .search-container {
-  width: 50%;
-  margin-left: 5%;
+  width: 52%;
+  margin-left: 10rem;
 }
 
 .nav-bar {
@@ -64,14 +64,14 @@
 
 .form-control {
   width: 100%;
-  padding: 14px;
+  padding: 1rem;
   border-top-left-radius: 5px;
   border-bottom-left-radius: 5px;
   border-width: 0px;
 }
 
 .btn {
-  padding: 12px;
+  padding: 0.88rem;
   color: #fff;
   background-color: red;
   margin-bottom: 0.4rem;

@@ -46,7 +46,7 @@ function Navigation() {
           <input
             className="form-control"
             type="search"
-            placeholder="Search"
+            placeholder="tacos, cheap dinner, Max's"
             aria-label="Search"
           />
           <button className="btn" type="submit">
