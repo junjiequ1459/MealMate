@@ -47,3 +47,8 @@
 .footer {
   background-color: #333;
 }
+.page-container {
+  width: 100vw;
+  height: 100vh;
+
+}

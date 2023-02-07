@@ -1,15 +1,8 @@
 .nav-bar {
-}
-
-.sign-up-button {
-  float: right;
-  border-radius: 4px;
-  cursor: pointer;
-  height: 40px;
-  margin: 0px;
-  padding: 8px 16px;
-  background-color: rgb(224, 7, 7);
-  color: rgb(255, 255, 255);
+  position: absolute;
+  top: 1.25rem;
+  left: 0;
+  right: 0;
 }
 
 .sign-in-button {
@@ -17,8 +10,82 @@
   border-radius: 4px;
   cursor: pointer;
   height: 40px;
-  margin: 0px;
+  padding: 8px 16px;
+  background-color: transparent;
+  border: 2px solid white;
+  padding: 12px 20px;
+  border-radius: 5px;
+  font-size: 16px;
+  color: white;
+  margin-left: 20%;
+  margin-right: 2%;
+}
+
+.sign-up-button {
+  float: right;
+  border-radius: 4px;
+  cursor: pointer;
+  height: 40px;
+  align-items: center;
   padding: 8px 16px;
   background-color: rgb(224, 7, 7);
   color: rgb(255, 255, 255);
+}
+
+.profile-icon {
+  float: right;
+  color: white;
+  font-size: 32px;
+}
+
+.fa-user-circle {
+  color: gray;
+}
+
+.logout-button {
+  color: white;
+}
+
+.search-container {
+  width: 50%;
+  margin-left: 5%;
+}
+
+.nav-bar {
+  display: flex;
+  align-items: center;
+  /* justify-content: center; */
+}
+
+.form-inline {
+  display: flex;
+  align-items: center;
+}
+
+.form-control {
+  width: 100%;
+  padding: 14px;
+  border-top-left-radius: 5px;
+  border-bottom-left-radius: 5px;
+  border-width: 0px;
+}
+
+.btn {
+  padding: 12px;
+  color: #fff;
+  background-color: red;
+  margin-bottom: 0.4rem;
+  border-top-right-radius: 3px;
+  border-bottom-right-radius: 3px;
+}
+
+.fa-magnifying-glass {
+  font-size: 20px;
+}
+
+.index-icon {
+  font-family: sans-serif;
+  margin-left: 5%;
+  font-weight: bold;
+  color: white;
 }

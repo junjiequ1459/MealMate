@@ -1,0 +1,43 @@
+footer {
+  position: relative;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  background-color: #f7f7f7;
+  color: rgb(51, 51, 51);
+  text-align: center;
+  padding: 40px 0;
+}
+
+.container {
+  display: flex;
+  justify-content: space-evenly;
+  width: 80%;
+  margin-left: 20%;
+}
+
+.col {
+  width: 33%;
+  text-align: left;
+}
+
+.col h3 {
+  margin-bottom: 20px;
+  font-size: 18px;
+}
+
+.col ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+.col li {
+  margin-bottom: 10px;
+  font-size: 14px;
+}
+
+.copyright {
+  margin-top: 20px;
+  font-size: 14px;
+  color: rgb(51, 51, 51);
+}

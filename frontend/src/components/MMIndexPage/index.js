@@ -1,20 +1,40 @@
-import React, { useEffect, useMemo, useState } from "react";
-import { useDispatch, useSelector } from "react-redux";
-import { useHistory } from "react-router-dom";
+import React, { useEffect, use, useState } from "react";
 import sushiImage from "../../assets/Sushi.jpg";
+import pizzaImage from "../../assets/Pizza.jpg";
+import HamburgerImage from "../../assets/Hamburger.jpg";
 import Navigation from "../Navigation";
+import "./MMIndexPage.css";
+import { CSSTransition } from "react-transition-group";
 
 function MMIndexPage() {
-  //   const history = useHistory();
-  //   const dispatch = useDispatch();
+  let imagesArray = [sushiImage, pizzaImage, HamburgerImage];
+  const [currentImageIndex, setCurrentImageIndex] = useState(0);
+
+  useEffect(() => {
+    const changeImage = () => {
+      setCurrentImageIndex((prevIndex) => (prevIndex + 1) % imagesArray.length);
+    };
+
+    const intervalId = setInterval(changeImage, 5000);
+    return () => {
+      clearInterval(intervalId);
+    };
+  }, [imagesArray]);
 
   return (
-    <>
-      <div className="header-container">
-        <Navigation />
-        <img className="header-image" src={sushiImage} />
-      </div>
-    </>
+    <div className="header-container">
+      <CSSTransition in={true} timeout={500} classNames="my-node-">
+        <div>
+          <img
+            className="header-image"
+            src={imagesArray[currentImageIndex]}
+            alt="noimg"
+          />
+        </div>
+      </CSSTransition>
+
+      <Navigation />
+    </div>
   );
 }
 

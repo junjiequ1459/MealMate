@@ -1,0 +1,14 @@
+.home-index-icon {
+  font-family: sans-serif;
+  margin-left: 5%;
+  position: absolute;
+  top: 5%;
+  left: 0%;
+  right: 0;
+  font-weight: bold;
+}
+
+.icon-container {
+  border-width: 2px;
+  border-color: black;
+}

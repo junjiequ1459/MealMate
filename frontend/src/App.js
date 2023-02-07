@@ -5,6 +5,7 @@ import { Route, Switch } from "react-router-dom";
 import LoginFormPage from "./components/LoginFormPage";
 import SignupFormPage from "./components/SignupFormPage";
 import MMIndexPage from "./components/MMIndexPage";
+import Footer from "./components/Footer";
 
 function App() {
   return (
@@ -20,6 +21,7 @@ function App() {
           <MMIndexPage />
         </Route>
       </Switch>
+      <Footer />
     </>
   );
 }
