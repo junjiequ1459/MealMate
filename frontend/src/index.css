@@ -1,10 +1,10 @@
 body {
-  font-family: 'Abel', sans-serif;
+  font-family: "Abel", sans-serif;
   font-size: 16px;
 }
 
 div#root {
-  width: 80%;
+  width: 100%;
   margin: 0 auto;
 }
 
@@ -21,7 +21,7 @@ h2 {
 .button {
   text-decoration: none;
   color: inherit;
-  background: rgb(240,240,240);
+  background: rgb(240, 240, 240);
   border-radius: 5px;
   padding: 5px 10px;
   cursor: pointer;
@@ -29,7 +29,7 @@ h2 {
 
 .link {
   text-decoration: underline;
-  color: #0000EE;
+  color: #0000ee;
   cursor: pointer;
 }
 
@@ -45,7 +45,7 @@ h2 {
   margin: 5px 0;
 }
 
-.form input, 
+.form input,
 .form textarea {
   margin-left: 10px;
   float: right;

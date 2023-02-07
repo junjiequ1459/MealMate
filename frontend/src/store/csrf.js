@@ -8,7 +8,10 @@ async function csrfFetch(url, options = {}) {
   // the "Content-Type" header to "application/json", and set the "CSRF-TOKEN"
   // header to the value of "X-CSRF-TOKEN" in `sessionStorage`
   if (options.method.toUpperCase() !== "GET") {
-    if (!options.headers["Content-Type"] && !(options.body instanceof FormData)) {
+    if (
+      !options.headers["Content-Type"] &&
+      !(options.body instanceof FormData)
+    ) {
       options.headers["Content-Type"] = "application/json";
     }
     options.headers["X-CSRF-Token"] = sessionStorage.getItem("X-CSRF-Token");

@@ -1,7 +1,12 @@
 .signup-form-container {
   width: 20%;
   margin-left: 20%;
-  margin-top: 23%;
+  margin-top: 30vh;
+}
+
+input {
+  width: 97%;
+  margin-bottom: 6px;
 }
 
 .signup-button {
@@ -13,6 +18,7 @@
   width: 100%;
   background-color: rgb(224, 7, 7);
   color: rgb(255, 255, 255);
+  margin-bottom: 5px;
 }
 
 .sign-up-image {
@@ -42,4 +48,12 @@
   color: #333;
   text-align: center;
   margin-bottom: 12px;
+}
+
+#first-name {
+  width: 46%;
+  margin-right: 7px;
+}
+#last-name {
+  width: 46%;
 }

@@ -17,33 +17,24 @@ function LoginFormPage() {
     e.preventDefault();
     setErrors([]);
     return dispatch(sessionActions.login({ credential, password })).catch(
-      async (res) => {
-        let data;
-        try {
-          // .clone() essentially allows you to read the response body twice
-          data = await res.clone().json();
-        } catch {
-          data = await res.text(); // Will hit this case if the server is down
-        }
-        if (data?.errors) setErrors(data.errors);
-        else if (data) setErrors([data]);
-        else setErrors([res.statusText]);
+      () => {
+        setErrors(["invalid credentials"]);
       }
     );
   };
 
   return (
     <>
-      <div class="login-form-container">
+      <div className="login-form-container">
         <form onSubmit={handleSubmit}>
           <ul>
             {errors.map((error) => (
               <li key={error}>{error}</li>
             ))}
           </ul>
-          <p class="red-text">Log in to yelp</p>
-          <p class="new-text">New to yelp? </p>
-          <p class="terms-text">
+          <p className="red-text">Log in to yelp</p>
+          <p className="new-text">New to yelp? </p>
+          <p className="terms-text">
             By logging in, you agree to Yelp's Terms of Service and Privacy
             Policy.
           </p>
@@ -65,15 +56,16 @@ function LoginFormPage() {
               required
             />
           </label>
-          <button class="login-button" type="submit">
+          <button className="login-button" type="submit">
             Log In
           </button>
         </form>
       </div>
       <img
-        class="sign-in-image"
+        className="sign-in-image"
         src="https://s3-media0.fl.yelpcdn.com/assets/2/www/img/7922e77f338d/signup/signup_illustration.png"
       ></img>
+      <footer className="footer"></footer>
     </>
   );
 }

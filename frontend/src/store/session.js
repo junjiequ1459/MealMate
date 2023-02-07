@@ -57,6 +57,7 @@ export const signup = (user) => async (dispatch) => {
       zipcode,
     }),
   });
+  
   const data = await response.json();
   storeCurrentUser(data.user);
   dispatch(setCurrentUser(data.user));
