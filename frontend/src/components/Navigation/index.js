@@ -3,10 +3,18 @@ import { useHistory } from "react-router-dom";
 import { useSelector } from "react-redux";
 import ProfileButton from "./ProfileButton";
 import "./Navigation.css";
+import HomeIcon from "../HomePageIcon";
 
-function Navigation() {
+function Navigation({ page }) {
   const sessionUser = useSelector((state) => state.session.user);
   const history = useHistory();
+
+  let signInButton = "sign-in-button";
+  let signUpButton = "sign-up-button";
+
+  if (page === "business-page") {
+    signInButton = "sign-in-button-dark";
+  }
 
   const handleLogInButtonClick = () => {
     history.push("/login");
@@ -14,10 +22,6 @@ function Navigation() {
 
   const handleSignUpButtonClick = () => {
     history.push("/signup");
-  };
-
-  const handleHomePageClick = () => {
-    history.push("/");
   };
 
   const handleBusinessPageClick = () => {
@@ -30,10 +34,10 @@ function Navigation() {
   } else {
     sessionLinks = (
       <>
-        <button className="sign-in-button" onClick={handleLogInButtonClick}>
+        <button className={signInButton} onClick={handleLogInButtonClick}>
           Log in
         </button>
-        <button className="sign-up-button" onClick={handleSignUpButtonClick}>
+        <button className={signUpButton} onClick={handleSignUpButtonClick}>
           Sign Up
         </button>
       </>
@@ -42,11 +46,11 @@ function Navigation() {
 
   return (
     <div className="nav-bar">
-      <p className="index-icon" onClick={handleHomePageClick}>
-        MealMate
-      </p>
       <div className="search-container">
-        <form className="form-inline " onSubmit={handleBusinessPageClick}>
+        <form
+          className="form-inliMealMatene "
+          onSubmit={handleBusinessPageClick}
+        >
           <input
             className="form-control"
             type="search"

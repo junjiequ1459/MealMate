@@ -1,21 +1,17 @@
-// import "./GoogleMap.css";
-// import React, { useEffect, useRef, useState } from "react";
-// // import { Map, GoogleApiWrapper } from "google-maps-react";
-// import { useHistory } from "react-router-dom";
+import "./GoogleMap.css";
+import React, { useEffect, useRef } from "react";
 
-// const GoogleMap = ({ google }) => {
-//   const [center, setCenter] = useState({ lat: 37.7749, lng: -122.4194 });
+const GoogleMap = () => {
+  const mapContainer = useRef(null);
 
-//   useEffect(() => {
-//     const updateCenter = () => {
-//       setCenter({ lat: 37.7749, lng: -122.4194 });
-//     };
-//     updateCenter();
-//   }, []);
+  useEffect(() => {
+    const map = new window.google.maps.Map(mapContainer.current, {
+      zoom: 14,
+      center: { lat: 37.7749, lng: -122.4194 },
+    });
+  }, []);
 
-//   return <Map google={google} zoom={14} initialCenter={center} />;
-// };
+  return <div ref={mapContainer} style={{ height: "100vh", width: "34vw" }} />;
+};
 
-// export default GoogleApiWrapper({
-//   apiKey: "AIzaSyCpVTq-kHDX_XHZWQpfaHQ4dQmHNDu7ptU",
-// })(GoogleMap);
+export default GoogleMap;

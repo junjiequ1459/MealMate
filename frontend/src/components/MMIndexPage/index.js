@@ -4,11 +4,11 @@ import pizzaImage from "../../assets/Pizza.jpg";
 import HamburgerImage from "../../assets/Hamburger.jpg";
 import Navigation from "../Navigation";
 import "./MMIndexPage.css";
+import HomeIcon from "../HomePageIcon";
 
 function MMIndexPage() {
   let imagesArray = [sushiImage, pizzaImage, HamburgerImage];
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
-
   useEffect(() => {
     const changeImage = () => {
       setCurrentImageIndex((prevIndex) => (prevIndex + 1) % imagesArray.length);
@@ -29,7 +29,8 @@ function MMIndexPage() {
           src={imagesArray[currentImageIndex]}
           alt="noimg"
         />
-        <Navigation />
+        <HomeIcon page={"white"} />
+        <Navigation page={"white"} />
       </div>
     </>
   );
