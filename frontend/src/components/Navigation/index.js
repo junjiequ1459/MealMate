@@ -20,6 +20,10 @@ function Navigation() {
     history.push("/");
   };
 
+  const handleBusinessPageClick = () => {
+    history.push("/business");
+  };
+
   let sessionLinks;
   if (sessionUser) {
     sessionLinks = <ProfileButton user={sessionUser} />;
@@ -42,7 +46,7 @@ function Navigation() {
         MealMate
       </p>
       <div className="search-container">
-        <form className="form-inline ">
+        <form className="form-inline " onSubmit={handleBusinessPageClick}>
           <input
             className="form-control"
             type="search"
