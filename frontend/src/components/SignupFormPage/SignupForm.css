@@ -1,11 +1,11 @@
 .signup-form-container {
-  width: 20%;
-  margin-left: 20%;
-  margin-top: 30vh;
+  width: 15%;
+  margin-left: 30vw;
+  margin-top: 17vh;
 }
 
 input {
-  width: 97%;
+  width: 14vw;
   margin-bottom: 6px;
 }
 
@@ -13,17 +13,20 @@ input {
   border-radius: 4px;
   cursor: pointer;
   height: 40px;
-  margin: 0px;
-  padding: 8px 16px;
-  width: 100%;
+  margin-bottom: 5%;
+  font-size: 16px;
+  padding: 10px 13px;
+  width: 14.75vw;
   background-color: rgb(224, 7, 7);
   color: rgb(255, 255, 255);
-  margin-bottom: 5px;
+  line-height: 1.3rem;
+  font-weight: bold;
 }
 
 .sign-up-image {
-  margin-left: 200%;
-  margin-top: -100%;
+  position: absolute;
+  left: 52.95vw;
+  top: 23.7vh;
 }
 
 .red-text {
@@ -51,9 +54,20 @@ input {
 }
 
 #first-name {
-  width: 46%;
+  width: 43%;
   margin-right: 7px;
 }
 #last-name {
-  width: 46%;
+  width: 43%;
+}
+
+hr {
+  margin-top: 10vh;
+  color: rgba(211, 211, 211, 0.2);
+}
+
+.small-login-text {
+  float: right;
+  font-size: 12px;
+  color: gray;
 }

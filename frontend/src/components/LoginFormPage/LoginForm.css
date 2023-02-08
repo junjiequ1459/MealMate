@@ -1,23 +1,27 @@
 .login-form-container {
-  width: 20%;
-  margin-left: 20%;
-  margin-top: 40vh;
+  width: 15%;
+  margin-left: 29.5vw;
+  margin-top: 20vh;
 }
 
 .login-button {
   border-radius: 4px;
   cursor: pointer;
   height: 40px;
-  margin: 0px;
-  padding: 8px 16px;
+  margin-top: 10%;
+  font-size: 16px;
+  padding: 10px 13px;
   width: 100%;
   background-color: rgb(224, 7, 7);
   color: rgb(255, 255, 255);
+  line-height: 1.3rem;
+  font-weight: bold;
 }
 
 .sign-in-image {
-  margin-left: 60%;
-  margin-top: -20%;
+  position: absolute;
+  left: 52.95vw;
+  top: 23.7vh;
 }
 
 .red-text {
@@ -49,6 +53,14 @@
 }
 .page-container {
   width: 100vw;
-  height: 100vh;
+  height: 59vh;
+}
 
+input {
+  padding: 5px;
+}
+
+hr {
+  margin-top: 10vh;
+  color: rgba(211,211,211,0.2)
 }

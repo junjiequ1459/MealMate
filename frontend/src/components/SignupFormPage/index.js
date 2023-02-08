@@ -3,6 +3,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { Redirect } from "react-router-dom";
 import * as sessionActions from "../../store/session";
 // import Navigation from "../Navigation";
+import { NavLink } from "react-router-dom";
 import HomeIcon from "../HomePageIcon";
 
 import "./SignupForm.css";
@@ -52,9 +53,32 @@ function SignupFormPage() {
     );
   };
 
+  const terms = (
+    <a href="https://terms.yelp.com/tos/en_us/20200101_en_us/">
+      Terms of Service
+    </a>
+  );
+
+  const privatePolicy = (
+    <a href="https://terms.yelp.com/privacy/en_us/20220831_en_us/">
+      Private Policy
+    </a>
+  );
+
+  const signin = (
+    <NavLink to="/login">
+      <a>Log In</a>
+    </NavLink>
+  );
+
   return (
     <>
       <HomeIcon />
+      <hr></hr>
+      <img
+        className="sign-up-image"
+        src="https://s3-media0.fl.yelpcdn.com/assets/2/www/img/7922e77f338d/signup/signup_illustration.png"
+      ></img>
       <div className="page-container">
         <div className="signup-form-container">
           <form onSubmit={handleSubmit}>
@@ -63,11 +87,11 @@ function SignupFormPage() {
                 <li key={error}>{error}</li>
               ))}
             </ul>
-            <p className="red-text">Sign Up for Yelp</p>
+            <p className="red-text">Sign Up for MealMate</p>
             <p className="new-text">Connect with great local businesses</p>
             <p className="terms-text">
-              By continuing, you agree to Yelp's Terms of Service and ackowlege
-              Yelp's Private Policy
+              By continuing, you agree to MealMate's {terms} and ackowlege
+              MealMate's {privatePolicy}
             </p>
             <label>
               <input
@@ -122,11 +146,8 @@ function SignupFormPage() {
             <button className="signup-button" type="submit" onClick={loginDemo}>
               Demo Login
             </button>
+            <p className="small-login-text">Already on Mealmate? {signin}</p>
           </form>
-          <img
-            className="sign-up-image"
-            src="https://s3-media0.fl.yelpcdn.com/assets/2/www/img/7922e77f338d/signup/signup_illustration.png"
-          ></img>
         </div>
       </div>
     </>
