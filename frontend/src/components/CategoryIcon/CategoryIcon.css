@@ -9,6 +9,17 @@
   cursor: pointer;
 }
 
+.category-container:hover .image-icon-container {
+  color: white;
+  transition: background-color 0.3s ease;
+}
+
+.category-container:hover {
+  background-color: #cc0000;
+  color: white;
+  transition: background-color 0.3s ease;
+  box-shadow: rgba(0, 0, 0, 0.55) 0px 2px 18px 0px;
+}
 .image-icon-container {
   display: flex;
   align-items: center;

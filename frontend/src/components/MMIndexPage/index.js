@@ -1,23 +1,60 @@
 import React, { useEffect, useState } from "react";
-import sushiImage from "../../assets/Sushi.jpg";
-import pizzaImage from "../../assets/Pizza.jpg";
-import HamburgerImage from "../../assets/Hamburger.jpg";
+import sushiImage from "../../assets/Sushi.png";
+import pizzaImage from "../../assets/Pizza.png";
+import HamburgerImage from "../../assets/Hamburger.png";
 import Navigation from "../Navigation";
 import "./MMIndexPage.css";
 import HomeIcon from "../HomePageIcon";
 import CategoryIcon from "../CategoryIcon";
+import { useHistory } from "react-router-dom";
 
 function MMIndexPage() {
+  const history = useHistory();
+  const foodArray = ["Sushi", "Pizza", "Burgers"];
+  const sushiText = "Sushi?";
+  const pizzaText = "Pizza?";
+  const HamburgerText = "Burgers?";
+
+  const handleDescriptionClick = () => {
+    history.push({
+      pathname: "/business",
+      state: {
+        data: { category: foodArray[currentImageIndex] },
+      },
+    });
+  };
+
+  const sushiButton = (
+    <button className="description-button" onClick={handleDescriptionClick}>
+      <i class="fa-solid fa-magnifying-glass index-mag-glass"></i>
+      Sushi
+    </button>
+  );
+  const pizzaButton = (
+    <button className="description-button" onClick={handleDescriptionClick}>
+      <i class="fa-solid fa-magnifying-glass index-mag-glass"></i>Pizza
+    </button>
+  );
+  const HamburgerButton = (
+    <button className="description-button" onClick={handleDescriptionClick}>
+      <i class="fa-solid fa-magnifying-glass index-mag-glas/"></i>Hamburger
+    </button>
+  );
+
+  let buttonArray = [sushiButton, pizzaButton, HamburgerButton];
   let imagesArray = [sushiImage, pizzaImage, HamburgerImage];
+  let textArray = [sushiText, pizzaText, HamburgerText];
+
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
+
   useEffect(() => {
     const changeImage = () => {
       setCurrentImageIndex((prevIndex) => (prevIndex + 1) % imagesArray.length);
     };
 
-    const intervalId = setInterval(changeImage, 5000);
+    const ImageintervalId = setInterval(changeImage, 5000);
     return () => {
-      clearInterval(intervalId);
+      clearInterval(ImageintervalId);
     };
   }, [imagesArray]);
 
@@ -33,6 +70,13 @@ function MMIndexPage() {
         <HomeIcon page={"white"} />
         <Navigation page={"white"} />
       </div>
+
+      <div className="description-container">
+        <h1 className="description-text">{textArray[currentImageIndex]}</h1>
+
+        {buttonArray[currentImageIndex]}
+      </div>
+
       <div className="categories-container">
         <div className="categories">
           <div id="categories-row1">

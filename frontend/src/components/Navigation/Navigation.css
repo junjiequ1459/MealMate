@@ -115,7 +115,7 @@
 .btn {
   position: absolute;
   padding: 0.88rem;
-  padding-right: 18px;
+  padding-right: 24px;
   color: #fff;
   background-color: #cc0000;
   border-top-right-radius: 5px;
@@ -172,7 +172,7 @@
   margin-top: 1vh;
 }
 
-.fa-brands {
+.fa-brands-light {
   font-size: 28px;
   color: white;
   margin-right: 1.5vw;
@@ -180,7 +180,24 @@
   cursor: pointer;
 }
 
+.fa-brands-light:hover {
+  transform: scale(1.5);
+  transition: transform 0.3s ease;
+}
+
 .fa-brands-container {
   position: absolute;
   left: 69vw;
+}
+
+.fa-brands-dark:hover {
+  transform: scale(1.5);
+  transition: transform 0.3s ease;
+}
+.fa-brands-dark {
+  font-size: 28px;
+  color: black;
+  margin-right: 1.5vw;
+  margin-bottom: 0.5rem;
+  cursor: pointer;
 }

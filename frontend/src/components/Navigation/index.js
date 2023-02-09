@@ -3,7 +3,6 @@ import { useHistory } from "react-router-dom";
 import { useSelector } from "react-redux";
 import ProfileButton from "./ProfileButton";
 import "./Navigation.css";
-import HomeIcon from "../HomePageIcon";
 
 function Navigation({ page }) {
   const sessionUser = useSelector((state) => state.session.user);
@@ -11,9 +10,11 @@ function Navigation({ page }) {
 
   let signInButton = "sign-in-button";
   let signUpButton = "sign-up-button";
+  let GithubclassName = "fa-brands-light";
 
   if (page === "business-page") {
     signInButton = "sign-in-button-dark";
+    GithubclassName = "fa-brands-dark";
   }
 
   const handleLogInButtonClick = () => {
@@ -64,16 +65,16 @@ function Navigation({ page }) {
       </div>
       <div className="fa-brands-container">
         <a href="https://github.com/junjiequ1459" target="_blank">
-          <i className="fa-brands fa-github"></i>
+          <i className={`${GithubclassName} fa-brands fa-github`}></i>
         </a>
         <a
           href="https://www.linkedin.com/in/junjie-qu-239070169/"
           target="_blank"
         >
-          <i className="fa-brands fa-linkedin"></i>
+          <i className={`${GithubclassName} fa-brands fa-linkedin`}></i>
         </a>
         <a href="https://angel.co/jobs" target="_blank">
-          <i className="fa-brands fa-angellist"></i>
+          <i className={`${GithubclassName} fa-brands fa-angellist`}></i>
         </a>
       </div>
       {sessionLinks}

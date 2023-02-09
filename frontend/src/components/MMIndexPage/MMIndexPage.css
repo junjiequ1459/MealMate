@@ -1,14 +1,13 @@
 .header-image {
   width: 100%;
   height: auto;
-  top: 25%;
-  transform: translate(0%, -25%);
-  transition: all 0.5s ease;
+  translate: 0% -30%;
+  filter: brightness(70%);
 }
 
 .header-container {
   width: 100vw;
-  height: 74vh;
+  height: 71.2vh;
   overflow: hidden;
 }
 
@@ -48,4 +47,37 @@
 .categories-container {
   height: 50vh;
   width: 100%;
+}
+
+.description-container {
+  position: absolute;
+  top: 20vh;
+  left: 22.5vw;
+  width: 40vw;
+  height: 20vh;
+}
+
+.description-text {
+  font-size: 60px;
+  color: white;
+}
+.description-button {
+  border-radius: 4px;
+  cursor: pointer;
+  height: 40px;
+  margin-top: 1vh;
+  font-size: 16px;
+  padding: 10px 13px;
+  width: fit-content;
+  padding-left: 2vw;
+  padding-right: 1.5vw;
+  background-color: rgb(224, 7, 7);
+  color: rgb(255, 255, 255);
+  line-height: 1.3rem;
+  font-weight: bold;
+}
+
+.index-mag-glass {
+  position: absolute;
+  left: 0.1vw;
 }

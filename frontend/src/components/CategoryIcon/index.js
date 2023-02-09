@@ -1,5 +1,5 @@
 import React from "react";
-import { useHistory} from "react-router-dom";
+import { useHistory } from "react-router-dom";
 import "./CategoryIcon.css";
 function CategoryIcon({ category, image }) {
   const history = useHistory();
@@ -17,10 +17,10 @@ function CategoryIcon({ category, image }) {
   return (
     <>
       <div className="category-container" onClick={handleIconClick}>
-        <p>
+        <div>
           <div className="image-icon-container">{image}</div>
           {category}
-        </p>
+        </div>
       </div>
     </>
   );
