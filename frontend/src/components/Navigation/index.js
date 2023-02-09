@@ -62,6 +62,20 @@ function Navigation({ page }) {
           </button>
         </form>
       </div>
+      <div className="fa-brands-container">
+        <a href="https://github.com/junjiequ1459" target="_blank">
+          <i className="fa-brands fa-github"></i>
+        </a>
+        <a
+          href="https://www.linkedin.com/in/junjie-qu-239070169/"
+          target="_blank"
+        >
+          <i className="fa-brands fa-linkedin"></i>
+        </a>
+        <a href="https://angel.co/jobs" target="_blank">
+          <i className="fa-brands fa-angellist"></i>
+        </a>
+      </div>
       {sessionLinks}
     </div>
   );

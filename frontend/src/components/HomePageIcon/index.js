@@ -17,9 +17,9 @@ function HomeIcon({ page }) {
 
   return (
     <div className="icon-container">
-      <p className={className} onClick={handlePageClick}>
+      <h1 className={className} onClick={handlePageClick}>
         MealMate
-      </p>
+      </h1>
     </div>
   );
 }

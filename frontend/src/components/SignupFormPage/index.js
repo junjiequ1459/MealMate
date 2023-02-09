@@ -65,6 +65,8 @@ function SignupFormPage() {
     </a>
   );
 
+  const handleClickHide = () => {};
+
   const signin = (
     <NavLink to="/login">
       <a>Log In</a>
@@ -82,11 +84,15 @@ function SignupFormPage() {
       <div className="page-container">
         <div className="signup-form-container">
           <form onSubmit={handleSubmit}>
-            <ul>
-              {errors.map((error) => (
-                <li key={error}>{error}</li>
-              ))}
-            </ul>
+            {errors.length > 0 && (
+              <div className="errors">
+                <ul>
+                  {errors.map((error) => (
+                    <li key={error}>{error}</li>
+                  ))}
+                </ul>
+              </div>
+            )}
             <p className="red-text">Sign Up for MealMate</p>
             <p className="new-text">Connect with great local businesses</p>
             <p className="terms-text">

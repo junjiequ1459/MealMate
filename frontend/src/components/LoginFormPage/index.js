@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import * as sessionActions from "../../store/session";
 import { useDispatch, useSelector } from "react-redux";
-import { Redirect, useHistory, NavLink } from "react-router-dom";
+import { Redirect, NavLink } from "react-router-dom";
 import "./LoginForm.css";
 import HomeIcon from "../HomePageIcon";
 
@@ -11,7 +11,6 @@ function LoginFormPage() {
   const [credential, setCredential] = useState("");
   const [password, setPassword] = useState("");
   const [errors, setErrors] = useState([]);
-  const history = useHistory();
 
   if (sessionUser) return <Redirect to="/" />;
 
@@ -36,11 +35,9 @@ function LoginFormPage() {
       Private Policy
     </a>
   );
-  const signup = (
-    <NavLink to="/signup">
-      <a>SignUp</a>
-    </NavLink>
-  );
+
+  const errorName = "errors";
+  const signup = <a href="/signup">SignUp</a>;
   return (
     <>
       <HomeIcon />
@@ -52,11 +49,15 @@ function LoginFormPage() {
       <div className="page-container">
         <div className="login-form-container">
           <form onSubmit={handleSubmit}>
-            <ul>
-              {errors.map((error) => (
-                <li key={error}>{error}</li>
-              ))}
-            </ul>
+            {errors.length > 0 && (
+              <div className={errorName}>
+                <ul>
+                  {errors.map((error) => (
+                    <li key={error}>{error}</li>
+                  ))}
+                </ul>
+              </div>
+            )}
             <p className="red-text">Log in to MealMate</p>
             <p className="new-text">New to MealMate? {signup}</p>
             <p className="terms-text">
