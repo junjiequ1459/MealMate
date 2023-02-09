@@ -16,13 +16,21 @@ function HomeIcon({ page }) {
     history.push("/");
   };
 
+  const handleYelpClick = () => {
+    window.location.href = "https://www.yelp.com";
+  };
+
   return (
     <div className="icon-container">
       <h1 className={HomeButtonclassName} onClick={handlePageClick}>
         MealMate
       </h1>
       <div className="splash-container">
-        <img className="yelp-splash" src={burstImage}></img>
+        <img
+          className="yelp-splash"
+          src={burstImage}
+          onClick={handleYelpClick}
+        ></img>
       </div>
     </div>
   );

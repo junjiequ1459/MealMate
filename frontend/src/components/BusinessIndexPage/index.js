@@ -5,9 +5,9 @@ import React, { useEffect } from "react";
 import HomeIcon from "../HomePageIcon";
 import { useLocation } from "react-router-dom";
 function BusinessIndexPage() {
+  
   const location = useLocation();
-
-  const data = location.state ? location.state.data : { category: "Pizza" };
+  const data = location.state.data;
 
   useEffect(() => {
     window.scrollTo(0, 0);

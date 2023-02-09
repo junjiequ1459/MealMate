@@ -1,10 +1,11 @@
-import React from "react";
+import React, { useState } from "react";
 import { useHistory } from "react-router-dom";
 import { useSelector } from "react-redux";
 import ProfileButton from "./ProfileButton";
 import "./Navigation.css";
 
 function Navigation({ page }) {
+  const [formInput, setFormInput] = useState("");
   const sessionUser = useSelector((state) => state.session.user);
   const history = useHistory();
 
@@ -25,8 +26,14 @@ function Navigation({ page }) {
     history.push("/signup");
   };
 
-  const handleBusinessPageClick = () => {
-    history.push("/business");
+  const handleBusinessPageSubmit = () => {
+    console.log("Form submitted", formInput);
+    history.push({
+      pathname: "/business",
+      state: {
+        data: { category: formInput },
+      },
+    });
   };
 
   let sessionLinks;
@@ -48,18 +55,16 @@ function Navigation({ page }) {
   return (
     <div className="nav-bar">
       <div className="search-container">
-        <form
-          className="form-inliMealMatene "
-          onSubmit={handleBusinessPageClick}
-        >
+        <form onSubmit={handleBusinessPageSubmit}>
           <input
             className="form-control"
-            type="search"
-            placeholder="tacos, cheap dinner, Max's"
-            aria-label="Search"
+            type="text"
+            value={formInput}
+            placeholder="Tacos, cheap dinner, Max's"
+            onChange={(event) => setFormInput(event.target.value)}
           />
           <button className="btn" type="submit">
-            <i className="fa-solid fa-magnifying-glass"></i>
+            <i className="fa-solid fa-magnifying-glass nav-mag-glass"></i>
           </button>
         </form>
       </div>

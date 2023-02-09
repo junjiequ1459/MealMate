@@ -37,7 +37,11 @@ function LoginFormPage() {
   );
 
   const errorName = "errors";
-  const signup = <a href="/signup">SignUp</a>;
+  const signup = (
+    <NavLink to="/signup">
+      <a>Sign Up</a>
+    </NavLink>
+  );
   return (
     <>
       <HomeIcon />

@@ -65,8 +65,6 @@ function SignupFormPage() {
     </a>
   );
 
-  const handleClickHide = () => {};
-
   const signin = (
     <NavLink to="/login">
       <a>Log In</a>

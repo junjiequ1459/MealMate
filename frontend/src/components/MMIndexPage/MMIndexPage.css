@@ -53,13 +53,18 @@
   position: absolute;
   top: 20vh;
   left: 22.5vw;
-  width: 40vw;
-  height: 20vh;
+  width: fit-content;
+  height: fit-content;
 }
 
 .description-text {
   font-size: 60px;
   color: white;
+}
+
+.description-text:hover {
+  color: red;
+  transition: color 0.3s ease;
 }
 .description-button {
   border-radius: 4px;
@@ -69,7 +74,6 @@
   font-size: 16px;
   padding: 10px 13px;
   width: fit-content;
-  padding-left: 2vw;
   padding-right: 1.5vw;
   background-color: rgb(224, 7, 7);
   color: rgb(255, 255, 255);
@@ -77,7 +81,11 @@
   font-weight: bold;
 }
 
+.description-button:hover {
+  background-color: rgb(244, 13, 21);
+  transition: background-color 0.3s ease;
+}
+
 .index-mag-glass {
-  position: absolute;
-  left: 0.1vw;
+  margin-right: 0.5vw;
 }

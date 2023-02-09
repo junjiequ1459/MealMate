@@ -48,6 +48,11 @@
   height: 100%;
 }
 
+.yelp-splash:hover {
+  transform: scale(1.5);
+  transition: transform 0.3s ease;
+}
+
 .splash-container {
   position: absolute;
   left: 9.5vw;

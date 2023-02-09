@@ -38,7 +38,7 @@ function ProfileButton({ user }) {
           <ul className="profile-dropdown">
             <div className="drop-down-container">
               <li>
-                <i class="fa-regular fa-circle-user"></i>
+                <i className="fa-regular fa-circle-user"></i>
                 <div className="profile-list">
                   {user.fname}
                   {user.lname}
