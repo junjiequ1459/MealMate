@@ -14,16 +14,19 @@ ActiveRecord::Schema[7.0].define(version: 2023_02_10_210605) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
-  create_table "businesses", force: :cascade do |t|
+  create_table "businesses", id: false, force: :cascade do |t|
+    t.string "business_id", null: false
     t.string "name", null: false
     t.string "address", null: false
     t.string "city", null: false
     t.string "state", null: false
     t.string "postal_code", null: false
-    t.decimal "latitude", null: false
-    t.decimal "longitude", null: false
+    t.float "latitude", null: false
+    t.float "longitude", null: false
     t.integer "stars", null: false
-    t.string "categories", null: false
+    t.text "categories", null: false
+    t.json "hours"
+    t.json "properties", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end

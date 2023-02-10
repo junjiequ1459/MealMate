@@ -9,4 +9,11 @@
   position: absolute;
   top: 20vh;
   left: 15vw;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.business-properties {
+  width: 48vw;
+  word-wrap: break-word;
 }
