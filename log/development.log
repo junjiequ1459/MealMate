@@ -11441,3 +11441,496 @@ Processing by StaticPagesController#frontend_index as */*
 Completed 200 OK in 1ms (Views: 0.4ms | ActiveRecord: 0.0ms | Allocations: 284)
 
 
+  [1m[36mBusiness Load (0.9ms)[0m  [1m[34mSELECT "businesses".* FROM "businesses"[0m
+Started GET "/api/session" for 127.0.0.1 at 2023-02-10 16:46:43 -0500
+Processing by Api::SessionsController#show as JSON
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."session_token" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:12:in `current_user'
+Completed 200 OK in 9ms (Views: 0.1ms | ActiveRecord: 2.3ms | Allocations: 5767)
+
+
+Started GET "/api/businesses" for 127.0.0.1 at 2023-02-10 16:47:18 -0500
+
+ActionController::RoutingError - uninitialized constant Api::BusinessesController
+      Object.const_get(camel_cased_word)
+            ^^^^^^^^^^
+Did you mean?  Api::SessionsController
+            raise MissingController.new(error.message, error.name)
+            ^^^^^:
+
+Started GET "/api/session" for 127.0.0.1 at 2023-02-10 16:47:20 -0500
+Processing by Api::SessionsController#show as JSON
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."session_token" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:12:in `current_user'
+Completed 200 OK in 2ms (Views: 0.1ms | ActiveRecord: 0.2ms | Allocations: 972)
+
+
+Started GET "/api/businesses" for 127.0.0.1 at 2023-02-10 16:47:21 -0500
+
+ActionController::RoutingError - uninitialized constant Api::BusinessesController
+      Object.const_get(camel_cased_word)
+            ^^^^^^^^^^
+Did you mean?  Api::SessionsController
+            raise MissingController.new(error.message, error.name)
+            ^^^^^:
+
+Started GET "/api/session" for 127.0.0.1 at 2023-02-10 16:48:44 -0500
+Processing by Api::SessionsController#show as JSON
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."session_token" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:12:in `current_user'
+Completed 200 OK in 2ms (Views: 0.1ms | ActiveRecord: 0.2ms | Allocations: 929)
+
+
+Started GET "/api/session" for 127.0.0.1 at 2023-02-10 16:48:47 -0500
+Processing by Api::SessionsController#show as JSON
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."session_token" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:12:in `current_user'
+Completed 200 OK in 2ms (Views: 0.1ms | ActiveRecord: 0.2ms | Allocations: 950)
+
+
+Started GET "/api/session" for 127.0.0.1 at 2023-02-10 16:48:48 -0500
+Processing by Api::SessionsController#show as JSON
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."session_token" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:12:in `current_user'
+Completed 200 OK in 2ms (Views: 0.1ms | ActiveRecord: 0.3ms | Allocations: 926)
+
+
+Started GET "/api/session" for 127.0.0.1 at 2023-02-10 16:48:49 -0500
+Processing by Api::SessionsController#show as JSON
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."session_token" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:12:in `current_user'
+Completed 200 OK in 2ms (Views: 0.1ms | ActiveRecord: 0.2ms | Allocations: 920)
+
+
+Started GET "/api/session" for 127.0.0.1 at 2023-02-10 16:48:52 -0500
+Processing by Api::SessionsController#show as JSON
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."session_token" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:12:in `current_user'
+Completed 200 OK in 2ms (Views: 0.1ms | ActiveRecord: 0.2ms | Allocations: 908)
+
+
+Started GET "/api/businesses" for 127.0.0.1 at 2023-02-10 16:49:21 -0500
+
+ActionController::RoutingError - uninitialized constant Api::BusinessesController
+      Object.const_get(camel_cased_word)
+            ^^^^^^^^^^
+Did you mean?  Api::SessionsController
+            raise MissingController.new(error.message, error.name)
+            ^^^^^:
+
+Started GET "/api/businesses" for 127.0.0.1 at 2023-02-10 16:50:08 -0500
+
+ActionController::RoutingError - uninitialized constant Api::BusinessesController
+      Object.const_get(camel_cased_word)
+            ^^^^^^^^^^
+Did you mean?  Api::SessionsController
+            raise MissingController.new(error.message, error.name)
+            ^^^^^:
+
+Started GET "/api/session" for 127.0.0.1 at 2023-02-10 16:50:10 -0500
+Processing by Api::SessionsController#show as JSON
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."session_token" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:12:in `current_user'
+Completed 200 OK in 2ms (Views: 0.1ms | ActiveRecord: 0.1ms | Allocations: 912)
+
+
+Started GET "/api/session" for 127.0.0.1 at 2023-02-10 16:50:12 -0500
+Processing by Api::SessionsController#show as JSON
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."session_token" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:12:in `current_user'
+Completed 200 OK in 1ms (Views: 0.1ms | ActiveRecord: 0.1ms | Allocations: 908)
+
+
+Started GET "/api/businesses" for 127.0.0.1 at 2023-02-10 16:50:13 -0500
+
+ActionController::RoutingError - uninitialized constant Api::BusinessesController
+      Object.const_get(camel_cased_word)
+            ^^^^^^^^^^
+Did you mean?  Api::SessionsController
+            raise MissingController.new(error.message, error.name)
+            ^^^^^:
+
+Started GET "/api/businesses" for 127.0.0.1 at 2023-02-10 16:52:05 -0500
+
+ActionController::RoutingError - uninitialized constant Api::BusinessesController
+      Object.const_get(camel_cased_word)
+            ^^^^^^^^^^
+Did you mean?  Api::SessionsController
+            raise MissingController.new(error.message, error.name)
+            ^^^^^:
+
+Started GET "/api/session" for 127.0.0.1 at 2023-02-10 16:52:06 -0500
+Processing by Api::SessionsController#show as JSON
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."session_token" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:12:in `current_user'
+Completed 200 OK in 2ms (Views: 0.1ms | ActiveRecord: 0.2ms | Allocations: 921)
+
+
+Started GET "/api/session" for 127.0.0.1 at 2023-02-10 16:52:08 -0500
+Processing by Api::SessionsController#show as JSON
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."session_token" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:12:in `current_user'
+Completed 200 OK in 2ms (Views: 0.1ms | ActiveRecord: 0.2ms | Allocations: 914)
+
+
+Started GET "/api/session" for 127.0.0.1 at 2023-02-10 16:52:28 -0500
+Processing by Api::SessionsController#show as JSON
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."session_token" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:12:in `current_user'
+Completed 200 OK in 2ms (Views: 0.1ms | ActiveRecord: 0.2ms | Allocations: 911)
+
+
+Started GET "/api/session" for 127.0.0.1 at 2023-02-10 16:52:28 -0500
+Processing by Api::SessionsController#show as JSON
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."session_token" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:12:in `current_user'
+Completed 200 OK in 2ms (Views: 0.1ms | ActiveRecord: 0.1ms | Allocations: 926)
+
+
+Started GET "/api/session" for 127.0.0.1 at 2023-02-10 16:52:29 -0500
+Processing by Api::SessionsController#show as JSON
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."session_token" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:12:in `current_user'
+Completed 200 OK in 2ms (Views: 0.1ms | ActiveRecord: 0.1ms | Allocations: 929)
+
+
+Started GET "/api/session" for 127.0.0.1 at 2023-02-10 16:52:30 -0500
+Processing by Api::SessionsController#show as JSON
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."session_token" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:12:in `current_user'
+Completed 200 OK in 2ms (Views: 0.1ms | ActiveRecord: 0.1ms | Allocations: 938)
+
+
+Started GET "/api/businesses" for 127.0.0.1 at 2023-02-10 16:52:34 -0500
+
+ActionController::RoutingError - uninitialized constant Api::BusinessesController
+      Object.const_get(camel_cased_word)
+            ^^^^^^^^^^
+Did you mean?  Api::SessionsController
+            raise MissingController.new(error.message, error.name)
+            ^^^^^:
+
+Started GET "/api/businesses" for 127.0.0.1 at 2023-02-10 16:52:37 -0500
+
+ActionController::RoutingError - uninitialized constant Api::BusinessesController
+      Object.const_get(camel_cased_word)
+            ^^^^^^^^^^
+Did you mean?  Api::SessionsController
+            raise MissingController.new(error.message, error.name)
+            ^^^^^:
+
+Started GET "/api/businesses" for 127.0.0.1 at 2023-02-10 16:52:43 -0500
+
+ActionController::RoutingError - uninitialized constant Api::BusinessesController
+      Object.const_get(camel_cased_word)
+            ^^^^^^^^^^
+Did you mean?  Api::SessionsController
+            raise MissingController.new(error.message, error.name)
+            ^^^^^:
+
+  [1m[36mBusiness Load (1.1ms)[0m  [1m[34mSELECT "businesses".* FROM "businesses"[0m
+Started GET "/api/businesses" for 127.0.0.1 at 2023-02-10 16:54:43 -0500
+
+ActionController::RoutingError - uninitialized constant Api::BusinessesController
+      Object.const_get(camel_cased_word)
+            ^^^^^^^^^^
+Did you mean?  Api::SessionsController
+            raise MissingController.new(error.message, error.name)
+            ^^^^^:
+
+Started GET "/api/businesses" for 127.0.0.1 at 2023-02-10 16:54:46 -0500
+
+ActionController::RoutingError - uninitialized constant Api::BusinessesController
+      Object.const_get(camel_cased_word)
+            ^^^^^^^^^^
+Did you mean?  Api::SessionsController
+            raise MissingController.new(error.message, error.name)
+            ^^^^^:
+
+Started GET "/api/session" for 127.0.0.1 at 2023-02-10 16:55:01 -0500
+Processing by Api::SessionsController#show as JSON
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."session_token" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:12:in `current_user'
+Completed 200 OK in 5ms (Views: 0.1ms | ActiveRecord: 1.7ms | Allocations: 3069)
+
+
+Started GET "/'https://example.com/api/businesses'" for 127.0.0.1 at 2023-02-10 16:56:08 -0500
+Processing by StaticPagesController#frontend_index as */*
+  Parameters: {"path"=>"'https:/example.com/api/businesses'"}
+  Rendering public/index.html
+  Rendered public/index.html (Duration: 0.4ms | Allocations: 10)
+Completed 200 OK in 2ms (Views: 1.4ms | ActiveRecord: 0.0ms | Allocations: 627)
+
+
+Started GET "/'https://localhost:6000/api/businesses'" for 127.0.0.1 at 2023-02-10 16:56:15 -0500
+Processing by StaticPagesController#frontend_index as */*
+  Parameters: {"path"=>"'https:/localhost:6000/api/businesses'"}
+  Rendering public/index.html
+  Rendered public/index.html (Duration: 0.0ms | Allocations: 5)
+Completed 200 OK in 1ms (Views: 0.4ms | ActiveRecord: 0.0ms | Allocations: 308)
+
+
+Started GET "/'https://localhost:6000/api/businesses'" for 127.0.0.1 at 2023-02-10 16:56:26 -0500
+Processing by StaticPagesController#frontend_index as */*
+  Parameters: {"path"=>"'https:/localhost:6000/api/businesses'"}
+  Rendering public/index.html
+  Rendered public/index.html (Duration: 0.0ms | Allocations: 5)
+Completed 200 OK in 0ms (Views: 0.3ms | ActiveRecord: 0.0ms | Allocations: 282)
+
+
+Started GET "/api/session" for 127.0.0.1 at 2023-02-10 16:57:09 -0500
+Processing by Api::SessionsController#show as JSON
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."session_token" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:12:in `current_user'
+Completed 200 OK in 2ms (Views: 0.1ms | ActiveRecord: 0.3ms | Allocations: 1133)
+
+
+Started GET "/api/session" for 127.0.0.1 at 2023-02-10 16:58:36 -0500
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by Api::SessionsController#show as JSON
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."session_token" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:12:in `current_user'
+Completed 200 OK in 7ms (Views: 0.2ms | ActiveRecord: 1.6ms | Allocations: 5129)
+
+
+Started GET "/favicon.ico" for 127.0.0.1 at 2023-02-10 16:58:36 -0500
+Processing by StaticPagesController#frontend_index as */*
+  Parameters: {"path"=>"favicon"}
+  Rendering public/index.html
+  Rendered public/index.html (Duration: 0.0ms | Allocations: 14)
+Completed 200 OK in 2ms (Views: 1.9ms | ActiveRecord: 0.0ms | Allocations: 1875)
+
+
+Started GET "/api/businesses" for 127.0.0.1 at 2023-02-10 16:58:49 -0500
+
+ActionController::RoutingError - uninitialized constant Api::BusinessesController
+      Object.const_get(camel_cased_word)
+            ^^^^^^^^^^
+Did you mean?  Api::SessionsController
+            raise MissingController.new(error.message, error.name)
+            ^^^^^:
+
+Started POST "/__better_errors/52acd1843216891b/variables" for 127.0.0.1 at 2023-02-10 16:58:49 -0500
+Started GET "/api/Businesses" for 127.0.0.1 at 2023-02-10 16:58:57 -0500
+Processing by StaticPagesController#frontend_index as HTML
+  Parameters: {"path"=>"api/Businesses"}
+  Rendering public/index.html
+  Rendered public/index.html (Duration: 0.0ms | Allocations: 7)
+Completed 200 OK in 0ms (Views: 0.3ms | ActiveRecord: 0.0ms | Allocations: 350)
+
+
+Started GET "/api/session" for 127.0.0.1 at 2023-02-10 16:58:57 -0500
+Processing by Api::SessionsController#show as JSON
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."session_token" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:12:in `current_user'
+Completed 200 OK in 3ms (Views: 0.2ms | ActiveRecord: 0.3ms | Allocations: 1116)
+
+
+Started GET "/api/Businesses" for 127.0.0.1 at 2023-02-10 16:58:59 -0500
+Processing by StaticPagesController#frontend_index as HTML
+  Parameters: {"path"=>"api/Businesses"}
+  Rendering public/index.html
+  Rendered public/index.html (Duration: 0.2ms | Allocations: 6)
+Completed 200 OK in 1ms (Views: 0.5ms | ActiveRecord: 0.0ms | Allocations: 277)
+
+
+Started GET "/api/session" for 127.0.0.1 at 2023-02-10 16:58:59 -0500
+Processing by Api::SessionsController#show as JSON
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."session_token" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:12:in `current_user'
+Completed 200 OK in 2ms (Views: 0.1ms | ActiveRecord: 0.2ms | Allocations: 936)
+
+
+Started GET "/api/session" for 127.0.0.1 at 2023-02-10 17:01:03 -0500
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by Api::SessionsController#show as JSON
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."session_token" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:12:in `current_user'
+Completed 200 OK in 7ms (Views: 0.1ms | ActiveRecord: 1.3ms | Allocations: 5162)
+
+
+Started GET "/api/session" for 127.0.0.1 at 2023-02-10 17:01:11 -0500
+Processing by Api::SessionsController#show as JSON
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."session_token" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:12:in `current_user'
+Completed 200 OK in 1ms (Views: 0.1ms | ActiveRecord: 0.1ms | Allocations: 1010)
+
+
+Started GET "/api/business" for 127.0.0.1 at 2023-02-10 17:01:26 -0500
+Processing by StaticPagesController#frontend_index as HTML
+  Parameters: {"path"=>"api/business"}
+  Rendering public/index.html
+  Rendered public/index.html (Duration: 0.1ms | Allocations: 14)
+Completed 200 OK in 4ms (Views: 3.3ms | ActiveRecord: 0.0ms | Allocations: 1879)
+
+
+Started GET "/api/session" for 127.0.0.1 at 2023-02-10 17:01:26 -0500
+Processing by Api::SessionsController#show as JSON
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."session_token" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:12:in `current_user'
+Completed 200 OK in 1ms (Views: 0.1ms | ActiveRecord: 0.1ms | Allocations: 1137)
+
+
+Started GET "/api/session" for 127.0.0.1 at 2023-02-10 17:03:45 -0500
+Processing by Api::SessionsController#show as JSON
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."session_token" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:12:in `current_user'
+Completed 200 OK in 4ms (Views: 0.2ms | ActiveRecord: 0.9ms | Allocations: 3038)
+
+
+Started GET "/api/session" for 127.0.0.1 at 2023-02-10 17:03:47 -0500
+Processing by Api::SessionsController#show as JSON
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."session_token" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:12:in `current_user'
+Completed 200 OK in 2ms (Views: 0.1ms | ActiveRecord: 0.3ms | Allocations: 975)
+
+
+Started GET "/api/session" for 127.0.0.1 at 2023-02-10 17:03:49 -0500
+Processing by Api::SessionsController#show as JSON
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."session_token" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:12:in `current_user'
+Completed 200 OK in 2ms (Views: 0.1ms | ActiveRecord: 0.2ms | Allocations: 932)
+
+
+Started GET "/business" for 127.0.0.1 at 2023-02-10 17:03:54 -0500
+Processing by StaticPagesController#frontend_index as */*
+  Parameters: {"path"=>"business"}
+  Rendering public/index.html
+  Rendered public/index.html (Duration: 0.0ms | Allocations: 10)
+Completed 200 OK in 1ms (Views: 0.6ms | ActiveRecord: 0.0ms | Allocations: 632)
+
+
+Started GET "/api/session" for 127.0.0.1 at 2023-02-10 17:05:07 -0500
+Processing by Api::SessionsController#show as JSON
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."session_token" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:12:in `current_user'
+Completed 200 OK in 2ms (Views: 0.1ms | ActiveRecord: 0.1ms | Allocations: 1141)
+
+
+Started GET "/api/session" for 127.0.0.1 at 2023-02-10 17:06:20 -0500
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by Api::SessionsController#show as JSON
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."session_token" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:12:in `current_user'
+Completed 200 OK in 7ms (Views: 0.2ms | ActiveRecord: 1.5ms | Allocations: 5154)
+
+
+Started GET "/main.d62f4ce36b86af10cab0.hot-update.json" for 127.0.0.1 at 2023-02-10 17:06:31 -0500
+Processing by StaticPagesController#frontend_index as JSON
+  Parameters: {"path"=>"main.d62f4ce36b86af10cab0.hot-update"}
+  Rendering public/index.html
+  Rendered public/index.html (Duration: 0.0ms | Allocations: 14)
+Completed 200 OK in 3ms (Views: 2.4ms | ActiveRecord: 0.0ms | Allocations: 1877)
+
+
+Started GET "/api/session" for 127.0.0.1 at 2023-02-10 17:07:49 -0500
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by Api::SessionsController#show as JSON
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."session_token" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:12:in `current_user'
+Completed 200 OK in 7ms (Views: 0.2ms | ActiveRecord: 1.0ms | Allocations: 5148)
+
+
+Started GET "/api/session" for 127.0.0.1 at 2023-02-10 17:09:11 -0500
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by Api::SessionsController#show as JSON
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."session_token" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:12:in `current_user'
+Completed 200 OK in 7ms (Views: 0.2ms | ActiveRecord: 1.1ms | Allocations: 5139)
+
+
+Started GET "/api/session" for 127.0.0.1 at 2023-02-10 17:12:09 -0500
+Processing by Api::SessionsController#show as JSON
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."session_token" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:12:in `current_user'
+Completed 200 OK in 2ms (Views: 0.1ms | ActiveRecord: 0.2ms | Allocations: 1005)
+
+
+Started GET "/api/session" for 127.0.0.1 at 2023-02-10 17:12:27 -0500
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by Api::SessionsController#show as JSON
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."session_token" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:12:in `current_user'
+Completed 200 OK in 7ms (Views: 0.2ms | ActiveRecord: 1.1ms | Allocations: 5160)
+
+
+Started GET "/api/session" for 127.0.0.1 at 2023-02-10 17:15:12 -0500
+Processing by Api::SessionsController#show as JSON
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."session_token" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:12:in `current_user'
+Completed 200 OK in 3ms (Views: 0.1ms | ActiveRecord: 0.7ms | Allocations: 3056)
+
+
+Started GET "/api/Businesses" for 127.0.0.1 at 2023-02-10 17:15:18 -0500
+Processing by StaticPagesController#frontend_index as HTML
+  Parameters: {"path"=>"api/Businesses"}
+  Rendering public/index.html
+  Rendered public/index.html (Duration: 0.1ms | Allocations: 14)
+Completed 200 OK in 5ms (Views: 4.4ms | ActiveRecord: 0.0ms | Allocations: 1878)
+
+
+Started GET "/api/session" for 127.0.0.1 at 2023-02-10 17:15:18 -0500
+Processing by Api::SessionsController#show as JSON
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."session_token" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:12:in `current_user'
+Completed 200 OK in 2ms (Views: 0.1ms | ActiveRecord: 0.1ms | Allocations: 1144)
+
+
+Started GET "/api/session" for 127.0.0.1 at 2023-02-10 17:18:36 -0500
+Processing by Api::SessionsController#show as JSON
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."session_token" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:12:in `current_user'
+Completed 200 OK in 1ms (Views: 0.1ms | ActiveRecord: 0.1ms | Allocations: 929)
+
+
+Started GET "/api/businesses" for 127.0.0.1 at 2023-02-10 17:18:43 -0500
+
+ActionController::RoutingError - uninitialized constant Api::BusinessesController
+      Object.const_get(camel_cased_word)
+            ^^^^^^^^^^
+Did you mean?  Api::SessionsController
+            raise MissingController.new(error.message, error.name)
+            ^^^^^:
+
+Started POST "/__better_errors/d863c174391d5871/variables" for 127.0.0.1 at 2023-02-10 17:18:43 -0500
+Started GET "/api/businesses" for 127.0.0.1 at 2023-02-10 17:19:51 -0500
+
+ActionController::RoutingError - uninitialized constant Api::BusinessesController
+      Object.const_get(camel_cased_word)
+            ^^^^^^^^^^
+Did you mean?  Api::SessionsController
+            raise MissingController.new(error.message, error.name)
+            ^^^^^:
+
+Started POST "/__better_errors/db24d4cb682d1a0f/variables" for 127.0.0.1 at 2023-02-10 17:19:51 -0500
+Started GET "/api/businesses" for 127.0.0.1 at 2023-02-10 17:19:52 -0500
+
+ActionController::RoutingError - uninitialized constant Api::BusinessesController
+      Object.const_get(camel_cased_word)
+            ^^^^^^^^^^
+Did you mean?  Api::SessionsController
+            raise MissingController.new(error.message, error.name)
+            ^^^^^:
+
+Started POST "/__better_errors/d8288d78b17f06aa/variables" for 127.0.0.1 at 2023-02-10 17:19:52 -0500
+Started GET "/api/businesses" for 127.0.0.1 at 2023-02-10 17:20:40 -0500
+Processing by Api::BusinessesController#index as JSON
+  [1m[36mBusiness Load (2.1ms)[0m  [1m[34mSELECT "businesses".* FROM "businesses"[0m
+  ↳ app/controllers/api/businesses_controller.rb:4:in `index'
+Completed 200 OK in 139ms (Views: 132.0ms | ActiveRecord: 5.1ms | Allocations: 212958)
+
+
+Started GET "/api/session" for 127.0.0.1 at 2023-02-10 17:20:46 -0500
+Processing by Api::SessionsController#show as JSON
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."session_token" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:12:in `current_user'
+Completed 200 OK in 4ms (Views: 0.1ms | ActiveRecord: 1.0ms | Allocations: 2734)
+
+
+Started GET "/api/businesses" for 127.0.0.1 at 2023-02-10 17:20:57 -0500
+Processing by Api::BusinessesController#index as JSON
+  [1m[36mBusiness Load (1.7ms)[0m  [1m[34mSELECT "businesses".* FROM "businesses"[0m
+  ↳ app/controllers/api/businesses_controller.rb:4:in `index'
+Completed 200 OK in 87ms (Views: 84.9ms | ActiveRecord: 1.7ms | Allocations: 205007)
+
+

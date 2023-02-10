@@ -41,7 +41,7 @@
   "devDependencies": {
     "redux-logger": "^3.0.6"
   },
-  "proxy": "http://localhost:6000",
+  "proxy": "http://localhost:5000",
   "main": "index.js",
   "keywords": [],
   "author": "",
