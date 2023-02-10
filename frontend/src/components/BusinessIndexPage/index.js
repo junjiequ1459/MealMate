@@ -1,7 +1,7 @@
 import Navigation from "../Navigation";
 import "./BusinessIndexPage.css";
 import GoogleMap from "../GoogleMap";
-import React, { useEffect } from "react";
+import React, { useState, useEffect } from "react";
 import HomeIcon from "../HomePageIcon";
 import { useLocation } from "react-router-dom";
 import BusinessList from "../Business";
@@ -9,8 +9,17 @@ import BusinessList from "../Business";
 function BusinessIndexPage() {
   const location = useLocation();
   const data = location.state.data;
+  const [businesses, setBusinesses] = useState([]);
+
   useEffect(() => {
     window.scrollTo(0, 0);
+    fetch("api/businesses")
+      .then((response) => {
+        console.log(response);
+        return response.json();
+      })
+      .then((data) => setBusinesses(data))
+      .catch((error) => console.error(error));
   }, []);
 
   return (
@@ -22,9 +31,9 @@ function BusinessIndexPage() {
           <Navigation page={"business-page"} />
         </div>
         <div className="map-container">
-          <GoogleMap />
+          <GoogleMap businesses={businesses} />
         </div>
-        <BusinessList />
+        <BusinessList businesses={businesses} />
       </div>
     </>
   );

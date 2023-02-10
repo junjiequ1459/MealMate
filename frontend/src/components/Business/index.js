@@ -1,18 +1,7 @@
-import React, { useState, useEffect } from "react";
+import React from "react";
 import "./Business.css";
-const BusinessList = () => {
-  const [businesses, setBusinesses] = useState([]);
 
-  useEffect(() => {
-    fetch("api/businesses")
-      .then((response) => {
-        console.log(response);
-        return response.json();
-      })
-      .then((data) => setBusinesses(data))
-      .catch((error) => console.error(error));
-  }, []);
-
+const BusinessList = ({ businesses }) => {
   return (
     <div className="business-component-container">
       {businesses.map((business) => (
@@ -22,6 +11,6 @@ const BusinessList = () => {
       ))}
     </div>
   );
-};
+};  
 
 export default BusinessList;

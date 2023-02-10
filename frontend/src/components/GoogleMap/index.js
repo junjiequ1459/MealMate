@@ -1,17 +1,7 @@
-import "./GoogleMap.css";
-import React, { useEffect, useRef, useState } from "react";
+import React, { useEffect, useRef } from "react";
 
-const GoogleMap = () => {
+const GoogleMap = ({ businesses }) => {
   const mapContainer = useRef(null);
-  const [businesses, setBusinesses] = useState([]);
-
-  useEffect(() => {
-    fetch("api/businesses")
-      .then((response) => response.json())
-      .then((data) => {
-        setBusinesses(data);
-      });
-  }, []);
 
   useEffect(() => {
     const map = new window.google.maps.Map(mapContainer.current, {
@@ -26,7 +16,6 @@ const GoogleMap = () => {
           lng: parseFloat(business.longitude),
         },
         map: map,
-        title: business.name,
       });
     });
   }, [businesses]);
