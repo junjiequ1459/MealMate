@@ -122,6 +122,7 @@ GEM
     nokogiri (1.13.8-x86_64-linux)
       racc (~> 1.4)
     pg (1.4.3)
+    pg_json (0.1.29)
     pry (0.14.1)
       coderay (~> 1.1)
       method_source (~> 1.0)
@@ -185,6 +186,7 @@ DEPENDENCIES
   faker
   jbuilder
   pg (~> 1.1)
+  pg_json
   pry-rails
   puma (~> 5.0)
   rack-cors
