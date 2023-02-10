@@ -1,10 +1,10 @@
 import React, { useState, useEffect } from "react";
-
+import "./Business.css";
 const BusinessList = () => {
   const [businesses, setBusinesses] = useState([]);
 
   useEffect(() => {
-    fetch("https://localhost:5000/api/businesses")
+    fetch("api/businesses")
       .then((response) => {
         console.log(response);
         return response.json();
@@ -14,9 +14,11 @@ const BusinessList = () => {
   }, []);
 
   return (
-    <div>
+    <div className="business-component-container">
       {businesses.map((business) => (
-        <div key={business.id}>{business.name}</div>
+        <div className="business-component" key={business.id}>
+          {business.name} {business.postal_code},{business.stars}
+        </div>
       ))}
     </div>
   );

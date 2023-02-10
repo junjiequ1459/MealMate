@@ -1,0 +1,12 @@
+.business-component {
+  display: flex;
+  width: 48vw;
+  height: 26vh;
+  border: 1px solid red;
+}
+
+.business-component-container {
+  position: absolute;
+  top: 20vh;
+  left: 15vw;
+}
