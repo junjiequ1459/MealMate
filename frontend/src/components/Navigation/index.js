@@ -26,8 +26,8 @@ function Navigation({ page }) {
     history.push("/signup");
   };
 
-  const handleBusinessPageSubmit = () => {
-    console.log("Form submitted", formInput);
+  const handleBusinessPageSubmit = (e) => {
+    e.preventDefault();
     history.push({
       pathname: "/business",
       state: {

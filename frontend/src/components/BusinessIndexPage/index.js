@@ -8,19 +8,28 @@ import BusinessList from "../Business";
 
 function BusinessIndexPage() {
   const location = useLocation();
-  const data = location.state.data;
+  const data = (location.state && location.state.data) || {};
   const [businesses, setBusinesses] = useState([]);
+  const searchInput = data.category;
+  console.log(searchInput);
 
   useEffect(() => {
     window.scrollTo(0, 0);
     fetch("api/businesses")
       .then((response) => {
-        console.log(response);
         return response.json();
       })
-      .then((data) => setBusinesses(data))
+      .then((data) => {
+        const filteredData = data.filter((business) => {
+          const categoriesArray = business.categories.split(",");
+          return categoriesArray.some((category) =>
+            category.trim().includes(searchInput)
+          );
+        });
+        setBusinesses(filteredData);
+      })
       .catch((error) => console.error(error));
-  }, []);
+  }, [searchInput]);
 
   return (
     <>
@@ -31,7 +40,7 @@ function BusinessIndexPage() {
           <Navigation page={"business-page"} />
         </div>
         <div className="map-container">
-          <GoogleMap businesses={businesses} />
+          <GoogleMap businesses={businesses.slice(0, 10)} />
         </div>
         <BusinessList businesses={businesses} />
       </div>

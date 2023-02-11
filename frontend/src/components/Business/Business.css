@@ -11,9 +11,40 @@
   left: 15vw;
   display: flex;
   flex-wrap: wrap;
+  max-width: 50vw;
 }
 
 .business-properties {
   width: 48vw;
   word-wrap: break-word;
+}
+.business-image {
+  margin-top: 1.5vh;
+  margin-left: 1vw;
+  width: 13vw;
+  height: 13vw;
+}
+
+.business-name {
+  display: block;
+  margin-bottom: 10px;
+  height: 5vh;
+  margin-top: 2vh;
+  margin-left: 1vw;
+  width: 100%;
+}
+
+.business-button {
+  background-color: #d3d3d3;
+  border: none;
+  border-radius: 5px;
+  color: #333;
+  font-size: 14px;
+  cursor: pointer;
+  height: 2vh;
+  transition: background-color 0.2s ease-in-out;
+}
+
+.business-button:hover {
+  background-color: #c0c0c0;
 }

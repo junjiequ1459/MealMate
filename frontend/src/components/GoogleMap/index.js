@@ -1,12 +1,14 @@
 import React, { useEffect, useRef } from "react";
+import { useState } from "react";
 
 const GoogleMap = ({ businesses }) => {
   const mapContainer = useRef(null);
+  const [center, setCenter] = useState({ lat: 34.4087147, lng: -119.6850187 });
 
   useEffect(() => {
     const map = new window.google.maps.Map(mapContainer.current, {
-      zoom: 14,
-      center: { lat: 34.4087147, lng: -119.6850187 },
+      zoom: 13,
+      center: center,
     });
 
     businesses.forEach((business) => {
