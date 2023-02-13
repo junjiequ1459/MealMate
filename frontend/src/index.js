@@ -7,6 +7,7 @@ import "./index.css";
 import App from "./App";
 import configureStore from "./store";
 import * as sessionActions from "./store/session";
+// import Footer from "./components/Footer";
 // import * as reviewActions from "./store/reviews";
 
 const store = configureStore();

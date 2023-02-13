@@ -1,20 +1,75 @@
 .main-page {
   width: 100vw;
-  height: 100vh;
+  height: fit-content;
+  position: flex;
 }
 
 .map-container {
-  position: absolute;
+  position: fixed;
   top: 13.8vh;
   left: 66vw;
 }
+.business-background-color {
+  background-color: white;
+  position: fixed;
+  top: 0;
+  height: 14vh;
+  width: 100vw;
+  z-index: 1;
+}
 hr {
-  margin-top: 12vh;
+  position: fixed;
+  top: 4vh;
+  width: 100%;
   color: rgba(211, 211, 211, 0.2);
+  z-index: 2;
 }
 
 .business-header {
   margin-left: 15vw;
   margin-top: 2vh;
   font-weight: bold;
+}
+.business-list-container {
+  margin-top: 20vh;
+}
+
+.business-filter {
+  width: 15vw;
+  height: 100vh;
+  float: left;
+}
+
+.business-filter-list {
+  position: fixed;
+}
+
+.filter-button {
+  border: solid lightgray 1px;
+  width: 50px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  font-size: 10px;
+  border-left: 0px;
+  margin-top: 5vh;
+}
+
+.filter-button:hover {
+  background-color: lightgray;
+  transition: background-color 0.5s ease;
+}
+.filter-first-button {
+  margin-left: 2vw;
+  border-bottom-left-radius: 16px;
+  border-top-left-radius: 16px;
+}
+
+.filter-fourth-button {
+  border-bottom-right-radius: 16px;
+  border-top-right-radius: 16px;
+}
+
+.filter-h2 {
+  margin-left: 2vw;
+  margin-bottom: 3vh;
 }

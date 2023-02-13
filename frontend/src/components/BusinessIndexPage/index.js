@@ -11,6 +11,7 @@ function BusinessIndexPage() {
   const data = (location.state && location.state.data) || {};
   const [businesses, setBusinesses] = useState([]);
   const searchInput = data.category;
+  const [priceFilter, setPriceFilter] = useState(null);
 
   useEffect(() => {
     window.scrollTo(0, 0);
@@ -21,6 +22,13 @@ function BusinessIndexPage() {
       .then((data) => {
         const filteredData = data.filter((business) => {
           const categoriesArray = business.categories.split(",");
+          if (priceFilter) {
+            return (
+              categoriesArray.some((category) =>
+                category.trim().includes(searchInput)
+              ) && business.properties.RestaurantsPriceRange2 === priceFilter
+            );
+          }
           return categoriesArray.some((category) =>
             category.trim().includes(searchInput)
           );
@@ -28,20 +36,71 @@ function BusinessIndexPage() {
         setBusinesses(filteredData);
       })
       .catch((error) => console.error(error));
-  }, [searchInput]);
+  }, [searchInput, priceFilter]);
 
+  function onFilterButtonClick1() {
+    setPriceFilter("1");
+  }
+  function onFilterButtonClick2() {
+    setPriceFilter("2");
+  }
+  function onFilterButtonClick3() {
+    setPriceFilter("3");
+  }
+  function onFilterButtonClick4() {
+    setPriceFilter("4");
+  }
+
+  function resetFilter() {
+    setPriceFilter(null);
+  }
   return (
     <>
-      <p>{data.category}</p>
       <div className="main-page">
+        <div className="business-background-color"></div>
         <HomeIcon />
         <hr></hr>
-        <div className="nav-container">
-          <Navigation page={"business-page"} />
+        <Navigation page={"business-page"} />
+      </div>
+      <div className="map-container">
+        <GoogleMap businesses={businesses.slice(0, 10)} />
+      </div>
+      <div class="business-filter">
+        <div className="filter-buttons-container">
+          <div className="business-filter-list">
+            <h2 className="filter-h2">Filters</h2>
+            <button className="reset-filter-button" onClick={resetFilter}>
+              Reset Filters
+            </button>
+          </div>
+          <button
+            className="filter-first-button filter-button"
+            onClick={onFilterButtonClick1}
+          >
+            $
+          </button>
+          <button
+            className="filter-second-button filter-button"
+            onClick={onFilterButtonClick2}
+          >
+            $$
+          </button>
+          <button
+            className="filter-third-button filter-button"
+            onClick={onFilterButtonClick3}
+          >
+            $$$
+          </button>
+          <button
+            className="filter-fourth-button filter-button"
+            onClick={onFilterButtonClick4}
+          >
+            $$$$
+          </button>
         </div>
-        <div className="map-container">
-          <GoogleMap businesses={businesses.slice(0, 10)} />
-        </div>
+      </div>
+
+      <div className="business-list-container">
         <h1 className="business-header">Browsing Stata Barbara, CA business</h1>
         <BusinessList businesses={businesses} />
       </div>

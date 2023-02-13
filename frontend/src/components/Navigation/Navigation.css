@@ -1,5 +1,5 @@
 .nav-bar {
-  position: absolute;
+  position: fixed;
   top: 1.5rem;
   left: 0;
   right: 0;

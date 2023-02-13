@@ -7,17 +7,40 @@ const GoogleMap = ({ businesses }) => {
 
   useEffect(() => {
     const map = new window.google.maps.Map(mapContainer.current, {
-      zoom: 12,
+      zoom: 13,
       center: center,
     });
 
-    businesses.forEach((business) => {
+    businesses.forEach((business, i) => {
       const marker = new window.google.maps.Marker({
         position: {
           lat: parseFloat(business.latitude),
           lng: parseFloat(business.longitude),
         },
+        label: {
+          text: (i + 1).toString(),
+          color: "white",
+          fontSize: "16px",
+          fontWeight: "bold",
+        },
         map: map,
+      });
+      marker.addListener("mouseover", () => {
+        marker.setLabel({
+          text: (i + 1).toString(),
+          color: "red",
+          fontSize: "16px",
+          fontWeight: "bold",
+        });
+      });
+
+      marker.addListener("mouseout", () => {
+        marker.setLabel({
+          text: (i + 1).toString(),
+          color: "white",
+          fontSize: "16px",
+          fontWeight: "bold",
+        });
       });
     });
   }, [businesses]);

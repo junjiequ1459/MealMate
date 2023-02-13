@@ -11,7 +11,7 @@
 
 .category-container:hover .image-icon-container {
   color: white;
-  transition: background-color 0.3s ease;
+  transition: background-color 0.5s ease;
 }
 
 .category-container:hover {

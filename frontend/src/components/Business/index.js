@@ -15,16 +15,65 @@ const BusinessList = ({ businesses }) => {
     return dollarSigns;
   }
 
+  function reviewStar(input) {
+    switch (input) {
+      case 1:
+        return "-53%";
+      case 1.5:
+        return "-50%";
+      case 2:
+        return "-59%";
+      case 2.5:
+        return "-56%";
+      case 3:
+        return "-64.7%";
+      case 3.5:
+        return "-62%";
+      case 4:
+        return "-70.7%";
+      case 4.5:
+        return "-67.8%";
+      case 5:
+      default:
+        return "-73.7%";
+    }
+  }
+
+  function timeTillClose(input) {
+    const [startTime, endTime] = input.hours.Friday.split("-");
+
+    const startHour = parseInt(startTime.split(":")[0]);
+    const endHour = parseInt(endTime.split(":")[0]);
+
+    const startTime24 =
+      startHour >= 12 ? `${startHour}:00 PM` : `${startHour}:00 AM`;
+    const endTime24 =
+      endHour >= 12 ? `${endHour - 12}:00 PM` : `${endHour}:00 AM`;
+
+    return endTime24;
+  }
+
   return (
-    <div className="business-component-container">
-      {businesses.slice(0, 10).map((business) => (
-        <>
+    <>
+      <div className="business-component-container">
+        {businesses.slice(0, 10).map((business, index) => (
           <div className="business-component" key={business.id}>
             <div className="business-image-container">
               <img className="business-image" src={fileNotFound}></img>
             </div>
             <div>
-              <h2 className="business-name">{business.name} </h2>
+              <h2 className="business-name">
+                {index + 1}. {business.name}
+              </h2>
+              <div className="business-review-container">
+                <img
+                  className="business-review"
+                  style={{
+                    translate: `0% ${reviewStar(business.stars)}`,
+                  }}
+                  src="https://s3-media0.fl.yelpcdn.com/assets/public/stars_v2.yji-59bbc2cf8e3d4be04fcc.png"
+                ></img>
+              </div>
               <div className="business-button-container">
                 {business.categories
                   .split(",")
@@ -36,11 +85,17 @@ const BusinessList = ({ businesses }) => {
                   ))}
                 {DollarSigns(business)} <span>&#x2022;</span> {business.city}
               </div>
+              <p className="business-open-till">
+                <span style={{ color: "darkgreen" }}>Open</span> until{" "}
+                {business.hours.Friday && timeTillClose(business)
+                  ? timeTillClose(business)
+                  : "12:00 AM"}
+              </p>
             </div>
           </div>
-        </>
-      ))}
-    </div>
+        ))}
+      </div>
+    </>
   );
 };
 

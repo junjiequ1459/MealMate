@@ -11,12 +11,12 @@
   box-shadow: rgba(0, 0, 0, 0.1) 0px 2px 18px 0px;
 }
 .business-component-container {
-  position: absolute;
+  display: flex;
   top: 20vh;
   left: 15vw;
-  display: flex;
   flex-wrap: wrap;
   max-width: 50vw;
+  min-height: 100vh;
 }
 
 .business-properties {
@@ -60,3 +60,31 @@
   margin-left: 1vw;
   color: rgb(110, 112, 114);
 }
+
+.business-review-container {
+  height: 2vh;
+  overflow: hidden;
+  margin-left: 1vw;
+  margin-bottom: 0.5vw;
+  z-index: 0;
+}
+
+.business-open-till {
+  margin-top: 1vh;
+  margin-left: 1vw;
+}
+
+.reset-filter-button {
+  display: inline;
+  margin-left: 2vw;
+  color: rgb(2, 122, 151);
+}
+
+.reset-filter-button:hover {
+  text-decoration: underline;
+}
+
+.filter-h2 {
+  display: inline;
+}
+

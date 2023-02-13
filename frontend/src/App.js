@@ -13,7 +13,7 @@ function App() {
       <Switch>
         <Route path="/login">
           <LoginFormPage />
-        </Route>  
+        </Route>
         <Route path="/signup">
           <SignupFormPage />
         </Route>

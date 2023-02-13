@@ -1,7 +1,7 @@
 .home-index-icon {
   font-family: sans-serif;
   margin-left: 5%;
-  position: absolute;
+  position: fixed;
   top: 4vh;
   left: -3vw;
   right: 0;
@@ -26,7 +26,7 @@
   font-family: sans-serif;
   margin-left: 5%;
 
-  position: absolute;
+  position: fixed;
   top: 4vh;
   left: -3vw;
   right: 0;
@@ -54,7 +54,7 @@
 }
 
 .splash-container {
-  position: absolute;
+  position: fixed;
   left: 9.5vw;
   top: 2.5vh;
   width: 2vw;
