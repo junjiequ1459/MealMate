@@ -8,3 +8,16 @@
 .show-page-container {
   min-height: 100vh;
 }
+
+.show-page-name {
+}
+
+.show-page-header {
+  position: absolute;
+  top: 35vh;
+  background-color: teal;
+  height: 20vh;
+  width: 63vw;
+  z-index: 1;
+  left: 20vw;
+}
