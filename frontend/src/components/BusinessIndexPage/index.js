@@ -11,7 +11,6 @@ function BusinessIndexPage() {
   const data = (location.state && location.state.data) || {};
   const [businesses, setBusinesses] = useState([]);
   const searchInput = data.category;
-  console.log(searchInput);
 
   useEffect(() => {
     window.scrollTo(0, 0);

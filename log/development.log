@@ -17559,3 +17559,179 @@ Processing by Api::BusinessesController#index as JSON
 Completed 200 OK in 204ms (Views: 201.9ms | ActiveRecord: 1.6ms | Allocations: 461689)
 
 
+Started GET "/api/session" for 127.0.0.1 at 2023-02-13 00:04:17 -0500
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.8ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by Api::SessionsController#show as JSON
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."session_token" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:12:in `current_user'
+Completed 200 OK in 9ms (Views: 0.2ms | ActiveRecord: 2.6ms | Allocations: 5005)
+
+
+Started GET "/api/businesses" for 127.0.0.1 at 2023-02-13 00:04:23 -0500
+Processing by Api::BusinessesController#index as JSON
+  [1m[36mBusiness Load (3.2ms)[0m  [1m[34mSELECT "businesses".* FROM "businesses"[0m
+  ↳ app/controllers/api/businesses_controller.rb:4:in `index'
+Completed 200 OK in 192ms (Views: 185.4ms | ActiveRecord: 5.1ms | Allocations: 470705)
+
+
+Started GET "/api/businesses" for 127.0.0.1 at 2023-02-13 00:09:34 -0500
+Processing by Api::BusinessesController#index as JSON
+  [1m[36mBusiness Load (2.1ms)[0m  [1m[34mSELECT "businesses".* FROM "businesses"[0m
+  ↳ app/controllers/api/businesses_controller.rb:4:in `index'
+Completed 200 OK in 204ms (Views: 201.2ms | ActiveRecord: 2.1ms | Allocations: 461816)
+
+
+Started GET "/api/businesses" for 127.0.0.1 at 2023-02-13 00:09:37 -0500
+Processing by Api::BusinessesController#index as JSON
+  [1m[36mBusiness Load (1.4ms)[0m  [1m[34mSELECT "businesses".* FROM "businesses"[0m
+  ↳ app/controllers/api/businesses_controller.rb:4:in `index'
+Completed 200 OK in 166ms (Views: 164.6ms | ActiveRecord: 1.4ms | Allocations: 461681)
+
+
+Started GET "/api/businesses" for 127.0.0.1 at 2023-02-13 00:17:42 -0500
+Processing by Api::BusinessesController#index as JSON
+  [1m[36mBusiness Load (1.4ms)[0m  [1m[34mSELECT "businesses".* FROM "businesses"[0m
+  ↳ app/controllers/api/businesses_controller.rb:4:in `index'
+Completed 200 OK in 172ms (Views: 171.9ms | ActiveRecord: 4.0ms | Allocations: 464786)
+
+
+Started GET "/api/businesses" for 127.0.0.1 at 2023-02-13 00:28:21 -0500
+Processing by Api::BusinessesController#index as JSON
+  [1m[36mBusiness Load (1.4ms)[0m  [1m[34mSELECT "businesses".* FROM "businesses"[0m
+  ↳ app/controllers/api/businesses_controller.rb:4:in `index'
+Completed 200 OK in 205ms (Views: 204.9ms | ActiveRecord: 3.4ms | Allocations: 464664)
+
+
+Started GET "/api/businesses" for 127.0.0.1 at 2023-02-13 00:28:30 -0500
+Processing by Api::BusinessesController#index as JSON
+  [1m[36mBusiness Load (2.1ms)[0m  [1m[34mSELECT "businesses".* FROM "businesses"[0m
+  ↳ app/controllers/api/businesses_controller.rb:4:in `index'
+Completed 200 OK in 168ms (Views: 165.4ms | ActiveRecord: 2.1ms | Allocations: 461674)
+
+
+Started GET "/api/businesses" for 127.0.0.1 at 2023-02-13 00:29:09 -0500
+Processing by Api::BusinessesController#index as JSON
+  [1m[36mBusiness Load (2.1ms)[0m  [1m[34mSELECT "businesses".* FROM "businesses"[0m
+  ↳ app/controllers/api/businesses_controller.rb:4:in `index'
+Completed 200 OK in 198ms (Views: 195.6ms | ActiveRecord: 2.1ms | Allocations: 461659)
+
+
+Started GET "/api/businesses" for 127.0.0.1 at 2023-02-13 00:29:31 -0500
+Processing by Api::BusinessesController#index as JSON
+  [1m[36mBusiness Load (2.1ms)[0m  [1m[34mSELECT "businesses".* FROM "businesses"[0m
+  ↳ app/controllers/api/businesses_controller.rb:4:in `index'
+Completed 200 OK in 179ms (Views: 176.5ms | ActiveRecord: 2.1ms | Allocations: 461689)
+
+
+Started GET "/api/session" for 127.0.0.1 at 2023-02-13 00:30:23 -0500
+Processing by Api::SessionsController#show as JSON
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."session_token" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:12:in `current_user'
+Completed 200 OK in 2ms (Views: 0.1ms | ActiveRecord: 0.4ms | Allocations: 1019)
+
+
+Started GET "/api/businesses" for 127.0.0.1 at 2023-02-13 00:30:23 -0500
+Processing by Api::BusinessesController#index as JSON
+  [1m[36mBusiness Load (3.3ms)[0m  [1m[34mSELECT "businesses".* FROM "businesses"[0m
+  ↳ app/controllers/api/businesses_controller.rb:4:in `index'
+Completed 200 OK in 200ms (Views: 195.9ms | ActiveRecord: 3.3ms | Allocations: 461689)
+
+
+Started GET "/api/session" for 127.0.0.1 at 2023-02-13 00:30:39 -0500
+Processing by Api::SessionsController#show as JSON
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."session_token" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:12:in `current_user'
+Completed 200 OK in 2ms (Views: 0.1ms | ActiveRecord: 0.3ms | Allocations: 902)
+
+
+Started GET "/api/businesses" for 127.0.0.1 at 2023-02-13 00:30:39 -0500
+Processing by Api::BusinessesController#index as JSON
+  [1m[36mBusiness Load (1.8ms)[0m  [1m[34mSELECT "businesses".* FROM "businesses"[0m
+  ↳ app/controllers/api/businesses_controller.rb:4:in `index'
+Completed 200 OK in 169ms (Views: 167.0ms | ActiveRecord: 1.8ms | Allocations: 461683)
+
+
+Started GET "/api/businesses" for 127.0.0.1 at 2023-02-13 00:31:24 -0500
+Processing by Api::BusinessesController#index as JSON
+  [1m[36mBusiness Load (1.7ms)[0m  [1m[34mSELECT "businesses".* FROM "businesses"[0m
+  ↳ app/controllers/api/businesses_controller.rb:4:in `index'
+Completed 200 OK in 201ms (Views: 198.1ms | ActiveRecord: 1.7ms | Allocations: 461683)
+
+
+Started GET "/api/businesses" for 127.0.0.1 at 2023-02-13 00:31:28 -0500
+Processing by Api::BusinessesController#index as JSON
+  [1m[36mBusiness Load (3.8ms)[0m  [1m[34mSELECT "businesses".* FROM "businesses"[0m
+  ↳ app/controllers/api/businesses_controller.rb:4:in `index'
+Completed 200 OK in 177ms (Views: 172.8ms | ActiveRecord: 3.8ms | Allocations: 461680)
+
+
+Started GET "/api/businesses" for 127.0.0.1 at 2023-02-13 00:32:08 -0500
+Processing by Api::BusinessesController#index as JSON
+  [1m[36mBusiness Load (1.4ms)[0m  [1m[34mSELECT "businesses".* FROM "businesses"[0m
+  ↳ app/controllers/api/businesses_controller.rb:4:in `index'
+Completed 200 OK in 195ms (Views: 193.1ms | ActiveRecord: 1.4ms | Allocations: 461680)
+
+
+Started GET "/api/businesses" for 127.0.0.1 at 2023-02-13 00:32:16 -0500
+Processing by Api::BusinessesController#index as JSON
+  [1m[36mBusiness Load (2.0ms)[0m  [1m[34mSELECT "businesses".* FROM "businesses"[0m
+  ↳ app/controllers/api/businesses_controller.rb:4:in `index'
+Completed 200 OK in 166ms (Views: 163.4ms | ActiveRecord: 2.0ms | Allocations: 461677)
+
+
+Started GET "/api/businesses" for 127.0.0.1 at 2023-02-13 00:32:29 -0500
+Processing by Api::BusinessesController#index as JSON
+  [1m[36mBusiness Load (1.6ms)[0m  [1m[34mSELECT "businesses".* FROM "businesses"[0m
+  ↳ app/controllers/api/businesses_controller.rb:4:in `index'
+Completed 200 OK in 200ms (Views: 197.7ms | ActiveRecord: 1.6ms | Allocations: 461674)
+
+
+Started GET "/api/businesses" for 127.0.0.1 at 2023-02-13 00:33:41 -0500
+Processing by Api::BusinessesController#index as JSON
+  [1m[36mBusiness Load (2.0ms)[0m  [1m[34mSELECT "businesses".* FROM "businesses"[0m
+  ↳ app/controllers/api/businesses_controller.rb:4:in `index'
+Completed 200 OK in 176ms (Views: 173.5ms | ActiveRecord: 2.0ms | Allocations: 461677)
+
+
+Started GET "/api/businesses" for 127.0.0.1 at 2023-02-13 00:33:43 -0500
+Processing by Api::BusinessesController#index as JSON
+  [1m[36mBusiness Load (2.0ms)[0m  [1m[34mSELECT "businesses".* FROM "businesses"[0m
+  ↳ app/controllers/api/businesses_controller.rb:4:in `index'
+Completed 200 OK in 202ms (Views: 199.9ms | ActiveRecord: 2.0ms | Allocations: 461692)
+
+
+Started GET "/api/businesses" for 127.0.0.1 at 2023-02-13 00:33:47 -0500
+Processing by Api::BusinessesController#index as JSON
+  [1m[36mBusiness Load (1.4ms)[0m  [1m[34mSELECT "businesses".* FROM "businesses"[0m
+  ↳ app/controllers/api/businesses_controller.rb:4:in `index'
+Completed 200 OK in 165ms (Views: 162.8ms | ActiveRecord: 1.4ms | Allocations: 461686)
+
+
+Started GET "/api/businesses" for 127.0.0.1 at 2023-02-13 00:33:50 -0500
+Processing by Api::BusinessesController#index as JSON
+  [1m[36mBusiness Load (1.5ms)[0m  [1m[34mSELECT "businesses".* FROM "businesses"[0m
+  ↳ app/controllers/api/businesses_controller.rb:4:in `index'
+Completed 200 OK in 193ms (Views: 190.7ms | ActiveRecord: 1.5ms | Allocations: 461671)
+
+
+Started GET "/api/businesses" for 127.0.0.1 at 2023-02-13 00:34:39 -0500
+Processing by Api::BusinessesController#index as JSON
+  [1m[36mBusiness Load (1.6ms)[0m  [1m[34mSELECT "businesses".* FROM "businesses"[0m
+  ↳ app/controllers/api/businesses_controller.rb:4:in `index'
+Completed 200 OK in 183ms (Views: 180.6ms | ActiveRecord: 1.6ms | Allocations: 461689)
+
+
+Started GET "/api/session" for 127.0.0.1 at 2023-02-13 00:35:36 -0500
+Processing by Api::SessionsController#show as JSON
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."session_token" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:12:in `current_user'
+Completed 200 OK in 2ms (Views: 0.1ms | ActiveRecord: 0.3ms | Allocations: 926)
+
+
+Started GET "/api/businesses" for 127.0.0.1 at 2023-02-13 00:35:36 -0500
+Processing by Api::BusinessesController#index as JSON
+  [1m[36mBusiness Load (1.6ms)[0m  [1m[34mSELECT "businesses".* FROM "businesses"[0m
+  ↳ app/controllers/api/businesses_controller.rb:4:in `index'
+Completed 200 OK in 202ms (Views: 200.3ms | ActiveRecord: 1.6ms | Allocations: 461677)
+
+

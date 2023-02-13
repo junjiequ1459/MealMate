@@ -7,14 +7,13 @@ import SignupFormPage from "./components/SignupFormPage";
 import MMIndexPage from "./components/MMIndexPage";
 import Footer from "./components/Footer";
 import BusinessIndexPage from "./components/BusinessIndexPage";
-
 function App() {
   return (
     <>
       <Switch>
         <Route path="/login">
           <LoginFormPage />
-        </Route>
+        </Route>  
         <Route path="/signup">
           <SignupFormPage />
         </Route>
