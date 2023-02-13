@@ -85,7 +85,7 @@ function MMIndexPage() {
               image={<i className="fa-solid fa-pizza-slice"></i>}
             />
             <CategoryIcon
-              category={"SeaFood"}
+              category={"Sushi"}
               image={<i className="fa-solid fa-fish-fins"></i>}
             />
             <CategoryIcon
@@ -99,7 +99,7 @@ function MMIndexPage() {
           </div>
           <div id="categories-row2">
             <CategoryIcon
-              category={"Bakery"}
+              category={"Breakfast"}
               image={<i className="fa-solid fa-bread-slice"></i>}
             />
             <CategoryIcon

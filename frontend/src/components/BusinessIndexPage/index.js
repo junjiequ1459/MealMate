@@ -35,12 +35,14 @@ function BusinessIndexPage() {
       <p>{data.category}</p>
       <div className="main-page">
         <HomeIcon />
+        <hr></hr>
         <div className="nav-container">
           <Navigation page={"business-page"} />
         </div>
         <div className="map-container">
           <GoogleMap businesses={businesses.slice(0, 10)} />
         </div>
+        <h1 className="business-header">Browsing Stata Barbara, CA business</h1>
         <BusinessList businesses={businesses} />
       </div>
     </>

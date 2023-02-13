@@ -7,7 +7,7 @@ const GoogleMap = ({ businesses }) => {
 
   useEffect(() => {
     const map = new window.google.maps.Map(mapContainer.current, {
-      zoom: 13,
+      zoom: 12,
       center: center,
     });
 

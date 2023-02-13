@@ -5,6 +5,16 @@
 
 .map-container {
   position: absolute;
-  top: 10vh;
+  top: 13.8vh;
   left: 66vw;
+}
+hr {
+  margin-top: 12vh;
+  color: rgba(211, 211, 211, 0.2);
+}
+
+.business-header {
+  margin-left: 15vw;
+  margin-top: 2vh;
+  font-weight: bold;
 }

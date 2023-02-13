@@ -2,9 +2,14 @@
   display: flex;
   width: 48vw;
   height: 26vh;
-  border: 1px solid red;
+  /* border: 1px solid red; */
+  margin-bottom: 0.1vh;
 }
 
+.business-component:hover {
+  transition: box-shadow 0.5s ease;
+  box-shadow: rgba(0, 0, 0, 0.1) 0px 2px 18px 0px;
+}
 .business-component-container {
   position: absolute;
   top: 20vh;
@@ -19,32 +24,39 @@
   word-wrap: break-word;
 }
 .business-image {
-  margin-top: 1.5vh;
+  margin-top: 1vh;
   margin-left: 1vw;
-  width: 13vw;
-  height: 13vw;
+  width: 12vw;
+  height: 12vw;
 }
 
 .business-name {
   display: block;
   margin-bottom: 10px;
-  height: 5vh;
   margin-top: 2vh;
   margin-left: 1vw;
   width: 100%;
+  font-size: 20px;
 }
 
 .business-button {
-  background-color: #d3d3d3;
+  background-color: rgba(211, 211, 211, 0.5);
   border: none;
   border-radius: 5px;
-  color: #333;
+  color: rgb(110, 112, 114);
   font-size: 14px;
   cursor: pointer;
-  height: 2vh;
   transition: background-color 0.2s ease-in-out;
+  margin-right: 0.4vw;
+  padding: 2px;
+  font-weight: bold;
 }
 
 .business-button:hover {
   background-color: #c0c0c0;
+}
+
+.business-button-container {
+  margin-left: 1vw;
+  color: rgb(110, 112, 114);
 }
