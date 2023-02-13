@@ -1,8 +1,10 @@
 import React from "react";
 import "./Business.css";
 import fileNotFound from "../../assets/file.png";
-
+import { useHistory, Route, useParams } from "react-router-dom";
 const BusinessList = ({ businesses }) => {
+  const history = useHistory();
+  const { businessId } = useParams();
   function DollarSigns(input) {
     let dollarSigns = [];
     for (
@@ -26,11 +28,11 @@ const BusinessList = ({ businesses }) => {
       case 2.5:
         return "-56%";
       case 3:
-        return "-64.7%";
+        return "-64.5%";
       case 3.5:
         return "-62%";
       case 4:
-        return "-70.7%";
+        return "-70.6%";
       case 4.5:
         return "-67.8%";
       case 5:
@@ -52,12 +54,21 @@ const BusinessList = ({ businesses }) => {
 
     return endTime24;
   }
+  const handleDescriptionClick = (input) => {
+    history.push({
+      pathname: `/business/${input.business_id}`,
+    });
+  };
 
   return (
     <>
       <div className="business-component-container">
         {businesses.slice(0, 10).map((business, index) => (
-          <div className="business-component" key={business.id}>
+          <div
+            className="business-component"
+            key={business.id}
+            onClick={() => handleDescriptionClick(business)}
+          >
             <div className="business-image-container">
               <img className="business-image" src={fileNotFound}></img>
             </div>

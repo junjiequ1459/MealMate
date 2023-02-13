@@ -1,0 +1,10 @@
+.show-image-container {
+  position: fixed;
+  background-color: lightgray;
+  top: 13.5vh;
+  height: 45vh;
+  width: 100vw;
+}
+.show-page-container {
+  min-height: 100vh;
+}

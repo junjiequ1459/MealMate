@@ -3,10 +3,11 @@ import "./BusinessIndexPage.css";
 import GoogleMap from "../GoogleMap";
 import React, { useState, useEffect } from "react";
 import HomeIcon from "../HomePageIcon";
-import { useLocation } from "react-router-dom";
+import { useLocation, useHistory } from "react-router-dom";
 import BusinessList from "../Business";
 
 function BusinessIndexPage() {
+  const history = useHistory();
   const location = useLocation();
   const data = (location.state && location.state.data) || {};
   const [businesses, setBusinesses] = useState([]);
@@ -15,12 +16,12 @@ function BusinessIndexPage() {
 
   useEffect(() => {
     window.scrollTo(0, 0);
-    fetch("api/businesses")
+    fetch("/api/businesses")
       .then((response) => {
         return response.json();
       })
-      .then((data) => {
-        const filteredData = data.filter((business) => {
+      .then((datas) => {
+        const filteredData = datas.filter((business) => {
           const categoriesArray = business.categories.split(",");
           if (priceFilter) {
             return (
@@ -54,13 +55,14 @@ function BusinessIndexPage() {
   function resetFilter() {
     setPriceFilter(null);
   }
+
   return (
     <>
       <div className="main-page">
         <div className="business-background-color"></div>
         <HomeIcon />
         <hr></hr>
-        <Navigation page={"business-page"} />
+        <Navigation />
       </div>
       <div className="map-container">
         <GoogleMap businesses={businesses.slice(0, 10)} />
@@ -72,31 +74,33 @@ function BusinessIndexPage() {
             <button className="reset-filter-button" onClick={resetFilter}>
               Reset Filters
             </button>
+            <div className="filter-button-list">
+              <button
+                className="filter-first-button filter-button"
+                onClick={onFilterButtonClick1}
+              >
+                $
+              </button>
+              <button
+                className="filter-second-button filter-button"
+                onClick={onFilterButtonClick2}
+              >
+                $$
+              </button>
+              <button
+                className="filter-third-button filter-button"
+                onClick={onFilterButtonClick3}
+              >
+                $$$
+              </button>
+              <button
+                className="filter-fourth-button filter-button"
+                onClick={onFilterButtonClick4}
+              >
+                $$$$
+              </button>
+            </div>
           </div>
-          <button
-            className="filter-first-button filter-button"
-            onClick={onFilterButtonClick1}
-          >
-            $
-          </button>
-          <button
-            className="filter-second-button filter-button"
-            onClick={onFilterButtonClick2}
-          >
-            $$
-          </button>
-          <button
-            className="filter-third-button filter-button"
-            onClick={onFilterButtonClick3}
-          >
-            $$$
-          </button>
-          <button
-            className="filter-fourth-button filter-button"
-            onClick={onFilterButtonClick4}
-          >
-            $$$$
-          </button>
         </div>
       </div>
 

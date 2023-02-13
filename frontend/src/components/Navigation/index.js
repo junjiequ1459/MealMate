@@ -9,13 +9,13 @@ function Navigation({ page }) {
   const sessionUser = useSelector((state) => state.session.user);
   const history = useHistory();
 
-  let signInButton = "sign-in-button";
+  let signInButton = "sign-in-button-dark";
   let signUpButton = "sign-up-button";
-  let GithubclassName = "fa-brands-light";
+  let GithubclassName = "fa-brands-dark";
 
-  if (page === "business-page") {
-    signInButton = "sign-in-button-dark";
-    GithubclassName = "fa-brands-dark";
+  if (page === "white") {
+    signInButton = "sign-in-button";
+    GithubclassName = "fa-brands-light";
   }
 
   const handleLogInButtonClick = () => {

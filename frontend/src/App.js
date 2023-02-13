@@ -7,6 +7,7 @@ import SignupFormPage from "./components/SignupFormPage";
 import MMIndexPage from "./components/MMIndexPage";
 import Footer from "./components/Footer";
 import BusinessIndexPage from "./components/BusinessIndexPage";
+import ShowPage from "./components/ShowPage";
 function App() {
   return (
     <>
@@ -17,9 +18,10 @@ function App() {
         <Route path="/signup">
           <SignupFormPage />
         </Route>
-        <Route path="/business">
+        <Route exact path="/business">
           <BusinessIndexPage />
         </Route>
+        <Route path="/business/:businessId" component={ShowPage}></Route>
         <Route exact path="/">
           <MMIndexPage />
         </Route>

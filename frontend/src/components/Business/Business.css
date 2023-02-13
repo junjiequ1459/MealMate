@@ -74,17 +74,7 @@
   margin-left: 1vw;
 }
 
-.reset-filter-button {
-  display: inline;
-  margin-left: 2vw;
-  color: rgb(2, 122, 151);
-}
-
-.reset-filter-button:hover {
-  text-decoration: underline;
-}
 
 .filter-h2 {
   display: inline;
 }
-

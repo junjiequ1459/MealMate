@@ -69,7 +69,20 @@ hr {
   border-top-right-radius: 16px;
 }
 
+.reset-filter-button {
+  display: inline;
+  margin-left: 2vw;
+  color: rgb(2, 122, 151);
+}
+
+.reset-filter-button:hover {
+  text-decoration: underline;
+}
+
 .filter-h2 {
   margin-left: 2vw;
   margin-bottom: 3vh;
+}
+.filter-button-list {
+  position: fixed;
 }
