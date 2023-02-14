@@ -1,10 +1,11 @@
 import React from "react";
 import "./Business.css";
-import fileNotFound from "../../assets/file.png";
-import { useHistory, Route, useParams } from "react-router-dom";
+import { useState } from "react";
+import { useHistory } from "react-router-dom";
+import TempImage from "../../assets/tempimage.png"
 const BusinessList = ({ businesses }) => {
   const history = useHistory();
-  const { businessId } = useParams();
+  const [currentPage, setCurrentPage] = useState(0)
   function DollarSigns(input) {
     let dollarSigns = [];
     for (
@@ -24,11 +25,11 @@ const BusinessList = ({ businesses }) => {
       case 1.5:
         return "-50%";
       case 2:
-        return "-59%";
+        return "-58.8%";
       case 2.5:
         return "-56%";
       case 3:
-        return "-64.5%";
+        return "-64.7%";
       case 3.5:
         return "-62%";
       case 4:
@@ -60,19 +61,32 @@ const BusinessList = ({ businesses }) => {
     });
   };
 
+
+  function nextPage() {
+    setCurrentPage(prevPage => prevPage + 10);
+  }
+
+  function prevPage() {
+    if (currentPage !== 0) {
+      setCurrentPage(prevPage => prevPage - 10);
+    }
+  }
+  function handleImageError(event) {
+    event.target.src = TempImage;
+  }
   return (
     <>
       <div className="business-component-container">
-        {businesses.slice(0, 10).map((business, index) => (
+        {businesses.slice(currentPage, currentPage + 10).map((business, index) => (
           <div
             className="business-component"
             key={business.id}
             onClick={() => handleDescriptionClick(business)}
           >
             <div className="business-image-container">
-              <img className="business-image" src={fileNotFound}></img>
+              <img className="business-image" src={`https://meal-mate-seeds.s3.amazonaws.com/testfolder/${business.business_id}_photos/1.jpg`} onError={handleImageError} alt="img"></img>
             </div>
-            <div>
+            <div className="business-text-container">
               <h2 className="business-name">
                 {index + 1}. {business.name}
               </h2>
@@ -105,6 +119,13 @@ const BusinessList = ({ businesses }) => {
             </div>
           </div>
         ))}
+        <div>
+          <button class="next-page-button" onClick={prevPage}>Prev Page</button>
+        </div>
+        <div>
+          <button class="next-page-button" onClick={nextPage}>Next Page</button>
+        </div>
+
       </div>
     </>
   );

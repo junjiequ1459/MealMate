@@ -26,13 +26,13 @@ function BusinessIndexPage() {
           if (priceFilter) {
             return (
               categoriesArray.some((category) =>
-                category.trim().includes(searchInput)
+                category.includes(searchInput)
               ) && business.properties.RestaurantsPriceRange2 === priceFilter
             );
           }
-          return categoriesArray.some((category) =>
-            category.trim().includes(searchInput)
-          );
+          return (categoriesArray.some((category) =>
+            category.includes(searchInput)
+          )) || business.name.includes(searchInput)
         });
         setBusinesses(filteredData);
       })

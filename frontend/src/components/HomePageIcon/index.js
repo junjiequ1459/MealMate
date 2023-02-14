@@ -17,7 +17,7 @@ function HomeIcon({ page }) {
   };
 
   const handleYelpClick = () => {
-    window.location.href = "https://www.yelp.com";
+    window.open("https://www.yelp.com", "_blank");
   };
 
   return (

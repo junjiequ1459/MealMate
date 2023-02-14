@@ -1,23 +1,72 @@
 .show-image-container {
-  position: fixed;
-  background-color: lightgray;
+  position: absolute;
   top: 13.5vh;
-  height: 45vh;
+  height: 44vh;
   width: 100vw;
+  overflow: hidden;
+  background: linear-gradient(to bottom, rgba(0, 0, 0, 0), rgba(0, 0, 0, 1));
+  opacity: 0.6;
+  z-index: 0;
 }
 .show-page-container {
-  min-height: 100vh;
+  min-height: 80vh;
+}
+.show-image {
+  height: 57.5vh;
+  width: 33%;
 }
 
 .show-page-name {
+  font-size: 38px;
+  color: white;
 }
 
 .show-page-header {
   position: absolute;
   top: 35vh;
-  background-color: teal;
+  /* background-color: royalblue; */
   height: 20vh;
   width: 63vw;
   z-index: 1;
   left: 20vw;
 }
+
+.show-review-container {
+  height: 32px;
+  overflow: hidden;
+  margin-bottom: 0.5vw;
+  width: 200px;
+}
+
+.direction-container {
+  display: flex;
+  height: 200px;
+  width: 400px;
+  background-color: peachpuff;
+}
+
+.properties-info-container {
+  display: flex;
+  min-height: 100vh;
+  width: 800px;
+  /* background-color: green; */
+}
+
+.show-body-container {
+  display: flex;
+  /* background-color: gray; */
+  width: 1170px;
+  margin-left: 370px;
+}
+
+.amenities-list li {
+  font-size: 16px;
+  margin-bottom: 16px;
+}
+
+.directions-style {
+  display: block;
+  color: rgb(2, 122, 151);
+}
+
+
