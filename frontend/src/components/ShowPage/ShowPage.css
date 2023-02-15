@@ -40,10 +40,13 @@
 }
 
 .direction-container {
-  display: flex;
-  height: 200px;
+  height: 100px;
   width: 400px;
-  /* background-color: peachpuff; */
+  border: solid rgb(235, 235, 235) 1.5px;
+  border-radius: 5px;
+}
+.direction-address {
+  margin-left: 20px;
 }
 
 .properties-info-container {
@@ -71,12 +74,18 @@
 .amenities-list li {
   font-size: 16px;
   margin-top: 16px;
+  margin-left: -400px;
+}
+
+.amenities-list h2 {
+  margin-left: -400px;
 }
 
 .directions-style {
   color: rgb(2, 122, 151);
   font-weight: bold;
   margin-bottom: 20px;
+  margin-top: 20px;
 }
 
 .show-button-review {
@@ -93,7 +102,7 @@
 
 .google-map-address {
   position: absolute;
-  margin-top: 200px;
+  margin-top: 225px;
 }
 
 .show-description {
@@ -109,4 +118,27 @@
 
 .show-open-text-container {
   margin-top: 20px;
+}
+
+.review-button-container {
+  width: 765px;
+  border-bottom: 1px solid rgb(235, 235, 235);
+  margin-bottom: 35px;
+  margin-top: 30px;
+}
+
+.show-hours {
+  width: 600px;
+  height: auto;
+  /* background-color: green; */
+  display: flex;
+}
+
+.date-abbrev {
+  margin-right: 20px;
+  margin-left: 30px;
+}
+
+.show-hours li {
+  margin-bottom: 20px;
 }

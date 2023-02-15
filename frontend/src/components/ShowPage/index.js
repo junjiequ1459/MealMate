@@ -54,8 +54,8 @@ const ShowPage = () => {
     return result;
   }
 
-  function timeTillClose(input) {
-    const [startTime, endTime] = input.hours.Friday.split("-");
+  function timeTillClose(input, date, close = "") {
+    const [startTime, endTime] = showData.hours[date] ? input.hours[date].split("-") : "12";
 
     const startHour = parseInt(startTime.split(":")[0]);
     const endHour = parseInt(endTime.split(":")[0]);
@@ -64,8 +64,11 @@ const ShowPage = () => {
       startHour >= 12 ? `${startHour}:00 PM` : `${startHour}:00 AM`;
     const endTime24 =
       endHour >= 12 ? `${endHour - 12}:00 PM` : `${endHour}:00 AM`;
+    if (close === "") {
+      return endTime24
 
-    return endTime24;
+    }
+    return startTime24
   }
   function handleImageError(event) {
     event.target.src = TempImage;
@@ -109,13 +112,17 @@ const ShowPage = () => {
           &#x2022; {showData.categories}{" "}
           <div className="show-open-text-container">
             <span className="show-open-text">Open </span>
-            {showData.hours && timeTillClose(showData)
-              ? timeTillClose(showData)
+            {showData.hours && timeTillClose(showData, "Friday")
+              ? timeTillClose(showData, "Friday", "open")
+              : "10:00 AM"}
+            {" - "}
+            {showData.hours && timeTillClose(showData, "Friday")
+              ? timeTillClose(showData, "Friday")
               : "12:00 AM"}
           </div>
         </div>
-        <div><button className="show-button-review">Write a review</button></div>
-        <h1>Location & Hours</h1>
+        <div className="review-button-container"><button className="show-button-review">Write a review</button></div>
+        <h1 >Location & Hours</h1>
       </div>
 
       <div className="show-image-container"></div>
@@ -128,13 +135,34 @@ const ShowPage = () => {
           {showData.city}{" "}
           {showData.state}{" "}
           {showData.postal_code}
-
         </div>
-
+        <div className="show-hours">
+          <div className="date-abbrev">
+            <ul>
+              <li>Mon</li>
+              <li>Tues</li>
+              <li>Wed</li>
+              <li>Thurs</li>
+              <li>Fri</li>
+              <li>Sat</li>
+              <li>Sun</li>
+            </ul>
+          </div>
+          <ul>
+            <li>{showData.hours && timeTillClose(showData, "Monday", "open")} {"-"} {showData.hours && timeTillClose(showData, "Monday")}</li>
+            <li>{showData.hours && timeTillClose(showData, "Tuesday", "open")} {"-"} {showData.hours && timeTillClose(showData, "Tuesday")}</li>
+            <li>{showData.hours && timeTillClose(showData, "Wednesday", "open")} {"-"} {showData.hours && timeTillClose(showData, "Wednesday")}</li>
+            <li>{showData.hours && timeTillClose(showData, "Thursday", "open")} {"-"} {showData.hours && timeTillClose(showData, "Thursday")}</li>
+            <li>{showData.hours && timeTillClose(showData, "Friday", "open")} {"-"} {showData.hours && timeTillClose(showData, "Friday")}</li>
+            <li>{showData.hours && timeTillClose(showData, "Saturday", "open")} {"-"} {showData.hours && timeTillClose(showData, "Saturday")}</li>
+            <li>{showData.hours && timeTillClose(showData, "Sunday", "open")} {"-"} {showData.hours && timeTillClose(showData, "Sunday")}</li>
+          </ul>
+        </div>
         <div className="properties-info-container">
           <div className="amenities">
-            <h2>Amenities and more</h2>
             <ul className="amenities-list">
+              <h2>Amenities and more</h2>
+
               <li>{(showData.properties && showData.properties.RestaurantsTakeOut === "True"
               ) ? "\u2713" : "\u2715"} TakeOut </li>
               <li>{(showData.properties && showData.properties.BusinessAcceptsCreditCards === "True"
@@ -166,13 +194,14 @@ const ShowPage = () => {
               <li>{(showData.properties && showData.properties.BusinessAcceptsBitcoin === "True"
               ) ? "\u2713" : "\u2715"} Accepts Bitcoin</li>
               <li>{(showData.properties && showData.properties.Wifi)}Wifi</li>
-
             </ul>
           </div>
 
+
+
         </div>
-        <div>
-          <h2 className="directions-style">Get Directions</h2>
+        <div className="direction-container">
+          <h2 className="directions-style" style={{ marginLeft: "20px" }}>Get Directions</h2>
           <div className="direction-address">{showData.address}</div>
         </div>
       </div>

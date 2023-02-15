@@ -47,7 +47,7 @@ function SignupFormPage() {
     e.preventDefault();
     dispatch(
       sessionActions.login({
-        credential: "rexqu123@gmail.com",
+        credential: "rexqu2000@gmail.com",
         password: 198891,
       })
     );
