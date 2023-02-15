@@ -3,7 +3,6 @@
   width: 48vw;
   height: 26vh;
   /* border: 1px solid red; */
-
   /* border-top: 1px solid rgb(235, 235, 235); */
   border-bottom: 1px solid rgb(235, 235, 235);
 }
@@ -26,7 +25,7 @@
   word-wrap: break-word;
 }
 .business-image {
-  margin-top: 25px;
+  margin-top: 37px;
   margin-left: 25px;
   width: 100%;
   height: 100%;
@@ -96,32 +95,12 @@
 }
 
 .business-text-container {
-  margin-left: 20px;
-  margin-top: 5px;
-}
-
-.next-page-button {
-  float: right;
-  border-radius: 5px;
-  cursor: pointer;
-  height: 40px;
-  background-color: transparent;
-  border: 1px solid lightgray;
-  padding: 8px 14.5px;
-  border-radius: 5px;
-  font-size: 16px;
-  color: black;
-  font-weight: 600;
   margin-left: 25px;
-  overflow: hidden;
-  white-space: nowrap;
-  margin-bottom: 0.5rem;
+  margin-top: 20px;
+  height: 200px;
 }
 
-.next-page-button:hover {
-  background-color: rgba(211, 211, 211, 0.5);
-  transition: background-color 0.3s ease;
-}
+
 
 .business-open-text {
   color: rgb(0, 128, 85);

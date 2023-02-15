@@ -3,14 +3,14 @@ import "./BusinessIndexPage.css";
 import GoogleMap from "../GoogleMap";
 import React, { useState, useEffect } from "react";
 import HomeIcon from "../HomePageIcon";
-import { useLocation, useHistory } from "react-router-dom";
+import { useLocation } from "react-router-dom";
 import BusinessList from "../Business";
 
 function BusinessIndexPage() {
-  const history = useHistory();
   const location = useLocation();
   const data = (location.state && location.state.data) || {};
   const [businesses, setBusinesses] = useState([]);
+  const [currentPage, setCurrentPage] = useState(0)
   const searchInput = data.category;
   const [priceFilter, setPriceFilter] = useState(null);
 
@@ -56,6 +56,16 @@ function BusinessIndexPage() {
     setPriceFilter(null);
   }
 
+  function nextPage() {
+    setCurrentPage(prevPage => prevPage + 10);
+  }
+
+  function prevPage() {
+    if (currentPage !== 0) {
+      setCurrentPage(prevPage => prevPage - 10);
+    }
+  }
+
   return (
     <>
       <div className="main-page">
@@ -65,9 +75,9 @@ function BusinessIndexPage() {
         <Navigation />
       </div>
       <div className="map-container">
-        <GoogleMap businesses={businesses.slice(0, 10)} />
+        <GoogleMap businesses={businesses.slice(currentPage, currentPage + 10)} />
       </div>
-      <div class="business-filter">
+      <div className="business-filter">
         <div className="filter-buttons-container">
           <div className="business-filter-list">
             <h2 className="filter-h2">Filters</h2>
@@ -106,8 +116,17 @@ function BusinessIndexPage() {
 
       <div className="business-list-container">
         <h1 className="business-header">Browsing Stata Barbara, CA business</h1>
-        <BusinessList businesses={businesses} />
+        <BusinessList businesses={businesses.slice(currentPage, currentPage + 10)} />
+        <div className="page-buttons">
+          <div>
+            <button className="next-page-button prev-button" onClick={prevPage}>Prev Page</button>
+          </div>
+          <div>
+            <button className="next-page-button next-button" onClick={nextPage}>Next Page</button>
+          </div>
+        </div>
       </div>
+
     </>
   );
 }

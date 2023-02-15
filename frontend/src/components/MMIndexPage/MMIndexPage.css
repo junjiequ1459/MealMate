@@ -83,7 +83,8 @@
 
 .description-button:hover {
   background-color: rgb(244, 13, 21);
-  transition: background-color 0.3s ease;
+  transform: scale(1.5) translate(24px, 8px);
+  transition: background-color, transform 0.3s ease;
 }
 
 .index-mag-glass {

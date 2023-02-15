@@ -54,6 +54,10 @@
   white-space: nowrap;
   margin-bottom: 0.5rem;
 }
+.sign-in-button-dark:hover {
+  background-color: rgba(211, 211, 211, 0.5);
+  transition: background-color 0.3s ease;
+}
 
 .sign-up-button {
   float: right;
@@ -80,11 +84,11 @@
   font-size: 32px;
   position: absolute;
   left: 90.2vw;
-  top: 1vh;
+  top: 0.5vh;
 }
 
 .fa-user-circle {
-  color: white;
+  color: lightgray;
   background-color: darkgray;
   border-radius: 25px;
 }
@@ -136,7 +140,7 @@
 
 .drop-down-container {
   width: 10vw;
-  height: 9.5vh;
+  height: 10.5vh;
   position: absolute;
   background-color: #f9f9f9;
   transform: translate(-85%, 0%);
@@ -149,6 +153,17 @@
 
 #log-out-button {
   color: black;
+  margin-top: 25px;
+  padding-right: 40px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  padding-left: 5px;
+  border-radius: 5px;
+}
+
+#log-out-button:hover {
+  background-color: lightgray;
+  cursor: pointer;
 }
 
 .profile-list {
@@ -157,6 +172,9 @@
   margin-left: 0.5vw;
 }
 
+.first-last-container {
+  padding-top: 5px;
+}
 .fa-user-circle {
   display: flexbox;
   position: relative;

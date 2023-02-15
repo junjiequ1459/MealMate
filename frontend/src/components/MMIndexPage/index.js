@@ -32,7 +32,7 @@ function MMIndexPage() {
   );
   const pizzaButton = (
     <button className="description-button" onClick={handleDescriptionClick}>
-      <i class="fa-solid fa-magnifying-glass index-mag-glass"></i>Pizza
+      <i className="fa-solid fa-magnifying-glass index-mag-glass"></i>Pizza
     </button>
   );
   const HamburgerButton = (

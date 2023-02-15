@@ -33,6 +33,8 @@ hr {
 }
 .business-list-container {
   margin-top: 20vh;
+  min-height: 272.5vh;
+  padding-bottom: 10vh;
 }
 
 .business-filter {
@@ -86,4 +88,40 @@ hr {
 }
 .filter-button-list {
   position: fixed;
+}
+
+.next-page-button {
+  float: right;
+  border-radius: 5px;
+  cursor: pointer;
+  height: 40px;
+  background-color: transparent;
+  border: 1px solid lightgray;
+  padding: 8px 14.5px;
+  border-radius: 5px;
+  font-size: 16px;
+  color: black;
+  font-weight: 600;
+  margin-left: 25px;
+  overflow: hidden;
+  white-space: nowrap;
+  margin-bottom: 0.5rem;
+  z-index: 2;
+}
+
+.next-page-button:hover {
+  background-color: rgba(211, 211, 211, 0.5);
+  transition: background-color 0.3s ease;
+}
+
+.prev-button {
+  position: absolute;
+  top: 168vw;
+  left: 13vw;
+}
+
+.next-button {
+  position: absolute;
+  top: 168vw;
+  left: 20vw;
 }

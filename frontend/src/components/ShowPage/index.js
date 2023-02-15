@@ -20,7 +20,7 @@ const ShowPage = () => {
       .then((data) => {
         setShowData(data);
       });
-  }, []);
+  }, [businessId]);
 
   function reviewStar(input) {
     switch (input) {
@@ -55,15 +55,15 @@ const ShowPage = () => {
   }
 
   function timeTillClose(input, date, close = "") {
-    const [startTime, endTime] = showData.hours[date] ? input.hours[date].split("-") : "12";
+    const [startTime, endTime] = showData.hours[date] ? input.hours[date].split("-") : ["10", "12"];
 
     const startHour = parseInt(startTime.split(":")[0]);
     const endHour = parseInt(endTime.split(":")[0]);
 
     const startTime24 =
-      startHour >= 12 ? `${startHour}:00 PM` : `${startHour}:00 AM`;
+      startHour > 12 ? `${startHour - 12}:00 PM` : `${startHour}:00 AM`;
     const endTime24 =
-      endHour >= 12 ? `${endHour - 12}:00 PM` : `${endHour}:00 AM`;
+      endHour > 12 ? `${endHour - 12}:00 PM` : `${endHour}:00 AM`;
     if (close === "") {
       return endTime24
 
@@ -80,7 +80,7 @@ const ShowPage = () => {
   return (
     <>
       <div className="show-page-container">
-        <img className="show-image" src={`https://meal-mate-seeds.s3.amazonaws.com/testfolder/${showData.business_id}_photos/1.jpg`} onError={handleImageError} alt="img"></img>
+        <img class="show-image" src={`https://meal-mate-seeds.s3.amazonaws.com/testfolder/${showData.business_id}_photos/1.jpg`} onError={handleImageError} alt="img"></img>
         <img className="show-image" src={`https://meal-mate-seeds.s3.amazonaws.com/testfolder/${showData.business_id}_photos/1.jpg`} onError={handleImageError} alt="img"></img>
         <img className="show-image" src={`https://meal-mate-seeds.s3.amazonaws.com/testfolder/${showData.business_id}_photos/1.jpg`} onError={handleImageError} alt="img"></img>
       </div>
@@ -98,11 +98,11 @@ const ShowPage = () => {
               translate: `0% ${reviewStar(showData.stars)}`,
             }}
             src="https://s3-media0.fl.yelpcdn.com/assets/public/stars_v2.yji-59bbc2cf8e3d4be04fcc.png"
-          ></img>
+            alt=""></img>
 
         </div>
         <div className="show-description">
-          <i class="fa-solid fa-circle-check" style={{ color: "rgba(88,180,255,1)" }}></i>{" "}
+          <i className="fa-solid fa-circle-check" style={{ color: "rgba(88,180,255,1)" }}></i>{" "}
           <span style={{ color: "rgba(88,180,255,1)" }}>
             Claimed</span>{" "}
           &#x2022;{" "}
@@ -128,7 +128,7 @@ const ShowPage = () => {
       <div className="show-image-container"></div>
       <div className="show-body-container">
         <div className="show-googlemaps">
-          <img src={mapUrl}></img>
+          <img src={mapUrl} alt=""></img>
         </div>
         <div className="google-map-address">
           <span className="directions-style">{showData.address}</span><br></br>
@@ -179,6 +179,10 @@ const ShowPage = () => {
               ) ? "\u2713" : "\u2715"} Outdoor Seating</li>
               <li>{(showData.properties && showData.properties.RestaurantsDelivery === "True"
               ) ? "\u2713" : "\u2715"} Delivery</li>
+            </ul>
+          </div>
+          <div className="amenities2-container">
+            <ul className="amenities-list2">
               <li>{(showData.properties && showData.properties.HasTV === "True"
               ) ? "\u2713" : "\u2715"} HasTV</li>
               <li>{(showData.properties && showData.properties.DogsAllowed === "True"
@@ -193,7 +197,7 @@ const ShowPage = () => {
               ) ? "\u2713" : "\u2715"} Bike Parking</li>
               <li>{(showData.properties && showData.properties.BusinessAcceptsBitcoin === "True"
               ) ? "\u2713" : "\u2715"} Accepts Bitcoin</li>
-              <li>{(showData.properties && showData.properties.Wifi)}Wifi</li>
+              <li>{(showData.properties && showData.properties.WiFi.includes("no")) ? "\u2715" : "\u2713"} Wifi </li>
             </ul>
           </div>
 

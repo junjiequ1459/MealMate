@@ -1,11 +1,7 @@
 import React from "react";
 import "./Business.css";
-import { useState } from "react";
-import { useHistory } from "react-router-dom";
 import TempImage from "../../assets/tempimage.png"
 const BusinessList = ({ businesses }) => {
-  const history = useHistory();
-  const [currentPage, setCurrentPage] = useState(0)
   function DollarSigns(input) {
     let dollarSigns = [];
     for (
@@ -45,11 +41,8 @@ const BusinessList = ({ businesses }) => {
   function timeTillClose(input) {
     const [startTime, endTime] = input.hours.Friday.split("-");
 
-    const startHour = parseInt(startTime.split(":")[0]);
     const endHour = parseInt(endTime.split(":")[0]);
 
-    const startTime24 =
-      startHour >= 12 ? `${startHour}:00 PM` : `${startHour}:00 AM`;
     const endTime24 =
       endHour >= 12 ? `${endHour - 12}:00 PM` : `${endHour}:00 AM`;
 
@@ -58,24 +51,13 @@ const BusinessList = ({ businesses }) => {
   const handleDescriptionClick = (input) => {
     window.open(`/business/${input.business_id}`, '_blank');
   };
-
-
-  function nextPage() {
-    setCurrentPage(prevPage => prevPage + 10);
-  }
-
-  function prevPage() {
-    if (currentPage !== 0) {
-      setCurrentPage(prevPage => prevPage - 10);
-    }
-  }
   function handleImageError(event) {
     event.target.src = TempImage;
   }
   return (
     <>
       <div className="business-component-container">
-        {businesses.slice(currentPage, currentPage + 10).map((business, index) => (
+        {businesses.map((business, index) => (
           <div
             className="business-component"
             key={business.id}
@@ -94,7 +76,7 @@ const BusinessList = ({ businesses }) => {
                   style={{
                     translate: `0% ${reviewStar(business.stars)}`,
                   }}
-                  src="https://s3-media0.fl.yelpcdn.com/assets/public/stars_v2.yji-59bbc2cf8e3d4be04fcc.png"
+                  src="https://s3-media0.fl.yelpcdn.com/assets/public/stars_v2.yji-59bbc2cf8e3d4be04fcc.png" alt=""
                 ></img>
               </div>
               <div className="business-button-container">
@@ -117,12 +99,6 @@ const BusinessList = ({ businesses }) => {
             </div>
           </div>
         ))}
-        <div>
-          <button class="next-page-button" onClick={prevPage}>Prev Page</button>
-        </div>
-        <div>
-          <button class="next-page-button" onClick={nextPage}>Next Page</button>
-        </div>
 
       </div>
     </>
