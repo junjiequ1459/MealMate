@@ -6,8 +6,9 @@
 
 .map-container {
   position: fixed;
-  top: 13.8vh;
+  top: 14vh;
   left: 66vw;
+  z-index: 0;
 }
 .business-background-color {
   background-color: white;

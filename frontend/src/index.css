@@ -1,5 +1,5 @@
 body {
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: "Open Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
   font-size: 16px;
 }
 
@@ -11,11 +11,15 @@ div#root {
 h1 {
   font-weight: bold;
   font-size: 1.5rem;
+  font-family: "Poppins", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  color: rgb(45, 46, 47);
 }
 
 h2 {
   font-weight: bold;
   font-size: 1.1rem;
+  font-family: "Poppins", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  color: rgb(45, 46, 47);
 }
 
 .button {

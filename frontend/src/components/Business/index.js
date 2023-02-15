@@ -56,9 +56,7 @@ const BusinessList = ({ businesses }) => {
     return endTime24;
   }
   const handleDescriptionClick = (input) => {
-    history.push({
-      pathname: `/business/${input.business_id}`,
-    });
+    window.open(`/business/${input.business_id}`, '_blank');
   };
 
 
@@ -108,10 +106,10 @@ const BusinessList = ({ businesses }) => {
                       {category}
                     </button>
                   ))}
-                {DollarSigns(business)} <span>&#x2022;</span> {business.city}
+                {DollarSigns(business)} <span>&#x2022;</span> <span style={{ fontSize: "14px" }}>{business.city}</span>
               </div>
               <p className="business-open-till">
-                <span style={{ color: "darkgreen" }}>Open</span> until{" "}
+                <span className="business-open-text">Open</span> until{" "}
                 {business.hours.Friday && timeTillClose(business)
                   ? timeTillClose(business)
                   : "12:00 AM"}

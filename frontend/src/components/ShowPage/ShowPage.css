@@ -4,7 +4,7 @@
   height: 44vh;
   width: 100vw;
   overflow: hidden;
-  background: linear-gradient(to bottom, rgba(0, 0, 0, 0), rgba(0, 0, 0, 1));
+  background: linear-gradient(to bottom, rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 1));
   opacity: 0.6;
   z-index: 0;
 }
@@ -13,17 +13,18 @@
 }
 .show-image {
   height: 57.5vh;
-  width: 33%;
+  width: 33.33%;
 }
 
 .show-page-name {
-  font-size: 38px;
+  font-size: 48px;
   color: white;
+  margin-bottom: 10px;
 }
 
 .show-page-header {
   position: absolute;
-  top: 35vh;
+  top: 36vh;
   /* background-color: royalblue; */
   height: 20vh;
   width: 63vw;
@@ -34,7 +35,7 @@
 .show-review-container {
   height: 32px;
   overflow: hidden;
-  margin-bottom: 0.5vw;
+  margin-bottom: 20px;
   width: 200px;
 }
 
@@ -42,13 +43,15 @@
   display: flex;
   height: 200px;
   width: 400px;
-  background-color: peachpuff;
+  /* background-color: peachpuff; */
 }
 
 .properties-info-container {
   display: flex;
+  margin-top: 300px;
   min-height: 100vh;
   width: 800px;
+  margin-left: -400px;
   /* background-color: green; */
 }
 
@@ -57,16 +60,53 @@
   /* background-color: gray; */
   width: 1170px;
   margin-left: 370px;
+  flex-direction: row;
+}
+.show-googlemaps {
+  display: flex;
+  width: 400px;
+  height: 200px;
 }
 
 .amenities-list li {
   font-size: 16px;
-  margin-bottom: 16px;
+  margin-top: 16px;
 }
 
 .directions-style {
-  display: block;
   color: rgb(2, 122, 151);
+  font-weight: bold;
+  margin-bottom: 20px;
 }
 
+.show-button-review {
+  border-radius: 4px;
+  cursor: pointer;
+  margin-bottom: 5%;
+  font-size: 16px;
+  padding: 10px 13px;
+  background-color: rgb(224, 7, 7);
+  color: rgb(255, 255, 255);
+  font-weight: bold;
+  margin-top: 2vh;
+}
 
+.google-map-address {
+  position: absolute;
+  margin-top: 200px;
+}
+
+.show-description {
+  font-weight: 600;
+  color: white;
+  height: 105px;
+}
+
+.show-open-text {
+  color: rgba(4, 197, 133, 1);
+  font-weight: bold;
+}
+
+.show-open-text-container {
+  margin-top: 20px;
+}

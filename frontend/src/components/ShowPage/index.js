@@ -18,10 +18,6 @@ const ShowPage = () => {
         return response.json();
       })
       .then((data) => {
-        console.log("THIS IS THE DATA");
-        console.log(data);
-        console.log(showData);
-        console.log(showData.properties);
         setShowData(data);
       });
   }, []);
@@ -75,6 +71,8 @@ const ShowPage = () => {
     event.target.src = TempImage;
   }
 
+  const center = showData.latitude ? `${showData.latitude.toString()},${showData.longitude.toString()}` : ""
+  const mapUrl = center ? `https://maps.googleapis.com/maps/api/staticmap?center=${center}&zoom=18&size=400x200&markers=color:red%7C${center}&key=AIzaSyCpVTq-kHDX_XHZWQpfaHQ4dQmHNDu7ptU` : "";
 
   return (
     <>
@@ -98,20 +96,41 @@ const ShowPage = () => {
             }}
             src="https://s3-media0.fl.yelpcdn.com/assets/public/stars_v2.yji-59bbc2cf8e3d4be04fcc.png"
           ></img>
+
         </div>
-        <p style={{ color: "white" }}>
-          Claimed &#x2022;{" "}
+        <div className="show-description">
+          <i class="fa-solid fa-circle-check" style={{ color: "rgba(88,180,255,1)" }}></i>{" "}
+          <span style={{ color: "rgba(88,180,255,1)" }}>
+            Claimed</span>{" "}
+          &#x2022;{" "}
+
           {showData.properties &&
             priceRange(showData.properties.RestaurantsPriceRange2)}{" "}
           &#x2022; {showData.categories}{" "}
-          <span style={{ color: "darkgreen" }}>Open </span>
-          {showData.hours && timeTillClose(showData)
-            ? timeTillClose(showData)
-            : "12:00 AM"}
-        </p>
+          <div className="show-open-text-container">
+            <span className="show-open-text">Open </span>
+            {showData.hours && timeTillClose(showData)
+              ? timeTillClose(showData)
+              : "12:00 AM"}
+          </div>
+        </div>
+        <div><button className="show-button-review">Write a review</button></div>
+        <h1>Location & Hours</h1>
       </div>
+
       <div className="show-image-container"></div>
       <div className="show-body-container">
+        <div className="show-googlemaps">
+          <img src={mapUrl}></img>
+        </div>
+        <div className="google-map-address">
+          <span className="directions-style">{showData.address}</span><br></br>
+          {showData.city}{" "}
+          {showData.state}{" "}
+          {showData.postal_code}
+
+        </div>
+
         <div className="properties-info-container">
           <div className="amenities">
             <h2>Amenities and more</h2>
@@ -152,12 +171,9 @@ const ShowPage = () => {
           </div>
 
         </div>
-
-        <div className="direction-container">
+        <div>
           <h2 className="directions-style">Get Directions</h2>
-          <div>
-            {showData.address}
-          </div>
+          <div className="direction-address">{showData.address}</div>
         </div>
       </div>
     </>
