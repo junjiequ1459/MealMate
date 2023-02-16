@@ -157,3 +157,9 @@
 .show-hours li {
   margin-bottom: 20px;
 }
+
+.review-container{
+  height: 200px;
+  width: 200px;
+  /* background-color: green; */
+}

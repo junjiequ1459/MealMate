@@ -10,6 +10,7 @@ import "./ShowPage.css";
 const ShowPage = () => {
   const { businessId } = useParams();
   const [showData, setShowData] = useState({});
+  const [showReview, setShowReview] = useState({})
 
   useEffect(() => {
     window.scrollTo(0, 0);
@@ -21,6 +22,16 @@ const ShowPage = () => {
         setShowData(data);
       });
   }, [businessId]);
+
+  useEffect(() => {
+    fetch(`/api/reviews`)
+      .then((response) => {
+        return response.json();
+      })
+      .then((data) => {
+        setShowReview(data);
+      })
+  }, [businessId])
 
   function reviewStar(input) {
     switch (input) {
@@ -78,8 +89,11 @@ const ShowPage = () => {
   const mapUrl = center ? `https://maps.googleapis.com/maps/api/staticmap?center=${center}&zoom=18&size=400x200&markers=color:red%7C${center}&key=AIzaSyCpVTq-kHDX_XHZWQpfaHQ4dQmHNDu7ptU` : "";
 
   const handleReviewClick = () => {
-    window.location.href = `/reviews/${showData.business_id}`;
+    window.location.href = `/reviews/${showData.id}`;
   };
+
+
+
 
 
   return (
@@ -204,10 +218,11 @@ const ShowPage = () => {
               ) ? "\u2713" : "\u2715"} Accepts Bitcoin</li>
               <li>{(showData.properties && showData.properties.WiFi && showData.properties.WiFi.includes("no")) ? "\u2715" : "\u2713"} Wifi </li>
             </ul>
+
           </div>
-
-
-
+          <div className="review-container">
+            {showReview && showReview.id}
+          </div>
         </div>
         <div className="direction-container">
           <h2 className="directions-style" style={{ marginLeft: "20px" }}>Get Directions</h2>

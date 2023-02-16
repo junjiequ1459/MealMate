@@ -14,7 +14,8 @@ const ReviewForm = () => {
 
     const handleSubmit = (e) => {
         e.preventDefault();
-        const review = { content, rating, businessId: String(businessId) };
+        const review = { content, rating, business_id: businessId };
+        console.log(review)
         dispatch(createReview(review));
         setContent('');
         setRating(0);
