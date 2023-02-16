@@ -58,11 +58,15 @@ function BusinessIndexPage() {
 
   function nextPage() {
     setCurrentPage(prevPage => prevPage + 10);
+    window.scrollTo(0, 0);
+
   }
 
   function prevPage() {
     if (currentPage !== 0) {
       setCurrentPage(prevPage => prevPage - 10);
+      window.scrollTo(0, 0);
+
     }
   }
 

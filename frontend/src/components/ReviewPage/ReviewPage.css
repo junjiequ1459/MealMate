@@ -1,0 +1,37 @@
+.form-container {
+  position: absolute;
+  top: 20vh;
+  left: 25vw;
+}
+
+.form-page-container {
+  min-height: 100vh;
+}
+
+.white-text-div {
+  background-color: white;
+  width: 1050px;
+  height: 100px;
+  left: 350px;
+  margin-top: -20px;
+  position: fixed;
+  z-index: 4;
+}
+.review-submit-button {
+  position: absolute;
+  float: right;
+  border-radius: 4px;
+  cursor: pointer;
+  height: 40px;
+  padding: 8px 48px;
+  background-color: #cc0000;
+  color: rgb(255, 255, 255);
+  font-weight: 600;
+  top: 50vh;
+  left: 0vw;
+}
+
+.review-submit-button:hover {
+  background-color: rgb(244, 13, 21);
+  transition: background-color 0.3s ease;
+}

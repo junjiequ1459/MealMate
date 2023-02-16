@@ -1,12 +1,13 @@
 import { createStore, combineReducers, applyMiddleware, compose } from "redux";
 import thunk from "redux-thunk";
 import session from "./session";
+import review from "./review"
 // import reviews from './reviews';
 import users from "./users";
 
 const rootReducer = combineReducers({
   session,
-  // reviews,
+  review,
   users,
 });
 
@@ -16,7 +17,7 @@ if (process.env.NODE_ENV === "production") {
   enhancer = applyMiddleware(thunk);
 } else {
   const logger = require("redux-logger").default;
-  const composeEnhancers =  
+  const composeEnhancers =
     window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
   enhancer = composeEnhancers(applyMiddleware(thunk, logger));
 }

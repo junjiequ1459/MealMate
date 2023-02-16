@@ -8,6 +8,7 @@ import MMIndexPage from "./components/MMIndexPage";
 import Footer from "./components/Footer";
 import BusinessIndexPage from "./components/BusinessIndexPage";
 import ShowPage from "./components/ShowPage";
+import ReviewForm from "./components/ReviewPage";
 function App() {
   return (
     <>
@@ -22,10 +23,11 @@ function App() {
           <BusinessIndexPage />
         </Route>
         <Route path="/business/:businessId" component={ShowPage}></Route>
+        <Route path="/reviews/:businessId" component={ReviewForm}></Route>
         <Route exact path="/">
           <MMIndexPage />
         </Route>
-      </Switch>
+      </Switch> 
       <Footer />
     </>
   );

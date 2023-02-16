@@ -33,7 +33,6 @@ hr {
 }
 .business-list-container {
   margin-top: 20vh;
-  min-height: 272.5vh;
   padding-bottom: 10vh;
 }
 
@@ -114,14 +113,11 @@ hr {
   transition: background-color 0.3s ease;
 }
 
-.prev-button {
-  position: absolute;
-  top: 168vw;
-  left: 13vw;
-}
-
-.next-button {
-  position: absolute;
-  top: 168vw;
-  left: 20vw;
+.page-buttons {
+  /* background-color: green; */
+  width: 200px;
+  height: 200px;
+  display: flex;
+  margin-top: 4vh;
+  margin-left: 14vw;
 }

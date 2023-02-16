@@ -77,6 +77,11 @@ const ShowPage = () => {
   const center = showData.latitude ? `${showData.latitude.toString()},${showData.longitude.toString()}` : ""
   const mapUrl = center ? `https://maps.googleapis.com/maps/api/staticmap?center=${center}&zoom=18&size=400x200&markers=color:red%7C${center}&key=AIzaSyCpVTq-kHDX_XHZWQpfaHQ4dQmHNDu7ptU` : "";
 
+  const handleReviewClick = () => {
+    window.location.href = `/reviews/${showData.business_id}`;
+  };
+
+
   return (
     <>
       <div className="show-page-container">
@@ -121,7 +126,7 @@ const ShowPage = () => {
               : "12:00 AM"}
           </div>
         </div>
-        <div className="review-button-container"><button className="show-button-review">Write a review</button></div>
+        <div className="review-button-container"><button className="show-button-review" onClick={handleReviewClick}>Write a review</button></div>
         <h1 >Location & Hours</h1>
       </div>
 
@@ -197,7 +202,7 @@ const ShowPage = () => {
               ) ? "\u2713" : "\u2715"} Bike Parking</li>
               <li>{(showData.properties && showData.properties.BusinessAcceptsBitcoin === "True"
               ) ? "\u2713" : "\u2715"} Accepts Bitcoin</li>
-              <li>{(showData.properties && showData.properties.WiFi.includes("no")) ? "\u2715" : "\u2713"} Wifi </li>
+              <li>{(showData.properties && showData.properties.WiFi && showData.properties.WiFi.includes("no")) ? "\u2715" : "\u2713"} Wifi </li>
             </ul>
           </div>
 
