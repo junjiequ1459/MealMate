@@ -129,7 +129,7 @@ function SignupFormPage() {
             <label>
               <input
                 placeholder="Password"
-                type="text"
+                type="password"
                 value={password}
                 onChange={(e) => setPassword(e.target.value)}
                 required
