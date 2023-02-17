@@ -4,6 +4,9 @@ Hi! Welcome to MealMate, my own clone of Yelp.
 
 To bring MealMate to life, I utilized React for the frontend and Ruby on Rails for the backend. With this application, users have the ability to browse for restaurants, filter them according to price, and even post their own reviews of their dining experiences.
 
+![Alt Text](https://meal-mate-seeds.s3.amazonaws.com/mealmate-splash.png)
+
+
 # Technologies & Libaries Used
 
     React
