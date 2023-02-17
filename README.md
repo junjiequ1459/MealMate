@@ -1,11 +1,10 @@
-# fullstackProject
-Yelp clone 
+# MealMate
+
 Hi! Welcome to MealMate, my own clone of Yelp.
 
-I created MealMate using React for the frontend and Ruby on Rails for the backend. Within the app, the user can search search for various resturants and filter them based on price. Users can then leave reviews for the resturants. 
+To bring MealMate to life, I utilized React for the frontend and Ruby on Rails for the backend. With this application, users have the ability to browse for restaurants, filter them according to price, and even post their own reviews of their dining experiences.
 
-
-## Technologies & Libaries Used
+# Technologies & Libaries Used
 
     React
     Redux
@@ -21,7 +20,7 @@ I created MealMate using React for the frontend and Ruby on Rails for the backen
     Webpack
 
 
-### Sample Action and Reducer Using React-Redux
+# Sample Action and Reducer Using React-Redux
 
 ```import csrfFetch from "./csrf.js";
 
@@ -60,7 +59,7 @@ const reviewReducer = (state = [], action) => {
 ```
 
 
-## Future Implementations 
+# Future Implementations 
     Users can Like and favorite Resturants
     Users can upload images with reviews
     User can upload photos for their profile
