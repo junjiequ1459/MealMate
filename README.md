@@ -21,7 +21,18 @@ To bring MealMate to life, I utilized React for the frontend and Ruby on Rails f
     Render
     Font Awesome
     Webpack
+    
+    
+# Setup
 
+in the root directory run ```bundle install```
+```db:create```
+```rails:migrate```
+```rails:seed```
+```rails s```
+
+cd into the front end directory and run ```npm install```
+then finally run ```npm start```
 
 # Sample Action and Reducer Using React-Redux
 
