@@ -1,6 +1,6 @@
 import React from "react";
 import "./Business.css";
-import TempImage from "../../assets/tempimage.png"
+import TempImage from "../../assets/tempimage.png";
 const BusinessList = ({ businesses }) => {
   function DollarSigns(input) {
     let dollarSigns = [];
@@ -49,7 +49,7 @@ const BusinessList = ({ businesses }) => {
     return endTime24;
   }
   const handleDescriptionClick = (input) => {
-    window.open(`/business/${input.business_id}`, '_blank');
+    window.open(`/business/${input.business_id}`, "_blank");
   };
   function handleImageError(event) {
     event.target.src = TempImage;
@@ -63,9 +63,16 @@ const BusinessList = ({ businesses }) => {
             key={business.id}
             onClick={() => handleDescriptionClick(business)}
           >
+            <div className="business-flex-container">
             <div className="business-image-container">
-              <img className="business-image" src={`https://meal-mate-seeds.s3.amazonaws.com/testfolder/${business.business_id}_photos/1.jpg`} onError={handleImageError} alt="img"></img>
+              <img
+                className="business-image"
+                src={`https://meal-mate-seeds.s3.amazonaws.com/testfolder/${business.business_id}_photos/1.jpg`}
+                onError={handleImageError}
+                alt="img"
+              ></img>
             </div>
+            <div>
             <div className="business-text-container">
               <h2 className="business-name">
                 {index + 1}. {business.name}
@@ -76,7 +83,8 @@ const BusinessList = ({ businesses }) => {
                   style={{
                     translate: `0% ${reviewStar(business.stars)}`,
                   }}
-                  src="https://s3-media0.fl.yelpcdn.com/assets/public/stars_v2.yji-59bbc2cf8e3d4be04fcc.png" alt=""
+                  src="https://s3-media0.fl.yelpcdn.com/assets/public/stars_v2.yji-59bbc2cf8e3d4be04fcc.png"
+                  alt=""
                 ></img>
               </div>
               <div className="business-button-container">
@@ -88,7 +96,8 @@ const BusinessList = ({ businesses }) => {
                       {category}
                     </button>
                   ))}
-                {DollarSigns(business)} <span>&#x2022;</span> <span style={{ fontSize: "14px" }}>{business.city}</span>
+                {DollarSigns(business)} <span>&#x2022;</span>{" "}
+                <span style={{ fontSize: "14px" }}>{business.city}</span>
               </div>
               <p className="business-open-till">
                 <span className="business-open-text">Open</span> until{" "}
@@ -98,8 +107,9 @@ const BusinessList = ({ businesses }) => {
               </p>
             </div>
           </div>
+          </div>
+          </div>
         ))}
-
       </div>
     </>
   );

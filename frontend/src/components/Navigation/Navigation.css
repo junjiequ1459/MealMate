@@ -139,9 +139,13 @@
 }
 
 .drop-down-container {
-  width: 10vw;
-  height: 10.5vh;
+  width: 12vw;
+  height: 15vh;
   position: absolute;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
   background-color: #f9f9f9;
   transform: translate(-85%, 0%);
   box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);

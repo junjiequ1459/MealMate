@@ -25,19 +25,22 @@
   word-wrap: break-word;
 }
 .business-image {
-  margin-top: 37px;
-  margin-left: 25px;
-  width: 100%;
-  height: 100%;
+  width: 200px;
+  height: 180px;
+  object-fit: cover;
   border-radius: 5px;
   z-index: 0;
 }
 
 .business-image-container {
-  width: 200px;
-  height: 200px;
+  min-width: 200px;
+  min-height: 200px;
   border-radius: 5px;
   z-index: 1;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .business-name {
@@ -100,9 +103,15 @@
   height: 200px;
 }
 
-
-
 .business-open-text {
   color: rgb(0, 128, 85);
   font-weight: bold;
+}
+
+.business-flex-container{
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  width: 51vw;
+  margin-left: 2vw;
 }

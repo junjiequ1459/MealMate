@@ -39,7 +39,9 @@ hr {
 .business-filter {
   width: 15vw;
   height: 100vh;
-  float: left;
+  /* float: left; */
+  /* background-color: green; */
+  margin-top: 20vh;
 }
 
 .business-filter-list {
@@ -61,7 +63,7 @@ hr {
   transition: background-color 0.5s ease;
 }
 .filter-first-button {
-  margin-left: 2vw;
+  margin-left: 1vw;
   border-bottom-left-radius: 16px;
   border-top-left-radius: 16px;
 }
@@ -120,4 +122,9 @@ hr {
   display: flex;
   margin-top: 4vh;
   margin-left: 14vw;
+}
+
+.business-indexpage-flex{
+  display: flex;
+  justify-content: flex-start;
 }

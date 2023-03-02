@@ -46,7 +46,6 @@ function ProfileButton({ user }) {
                   </div>
                 </li>
               </div>
-              <hr id="horizontal-index"></hr>
               <li>
                 <button
                   id="log-out-button"

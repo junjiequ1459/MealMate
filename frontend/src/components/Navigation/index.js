@@ -31,7 +31,9 @@ function Navigation({ page }) {
     history.push({
       pathname: "/business",
       state: {
-        data: { category: formInput },
+        data: {
+          category: formInput.charAt(0).toUpperCase() + formInput.slice(1),
+        },
       },
     });
   };
