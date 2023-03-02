@@ -80,4 +80,4 @@ test:
 #
 production:
   <<: *default
-  url: <%= ENV['mealmate_fqac'] %>
+  url: <%= ENV['mealmate'] %>
