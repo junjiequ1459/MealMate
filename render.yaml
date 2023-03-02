@@ -1,9 +1,8 @@
 databases:
   - name: meal-mate
-    user: meal-mate
+    user: meal_mate_user
     plan: free
     region: ohio
-
 services:
   - type: web
     name: MealMate
