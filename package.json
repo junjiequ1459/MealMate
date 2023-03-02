@@ -13,7 +13,6 @@
   "keywords": [],
   "author": "",
   "license": "ISC",
-  "main": "index.js",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/junjiequ1459/fullstackProject.git"
@@ -22,5 +21,6 @@
     "url": "https://github.com/junjiequ1459/fullstackProject/issues"
   },
   "homepage": "https://github.com/junjiequ1459/fullstackProject#readme",
-  "description": "Hi! Welcome to MealMate, my own clone of Yelp."
+  "description": "Hi! Welcome to MealMate, my own clone of Yelp.",
+  "devDependencies": {}
 }

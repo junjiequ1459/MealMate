@@ -2,7 +2,7 @@ require "active_support/core_ext/integer/time"
 
 Rails.application.configure do
   # Settings specified here will take precedence over those in config/application.rb.
-  config.secret_key_base = "d31dfbe4e52545abf22dca2661f57df850f8d8910ff1668e24cf492e5d78b62489348a209b6dce28bd117e265064b017840bf369172aa8f4fa411ed62beb1a89"
+  # config.secret_key_base = "d31dfbe4e52545abf22dca2661f57df850f8d8910ff1668e24cf492e5d78b62489348a209b6dce28bd117e265064b017840bf369172aa8f4fa411ed62beb1a89"
 
   # Code is not reloaded between requests.
   config.cache_classes = true

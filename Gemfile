@@ -20,7 +20,7 @@ gem "rack-cors"
 
 gem "bcrypt"
 gem "jbuilder"
-gem "faker"
+# gem "faker"
 gem "pg_json"
 
 group :development, :test do

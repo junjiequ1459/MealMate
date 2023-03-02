@@ -80,4 +80,4 @@ test:
 #
 production:
   <<: *default
-  url: <%= ENV['mealmate'] %>
+  url: <%= ENV['DATABASE_URL'] %>
