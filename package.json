@@ -2,7 +2,7 @@
   "name": "meal_mate",
   "version": "1.0.0",
   "engines": {
-    "node": "16.19.0"
+    "node": "16.19.1"
   },
   "directories": {
     "lib": "lib"
@@ -22,5 +22,6 @@
     "url": "https://github.com/junjiequ1459/fullstackProject/issues"
   },
   "homepage": "https://github.com/junjiequ1459/fullstackProject#readme",
-  "description": ""
+  "description": "Hi! Welcome to MealMate, my own clone of Yelp.",
+  "devDependencies": {}
 }
