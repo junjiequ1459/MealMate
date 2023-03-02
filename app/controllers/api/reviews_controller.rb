@@ -4,7 +4,7 @@ class Api::ReviewsController < ApplicationController
   end
 
   def show
-    @reviews = Business.find_by(business_id: params[:business_id])
+    @review = Review.find_by(business_id: params[:business_id])
     render json: @review
   end
 

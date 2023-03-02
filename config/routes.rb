@@ -1,4 +1,4 @@
-  Rails.application.routes.draw do
+Rails.application.routes.draw do
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
 
   # Defines the root path route ("/")
@@ -10,7 +10,7 @@
     resources :users, only: :create
     resource :session, only: [:show, :create, :destroy]
     resources :businesses, only: [:index, :show], param: :business_id
-    resources :reviews, only: [:index, :show, :create, :update, :destroy]
+    resources :reviews, only: [:index, :show, :create, :update, :destroy], param: :business_id
   end
 
   # Catch-all route to serve up frontend files

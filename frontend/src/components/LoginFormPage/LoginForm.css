@@ -1,7 +1,7 @@
 .login-form-container {
-  width: 15%;
-  margin-left: 29.5vw;
-  margin-top: 20vh;
+  min-width: 250px;
+  max-width: 250px;
+  margin-right: 10vw;
 }
 
 .login-button {
@@ -16,12 +16,6 @@
   color: rgb(255, 255, 255);
   line-height: 1.3rem;
   font-weight: bold;
-}
-
-.sign-in-image {
-  position: absolute;
-  left: 52.95vw;
-  top: 23.7vh;
 }
 
 .red-text {
@@ -52,8 +46,12 @@
   background-color: #333;
 }
 .page-container {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  /* background-color: green; */
   width: 100vw;
-  height: 59vh;
+  height: 100vh;
 }
 
 input {
@@ -103,4 +101,16 @@ hr {
   align-items: center;
   justify-content: space-around;
   display: none;
+}
+
+.login-flex-container{
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.login-form-flex{
+  display: flex;
+  justify-content:flex-start;
+  align-items: center;
 }

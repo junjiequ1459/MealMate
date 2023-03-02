@@ -64,6 +64,8 @@
   width: 1170px;
   margin-left: 370px;
   flex-direction: row;
+  height: 75vh;
+  
 }
 .show-googlemaps {
   display: flex;
@@ -138,8 +140,6 @@
 .review-button-container {
   width: 765px;
   border-bottom: 1px solid rgb(235, 235, 235);
-  margin-bottom: 35px;
-  margin-top: 30px;
 }
 
 .show-hours {
@@ -158,8 +158,12 @@
   margin-bottom: 20px;
 }
 
-.review-container{
-  height: 200px;
-  width: 200px;
-  /* background-color: green; */
+.reviews-form-container{
+  position: flex;
+  height: 70vh;
+  width: 50vw;
+  margin-left: 370px;
+  border:1px solid red;
+
 }
+

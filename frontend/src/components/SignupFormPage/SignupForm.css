@@ -1,7 +1,7 @@
 .signup-form-container {
-  width: 15%;
-  margin-left: 29.5vw;
-  margin-top: 20vh;
+  min-width: 250px;
+  max-width: 250px;
+  margin-right: 10vw;
 }
 
 input {
@@ -16,18 +16,13 @@ input {
   margin-bottom: 5%;
   font-size: 16px;
   padding: 10px 13px;
-  width: 14.75vw;
+  width: 100%;
   background-color: rgb(224, 7, 7);
   color: rgb(255, 255, 255);
   line-height: 1.3rem;
   font-weight: bold;
 }
 
-.sign-up-image {
-  position: absolute;
-  left: 52.95vw;
-  top: 23.7vh;
-}
 
 .red-text {
   color: #d32323;
@@ -87,4 +82,14 @@ hr {
 
 .errors li {
   margin-left: 20px;
+}
+
+.flex{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+input{
+ width: 94.5%;
 }

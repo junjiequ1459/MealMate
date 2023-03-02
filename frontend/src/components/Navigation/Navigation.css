@@ -12,6 +12,9 @@
 }
 
 .sign-in-button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
   float: right;
   border-radius: 4px;
   cursor: pointer;
@@ -37,6 +40,9 @@
 }
 
 .sign-in-button-dark {
+  display: flex;
+  align-items: center;
+  justify-content: center;
   float: right;
   border-radius: 5px;
   cursor: pointer;
@@ -60,11 +66,12 @@
 }
 
 .sign-up-button {
-  float: right;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   border-radius: 4px;
   cursor: pointer;
   height: 40px;
-  align-items: center;
   padding: 8px 16px;
   background-color: #cc0000;
   color: rgb(255, 255, 255);

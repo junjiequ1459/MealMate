@@ -75,83 +75,89 @@ function SignupFormPage() {
     <>
       <HomeIcon />
       <hr></hr>
-      <img
-        className="sign-up-image"
-        src="https://s3-media0.fl.yelpcdn.com/assets/2/www/img/7922e77f338d/signup/signup_illustration.png"
-      ></img>
       <div className="page-container">
-        <div className="signup-form-container">
-          <form onSubmit={handleSubmit}>
-            {errors.length > 0 && (
-              <div className="errors">
-                <ul>
-                  {errors.map((error) => (
-                    <li key={error}>{error}</li>
-                  ))}
-                </ul>
-              </div>
-            )}
-            <p className="red-text">Sign Up for MealMate</p>
-            <p className="new-text">Connect with great local businesses</p>
-            <p className="terms-text">
-              By continuing, you agree to MealMate's {terms} and ackowlege
-              MealMate's {privatePolicy}
-            </p>
-            <label>
-              <input
-                id="first-name"
-                placeholder="FirstName"
-                type="text"
-                value={fname}
-                onChange={(e) => setFname(e.target.value)}
-                required
-              />
-            </label>
-            <label>
-              <input
-                id="last-name"
-                placeholder="LastName"
-                type="text"
-                value={lname}
-                onChange={(e) => setLname(e.target.value)}
-                required
-              />
-            </label>
-            <label>
-              <input
-                placeholder="Email"
-                type="text"
-                value={email}
-                onChange={(e) => setEmail(e.target.value)}
-                required
-              />
-            </label>
-            <label>
-              <input
-                placeholder="Password"
-                type="password"
-                value={password}
-                onChange={(e) => setPassword(e.target.value)}
-                required
-              />
-            </label>
-            <label>
-              <input
-                placeholder="Zipcode"
-                type="text"
-                value={zipcode}
-                onChange={(e) => setZipcode(e.target.value)}
-                required
-              />
-            </label>
-            <button className="signup-button" type="submit">
-              Sign Up
-            </button>
-            <button className="signup-button" type="submit" onClick={loginDemo}>
-              Demo Login
-            </button>
-            <p className="small-login-text">Already on Mealmate? {signin}</p>
-          </form>
+        <div className="flex">
+          <div className="signup-form-container">
+            <form onSubmit={handleSubmit}>
+              {errors.length > 0 && (
+                <div className="errors">
+                  <ul>
+                    {errors.map((error) => (
+                      <li key={error}>{error}</li>
+                    ))}
+                  </ul>
+                </div>
+              )}
+              <p className="red-text">Sign Up for MealMate</p>
+              <p className="new-text">Connect with great local businesses</p>
+              <p className="terms-text">
+                By continuing, you agree to MealMate's {terms} and ackowlege
+                MealMate's {privatePolicy}
+              </p>
+              <label>
+                <input
+                  id="first-name"
+                  placeholder="FirstName"
+                  type="text"
+                  value={fname}
+                  onChange={(e) => setFname(e.target.value)}
+                  required
+                />
+              </label>
+              <label>
+                <input
+                  id="last-name"
+                  placeholder="LastName"
+                  type="text"
+                  value={lname}
+                  onChange={(e) => setLname(e.target.value)}
+                  required
+                />
+              </label>
+              <label>
+                <input
+                  placeholder="Email"
+                  type="text"
+                  value={email}
+                  onChange={(e) => setEmail(e.target.value)}
+                  required
+                />
+              </label>
+              <label>
+                <input
+                  placeholder="Password"
+                  type="password"
+                  value={password}
+                  onChange={(e) => setPassword(e.target.value)}
+                  required
+                />
+              </label>
+              <label>
+                <input
+                  placeholder="Zipcode"
+                  type="text"
+                  value={zipcode}
+                  onChange={(e) => setZipcode(e.target.value)}
+                  required
+                />
+              </label>
+              <button className="signup-button" type="submit">
+                Sign Up
+              </button>
+              <button
+                className="signup-button"
+                type="submit"
+                onClick={loginDemo}
+              >
+                Demo Login
+              </button>
+              <p className="small-login-text">Already on Mealmate? {signin}</p>
+            </form>
+          </div>
+          <img
+            className="sign-up-image"
+            src="https://s3-media0.fl.yelpcdn.com/assets/2/www/img/7922e77f338d/signup/signup_illustration.png"
+          ></img>
         </div>
       </div>
     </>

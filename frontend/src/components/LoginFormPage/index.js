@@ -46,50 +46,54 @@ function LoginFormPage() {
     <>
       <HomeIcon />
       <hr></hr>
-      <img
-        className="sign-in-image"
-        src="https://s3-media0.fl.yelpcdn.com/assets/2/www/img/7922e77f338d/signup/signup_illustration.png"
-      ></img>
       <div className="page-container">
-        <div className="login-form-container">
-          <form onSubmit={handleSubmit}>
-            {errors.length > 0 && (
-              <div className={errorName}>
-                <ul>
-                  {errors.map((error) => (
-                    <li key={error}>{error}</li>
-                  ))}
-                </ul>
-              </div>
-            )}
-            <p className="red-text">Log in to MealMate</p>
-            <p className="new-text">New to MealMate? {signup}</p>
-            <p className="terms-text">
-              By logging in, you agree to MealMate's {terms} and {privatePolicy}
-              .
-            </p>
-            <label>
-              <input
-                placeholder="Email"
-                type="text"
-                value={credential}
-                onChange={(e) => setCredential(e.target.value)}
-                required
-              />
-            </label>
-            <label>
-              <input
-                placeholder="Password"
-                type="password"
-                value={password}
-                onChange={(e) => setPassword(e.target.value)}
-                required
-              />
-            </label>
-            <button className="login-button" type="submit">
-              Log In
-            </button>
-          </form>
+        <div className="login-flex-container">
+          <div class="login-form-flex">
+            <div className="login-form-container">
+              <form onSubmit={handleSubmit}>
+                {errors.length > 0 && (
+                  <div className={errorName}>
+                    <ul>
+                      {errors.map((error) => (
+                        <li key={error}>{error}</li>
+                      ))}
+                    </ul>
+                  </div>
+                )}
+                <p className="red-text">Log in to MealMate</p>
+                <p className="new-text">New to MealMate? {signup}</p>
+                <p className="terms-text">
+                  By logging in, you agree to MealMate's {terms} and{" "}
+                  {privatePolicy}.
+                </p>
+                <label>
+                  <input
+                    placeholder="Email"
+                    type="text"
+                    value={credential}
+                    onChange={(e) => setCredential(e.target.value)}
+                    required
+                  />
+                </label>
+                <label>
+                  <input
+                    placeholder="Password"
+                    type="password"
+                    value={password}
+                    onChange={(e) => setPassword(e.target.value)}
+                    required
+                  />
+                </label>
+                <button className="login-button" type="submit">
+                  Log In
+                </button>
+              </form>
+            </div>
+          </div>
+          <img
+            className="sign-in-image"
+            src="https://s3-media0.fl.yelpcdn.com/assets/2/www/img/7922e77f338d/signup/signup_illustration.png"
+          ></img>
         </div>
       </div>
     </>
