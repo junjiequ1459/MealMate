@@ -1,6 +1,6 @@
 databases:
-  - name: MealMate
-    user: MealMate
+  - name: meal-mate
+    user: meal-mate
     plan: free
     region: ohio
 
