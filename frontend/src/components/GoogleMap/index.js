@@ -3,7 +3,7 @@ import React, { useEffect, useRef, useMemo } from "react";
 const GoogleMap = ({ businesses }) => {
   const mapContainer = useRef(null);
   const center = useMemo(() => {
-    return { lat: 37.7749, lng: -122.4194 };
+    return { lat: 34.4144445, lng: -119.6906718 };
   }, []);
   useEffect(() => {
     const map = new window.google.maps.Map(mapContainer.current, {
