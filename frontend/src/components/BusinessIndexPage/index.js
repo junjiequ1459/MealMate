@@ -13,6 +13,7 @@ function BusinessIndexPage() {
   const [currentPage, setCurrentPage] = useState(0);
   const searchInput = data.category;
   const [priceFilter, setPriceFilter] = useState(null);
+  const [isLoading, setIsLoading] = useState(true);
 
   useEffect(() => {
     window.scrollTo(0, 0);
@@ -37,6 +38,7 @@ function BusinessIndexPage() {
           );
         });
         setBusinesses(filteredData);
+        setIsLoading(false);
       })
       .catch((error) => console.error(error));
   }, [searchInput, priceFilter]);
@@ -128,9 +130,16 @@ function BusinessIndexPage() {
           <h1 className="business-header">
             Browsing Stata Barbara, CA business
           </h1>
-          <BusinessList
-            businesses={businesses.slice(currentPage, currentPage + 10)}
-          />
+
+          {isLoading ? (
+            <p className="loading-text">
+              Loading Database, sorry onRender loads really slow on free tier
+            </p>
+          ) : (
+            <BusinessList
+              businesses={businesses.slice(currentPage, currentPage + 10)}
+            />
+          )}
           <div className="page-buttons">
             <div>
               <button
