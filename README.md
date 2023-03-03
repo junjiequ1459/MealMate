@@ -25,14 +25,12 @@ To bring MealMate to life, I utilized React for the frontend and Ruby on Rails f
     
 # Setup
 
-npm install --prefix frontend && npm run build --prefix frontend
+```npm install --prefix frontend && npm run build --prefix frontend``` in root
 
-rails s in root
+```rails s```
 
-navigate to localhost:5000
+navigate to ```localhost:5000```
 
-cd into the front end directory and run ```npm install```
-then finally run ```npm start```
 
 # Sample Action and Reducer Using React-Redux
 
