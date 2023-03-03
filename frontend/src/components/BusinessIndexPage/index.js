@@ -134,7 +134,7 @@ function BusinessIndexPage() {
           {isLoading ? (
             <p className="loading-text">
               Loading Database, sorry onRender loads really slow on free
-              tier(eta 15seconds)
+              tier, same with filters(eta 15seconds)
             </p>
           ) : (
             <BusinessList
