@@ -5,6 +5,7 @@ import React, { useState, useEffect } from "react";
 import HomeIcon from "../HomePageIcon";
 import { useLocation } from "react-router-dom";
 import BusinessList from "../Business";
+import LoadingScreen from "../../LoadingScreen/LoadingScreen";
 
 function BusinessIndexPage() {
   const location = useLocation();
@@ -17,6 +18,7 @@ function BusinessIndexPage() {
 
   useEffect(() => {
     window.scrollTo(0, 0);
+    setIsLoading(true);
     fetch("/api/businesses")
       .then((response) => {
         return response.json();
@@ -74,93 +76,95 @@ function BusinessIndexPage() {
 
   return (
     <>
-      <div className="main-page">
-        <div className="business-background-color"></div>
-        <HomeIcon />
-        <hr></hr>
-        <Navigation />
-      </div>
-      <div className="map-container">
-        <GoogleMap
-          businesses={businesses.slice(currentPage, currentPage + 10)}
-        />
-      </div>
+      {isLoading ? (
+        <LoadingScreen />
+      ) : (
+        <>
+          <div className="main-page">
+            <div className="business-background-color"></div>
+            <HomeIcon />
+            <hr></hr>
+            <Navigation />
+          </div>
+          <div className="map-container">
+            <GoogleMap
+              businesses={businesses.slice(currentPage, currentPage + 10)}
+            />
+          </div>
 
-      <div className="business-indexpage-flex">
-        <div className="business-filter">
-          <div>
-            <div className="filter-buttons-container">
-              <div className="business-filter-list">
-                <h2 className="filter-h2">Filters</h2>
-                <button className="reset-filter-button" onClick={resetFilter}>
-                  Reset Filters
-                </button>
-                <div className="filter-button-list">
+          <div className="business-indexpage-flex">
+            <div className="business-filter">
+              <div>
+                <div className="filter-buttons-container">
+                  <div className="business-filter-list">
+                    <h2 className="filter-h2">Filters</h2>
+                    <button
+                      className="reset-filter-button"
+                      onClick={resetFilter}
+                    >
+                      Reset Filters
+                    </button>
+                    <div className="filter-button-list">
+                      <button
+                        className="filter-first-button filter-button"
+                        onClick={onFilterButtonClick1}
+                      >
+                        $
+                      </button>
+                      <button
+                        className="filter-second-button filter-button"
+                        onClick={onFilterButtonClick2}
+                      >
+                        $$
+                      </button>
+                      <button
+                        className="filter-third-button filter-button"
+                        onClick={onFilterButtonClick3}
+                      >
+                        $$$
+                      </button>
+                      <button
+                        className="filter-fourth-button filter-button"
+                        onClick={onFilterButtonClick4}
+                      >
+                        $$$$
+                      </button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div className="business-list-container">
+              <h1 className="business-header">
+                Browsing Stata Barbara, CA business
+              </h1>
+
+              <BusinessList
+                businesses={businesses.slice(currentPage, currentPage + 10)}
+              />
+              <div className="page-buttons">
+                <div>
                   <button
-                    className="filter-first-button filter-button"
-                    onClick={onFilterButtonClick1}
+                    className="next-page-button prev-button"
+                    onClick={prevPage}
                   >
-                    $
+                    Prev Page
                   </button>
+                </div>
+                <div>
                   <button
-                    className="filter-second-button filter-button"
-                    onClick={onFilterButtonClick2}
+                    className="next-page-button next-button"
+                    onClick={nextPage}
                   >
-                    $$
-                  </button>
-                  <button
-                    className="filter-third-button filter-button"
-                    onClick={onFilterButtonClick3}
-                  >
-                    $$$
-                  </button>
-                  <button
-                    className="filter-fourth-button filter-button"
-                    onClick={onFilterButtonClick4}
-                  >
-                    $$$$
+                    Next Page
                   </button>
                 </div>
               </div>
             </div>
           </div>
-        </div>
-
-        <div className="business-list-container">
-          <h1 className="business-header">
-            Browsing Stata Barbara, CA business
-          </h1>
-
-          {isLoading ? (
-            <p className="loading-text">
-              Loading Database, sorry onRender loads really slow on free
-              tier, same with filters(eta 15seconds)
-            </p>
-          ) : (
-            <BusinessList
-              businesses={businesses.slice(currentPage, currentPage + 10)}
-            />
-          )}
-          <div className="page-buttons">
-            <div>
-              <button
-                className="next-page-button prev-button"
-                onClick={prevPage}
-              >
-                Prev Page
-              </button>
-            </div>
-            <div>
-              <button
-                className="next-page-button next-button"
-                onClick={nextPage}
-              >
-                Next Page
-              </button>
-            </div>
-          </div>
-        </div>
-      </div>
+        </>
+      )}
     </>
   );
 }
