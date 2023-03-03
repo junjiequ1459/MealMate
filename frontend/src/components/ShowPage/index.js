@@ -159,7 +159,7 @@ const ShowPage = () => {
           <button className="show-button-review" onClick={handleReviewClick}>
             Write a review
           </button>
-          <h1>Location & Hours</h1>
+          <h1 className="location-and-hours-title">Location & Hours</h1>
         </div>
       </div>
 

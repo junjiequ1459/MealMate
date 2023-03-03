@@ -1,10 +1,10 @@
-import React, { useEffect, useRef } from "react";
-import { useState } from "react";
+import React, { useEffect, useRef, useMemo } from "react";
 
 const GoogleMap = ({ businesses }) => {
   const mapContainer = useRef(null);
-  const [center, setCenter] = useState({ lat: 34.4087147, lng: -119.6850187 });
-
+  const center = useMemo(() => {
+    return { lat: 37.7749, lng: -122.4194 };
+  }, []);
   useEffect(() => {
     const map = new window.google.maps.Map(mapContainer.current, {
       zoom: 13,
@@ -43,7 +43,7 @@ const GoogleMap = ({ businesses }) => {
         });
       });
     });
-  }, [businesses]);
+  }, [businesses, center]);
 
   return <div ref={mapContainer} style={{ height: "100vh", width: "34vw" }} />;
 };

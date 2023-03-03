@@ -39,7 +39,7 @@ function LoginFormPage() {
   const errorName = "errors";
   const signup = (
     <NavLink to="/signup">
-      <a>Sign Up</a>
+      <button className="anchor-style-button">Sign Up</button>
     </NavLink>
   );
   return (
@@ -47,6 +47,8 @@ function LoginFormPage() {
       <HomeIcon />
       <hr></hr>
       <div className="page-container">
+        <div className="business-background-color"></div>
+
         <div className="login-flex-container">
           <div class="login-form-flex">
             <div className="login-form-container">
@@ -93,6 +95,7 @@ function LoginFormPage() {
           <img
             className="sign-in-image"
             src="https://s3-media0.fl.yelpcdn.com/assets/2/www/img/7922e77f338d/signup/signup_illustration.png"
+            alt="img-broken"
           ></img>
         </div>
       </div>

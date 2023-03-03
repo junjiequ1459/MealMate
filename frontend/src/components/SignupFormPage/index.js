@@ -67,7 +67,7 @@ function SignupFormPage() {
 
   const signin = (
     <NavLink to="/login">
-      <a>Log In</a>
+      <button className="anchor-style-button">Log In</button>
     </NavLink>
   );
 
@@ -76,6 +76,8 @@ function SignupFormPage() {
       <HomeIcon />
       <hr></hr>
       <div className="page-container">
+        <div className="business-background-color"></div>
+
         <div className="flex">
           <div className="signup-form-container">
             <form onSubmit={handleSubmit}>
@@ -157,7 +159,7 @@ function SignupFormPage() {
           <img
             className="sign-up-image"
             src="https://s3-media0.fl.yelpcdn.com/assets/2/www/img/7922e77f338d/signup/signup_illustration.png"
-          ></img>
+          alt="img broken"></img>
         </div>
       </div>
     </>

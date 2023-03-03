@@ -68,8 +68,8 @@ hr {
 }
 
 .errors {
-  position: absolute;
-  top: 12vh;
+  position: fixed;
+  top: 2vh;
   left: 25vw;
   height: auto;
   flex-direction: column;

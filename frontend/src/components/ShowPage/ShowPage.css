@@ -62,7 +62,7 @@
   display: flex;
   /* background-color: gray; */
   width: 1170px;
-  margin-left: 370px;
+  margin-left: 300px;
   flex-direction: row;
   height: 75vh;
   
@@ -166,4 +166,5 @@
   border:1px solid red;
 
 }
+
 

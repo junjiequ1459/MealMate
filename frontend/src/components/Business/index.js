@@ -39,7 +39,7 @@ const BusinessList = ({ businesses }) => {
   }
 
   function timeTillClose(input) {
-    const [startTime, endTime] = input.hours.Friday.split("-");
+    const [, endTime] = input.hours.Friday.split("-");
 
     const endHour = parseInt(endTime.split(":")[0]);
 
@@ -64,50 +64,50 @@ const BusinessList = ({ businesses }) => {
             onClick={() => handleDescriptionClick(business)}
           >
             <div className="business-flex-container">
-            <div className="business-image-container">
-              <img
-                className="business-image"
-                src={`https://meal-mate-seeds.s3.amazonaws.com/testfolder/${business.business_id}_photos/1.jpg`}
-                onError={handleImageError}
-                alt="img"
-              ></img>
-            </div>
-            <div>
-            <div className="business-text-container">
-              <h2 className="business-name">
-                {index + 1}. {business.name}
-              </h2>
-              <div className="business-review-container">
+              <div className="business-image-container">
                 <img
-                  className="business-review"
-                  style={{
-                    translate: `0% ${reviewStar(business.stars)}`,
-                  }}
-                  src="https://s3-media0.fl.yelpcdn.com/assets/public/stars_v2.yji-59bbc2cf8e3d4be04fcc.png"
-                  alt=""
+                  className="business-image"
+                  src={`https://meal-mate-seeds.s3.amazonaws.com/testfolder/${business.business_id}_photos/1.jpg`}
+                  onError={handleImageError}
+                  alt="img"
                 ></img>
               </div>
-              <div className="business-button-container">
-                {business.categories
-                  .split(",")
-                  .splice(0, 3)
-                  .map((category) => (
-                    <button className="business-button" key={category.id}>
-                      {category}
-                    </button>
-                  ))}
-                {DollarSigns(business)} <span>&#x2022;</span>{" "}
-                <span style={{ fontSize: "14px" }}>{business.city}</span>
+              <div>
+                <div className="business-text-container">
+                  <h2 className="business-name">
+                    {index + 1}. {business.name}
+                  </h2>
+                  <div className="business-review-container">
+                    <img
+                      className="business-review"
+                      style={{
+                        translate: `0% ${reviewStar(business.stars)}`,
+                      }}
+                      src="https://s3-media0.fl.yelpcdn.com/assets/public/stars_v2.yji-59bbc2cf8e3d4be04fcc.png"
+                      alt=""
+                    ></img>
+                  </div>
+                  <div className="business-button-container">
+                    {business.categories
+                      .split(",")
+                      .splice(0, 3)
+                      .map((category) => (
+                        <button className="business-button" key={category.id}>
+                          {category}
+                        </button>
+                      ))}
+                    {DollarSigns(business)} <span>&#x2022;</span>{" "}
+                    <span style={{ fontSize: "14px" }}>{business.city}</span>
+                  </div>
+                  <p className="business-open-till">
+                    <span className="business-open-text">Open</span> until{" "}
+                    {business.hours.Friday && timeTillClose(business)
+                      ? timeTillClose(business)
+                      : "12:00 AM"}
+                  </p>
+                </div>
               </div>
-              <p className="business-open-till">
-                <span className="business-open-text">Open</span> until{" "}
-                {business.hours.Friday && timeTillClose(business)
-                  ? timeTillClose(business)
-                  : "12:00 AM"}
-              </p>
             </div>
-          </div>
-          </div>
           </div>
         ))}
       </div>

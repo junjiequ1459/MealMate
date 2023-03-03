@@ -25,13 +25,12 @@ function HomeIcon({ page }) {
       <h1 className={HomeButtonclassName} onClick={handlePageClick}>
         MealMate
       </h1>
-      <div className="splash-container">
-        <img
-          className="yelp-splash"
-          src={burstImage}
-          onClick={handleYelpClick}
-        ></img>
-      </div>
+      <img
+        className="yelp-splash"
+        src={burstImage}
+        onClick={handleYelpClick}
+        alt=""
+      ></img>
     </div>
   );
 }

@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useMemo, useState } from "react";
 import sushiImage from "../../assets/Sushi.png";
 import pizzaImage from "../../assets/Pizza.png";
 import HamburgerImage from "../../assets/Hamburger.png";
@@ -42,7 +42,7 @@ function MMIndexPage() {
   );
 
   let buttonArray = [sushiButton, pizzaButton, HamburgerButton];
-  let imagesArray = [sushiImage, pizzaImage, HamburgerImage];
+  let imagesArray = useMemo(() => [sushiImage, pizzaImage, HamburgerImage], []);
   let textArray = [sushiText, pizzaText, HamburgerText];
 
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
