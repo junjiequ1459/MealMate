@@ -25,7 +25,6 @@
   border-radius: 5px;
   font-size: 16px;
   color: white;
-  margin-left: 15.4rem;
   margin-right: 0.8rem;
   text-align: center;
   overflow: hidden;
@@ -54,7 +53,6 @@
   font-size: 16px;
   color: black;
   font-weight: 600;
-  margin-left: 15.4rem;
   margin-right: 0.95rem;
   overflow: hidden;
   white-space: nowrap;
@@ -215,13 +213,14 @@
 }
 
 .fa-brands-container {
-  position: absolute;
-  left: 69vw;
+  display: flex;
+  margin-left: 5vw;
+  margin-right: 5vw;
 }
 
 .fa-brands-dark:hover {
   transform: scale(1.5);
-  transition: transform 0.3s ease;
+  transition: transform 0.3s ease
 }
 .fa-brands-dark {
   font-size: 28px;
