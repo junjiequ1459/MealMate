@@ -34,12 +34,14 @@ ActiveRecord::Schema[7.0].define(version: 2023_02_15_205728) do
   create_table "reviews", force: :cascade do |t|
     t.text "content", null: false
     t.integer "rating", null: false
-    t.bigint "business_id"
+    t.bigint "business_id", null: false
+    t.bigint "author_id", null: false
     t.integer "useful"
     t.integer "funny"
     t.integer "cool"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.index ["author_id"], name: "index_reviews_on_author_id"
     t.index ["business_id"], name: "index_reviews_on_business_id"
   end
 
@@ -55,4 +57,5 @@ ActiveRecord::Schema[7.0].define(version: 2023_02_15_205728) do
   end
 
   add_foreign_key "reviews", "businesses"
+  add_foreign_key "reviews", "users", column: "author_id"
 end
