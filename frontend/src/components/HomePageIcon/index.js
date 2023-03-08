@@ -22,15 +22,19 @@ function HomeIcon({ page }) {
 
   return (
     <div className="icon-container">
-      <h1 className={HomeButtonclassName} onClick={handlePageClick}>
-        MealMate
-      </h1>
-      <img
-        className="yelp-splash"
-        src={burstImage}
-        onClick={handleYelpClick}
-        alt=""
-      ></img>
+      <div>
+        <h1 className={HomeButtonclassName} onClick={handlePageClick}>
+          MealMate
+        </h1>
+      </div>
+      <div>
+        <img
+          className="yelp-splash"
+          src={burstImage}
+          onClick={handleYelpClick}
+          alt=""
+        ></img>
+      </div>
     </div>
   );
 }

@@ -9,7 +9,10 @@
   z-index: 0;
 }
 .show-page-container {
-  min-height: 80vh;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  min-height: 40vh;
 }
 .show-image {
   height: 57.5vh;
@@ -27,6 +30,7 @@
   top: 36vh;
   /* background-color: royalblue; */
   height: 20vh;
+  min-height: 200px;
   width: 63vw;
   z-index: 1;
   left: 20vw;
@@ -65,7 +69,6 @@
   margin-left: 300px;
   flex-direction: row;
   height: 75vh;
-  
 }
 .show-googlemaps {
   display: flex;
@@ -158,13 +161,15 @@
   margin-bottom: 20px;
 }
 
-.reviews-form-container{
+.reviews-form-container {
   position: flex;
   height: 70vh;
   width: 50vw;
   margin-left: 370px;
-  border:1px solid red;
-
+  border: 1px solid red;
 }
 
-
+.location-and-hours-title {
+  margin-left: 300px;
+  margin-top: 100px;
+}

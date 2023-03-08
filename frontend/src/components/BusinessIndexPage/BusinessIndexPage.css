@@ -61,6 +61,7 @@ hr {
 .filter-button:hover {
   background-color: lightgray;
   transition: background-color 0.5s ease;
+  cursor: pointer;
 }
 .filter-first-button {
   margin-left: 1vw;
@@ -81,6 +82,7 @@ hr {
 
 .reset-filter-button:hover {
   text-decoration: underline;
+  cursor: pointer;
 }
 
 .filter-h2 {
@@ -124,7 +126,8 @@ hr {
   margin-left: 14vw;
 }
 
-.business-indexpage-flex{
+.business-indexpage-flex {
   display: flex;
   justify-content: flex-start;
+  margin-bottom: 300px;
 }

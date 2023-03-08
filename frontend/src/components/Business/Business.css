@@ -8,6 +8,7 @@
 }
 
 .business-component:hover {
+  cursor: pointer;
   transition: box-shadow 0.5s ease;
   box-shadow: rgba(0, 0, 0, 0.1) 0px 2px 18px 0px;
 }
@@ -108,7 +109,7 @@
   font-weight: bold;
 }
 
-.business-flex-container{
+.business-flex-container {
   display: flex;
   justify-content: flex-start;
   align-items: center;

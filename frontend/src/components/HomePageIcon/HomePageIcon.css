@@ -5,6 +5,8 @@
   color: black;
   width: 5vw;
   cursor: pointer;
+  width: 100px;
+  min-width: 100px;
 }
 
 .home-index-icon:hover {
@@ -36,6 +38,8 @@
   width: 5vw;
   cursor: pointer;
   z-index: 3;
+  width: 100px;
+  min-width: 100px;
 }
 
 .home-index-icon-white:hover {
@@ -46,12 +50,11 @@
 .yelp-splash {
   min-width: 30px;
   width: 30px;
-  margin-left:30px;
+
+  margin-left: 1%;
 }
 
 .yelp-splash:hover {
   transform: scale(1.5);
   transition: transform 0.3s ease;
 }
-
-

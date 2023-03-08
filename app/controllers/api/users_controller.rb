@@ -1,11 +1,6 @@
 class Api::UsersController < ApplicationController
   wrap_parameters include: User.attribute_names + ["password"]
 
-  def index
-    @users = User.all
-    render json: @users
-  end
-
   def create
     @user = User.new(user_params)
 
@@ -21,5 +16,5 @@ class Api::UsersController < ApplicationController
 
   def user_params
     params.require(:user).permit(:email, :username, :password, :fname, :lname, :zipcode)
-  end
+  en
 end
