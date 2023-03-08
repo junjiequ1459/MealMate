@@ -53,6 +53,7 @@ const ShowPage = () => {
       case 4.5:
         return "-32.9%";
       case 5:
+        return "-42.4%"
       default:
         return "0%";
     }

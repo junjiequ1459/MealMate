@@ -32,9 +32,8 @@ const BusinessList = ({ businesses }) => {
         return "-70.6%";
       case 4.5:
         return "-67.8%";
-      case 5:
       default:
-        return "-73.7%";
+        return "-73.5%";
     }
   }
 
