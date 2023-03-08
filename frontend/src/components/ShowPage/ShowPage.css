@@ -166,10 +166,18 @@
   height: 70vh;
   width: 50vw;
   margin-left: 370px;
-  border: 1px solid red;
+  overflow-y: auto;
 }
 
 .location-and-hours-title {
   margin-left: 300px;
   margin-top: 100px;
+}
+
+.show-user-review-container {
+  /* background-color: green; */
+  width: 40vw;
+  height: 20vh;
+  margin-bottom: 1vh;
+  border: 1px solid black;
 }
