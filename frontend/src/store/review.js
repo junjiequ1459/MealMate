@@ -8,11 +8,10 @@ const addReview = (review) => ({
 });
 
 export const createReview = (review) => async (dispatch) => {
-  const { content, id, rating, business_id, author_id } = review;
+  const { content, rating, business_id, author_id } = review;
   const response = await csrfFetch("/api/reviews", {
     method: "POST",
     body: JSON.stringify({
-      id,
       content,
       rating,
       business_id,
