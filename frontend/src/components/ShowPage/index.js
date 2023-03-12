@@ -1,16 +1,13 @@
 import React from "react";
+import "./ShowPage.css";
 import { useParams } from "react-router-dom";
 import { useState, useEffect } from "react";
 import Navigation from "../Navigation";
 import HomeIcon from "../HomePageIcon";
-import TempImage from "../../assets/tempimage.png";
 import Amenities from "./AmenetiesAndMore";
-import { reviewStar } from "../../utils";
-
-import "./ShowPage.css";
 import BusinessHours from "./BusinessHours";
-import BusinessHeader from "./BusinessHeader";
 import ReviewConainer from "./ReviewContainer";
+import BusinessImageHeader from "./BusinessImageHeader";
 
 const ShowPage = () => {
   const { businessId } = useParams();
@@ -24,24 +21,22 @@ const ShowPage = () => {
         return response.json();
       })
       .then((data) => {
+        console.log(data);
         setShowData(data);
       });
   }, [businessId]);
 
   useEffect(() => {
-    fetch(`/api/reviews/${showData && showData.id}`)
+    fetch(`/api/reviews/?business_id=${showData.id}`)
       .then((response) => {
         return response.json();
       })
       .then((data) => {
         setShowReview(data);
-        console.log(data);
       });
   }, [showData]);
 
-  function handleImageError(event) {
-    event.target.src = TempImage;
-  }
+  useEffect(() => {}, [showReview]);
 
   const center = showData.latitude
     ? `${showData.latitude.toString()},${showData.longitude.toString()}`
@@ -57,34 +52,12 @@ const ShowPage = () => {
   return (
     <>
       <div className="show-page-and-body-container">
-        <div className="show-page-container">
-          <img
-            class="show-image"
-            src={`https://meal-mate-seeds.s3.amazonaws.com/testfolder/${showData.business_id}_photos/1.jpg`}
-            onError={handleImageError}
-            alt="img"
-          ></img>
-          <img
-            className="show-image"
-            src={`https://meal-mate-seeds.s3.amazonaws.com/testfolder/${showData.business_id}_photos/1.jpg`}
-            onError={handleImageError}
-            alt="img"
-          ></img>
-          <img
-            className="show-image"
-            src={`https://meal-mate-seeds.s3.amazonaws.com/testfolder/${showData.business_id}_photos/1.jpg`}
-            onError={handleImageError}
-            alt="img"
-          ></img>
-          <BusinessHeader showData={showData} />
-        </div>
-        <div className="dark-image-header"></div>
+        <BusinessImageHeader showData={showData} />
         <Navigation />
         <div className="business-background-color"></div>
         <HomeIcon />
         <h1 className="location-and-hours-title">Location & Hours</h1>
         <div className="show-image-container"></div>
-
         <div className="show-body-container">
           <div className="show-googlemaps">
             <img src={mapUrl} alt=""></img>

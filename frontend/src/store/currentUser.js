@@ -1,12 +1,10 @@
 export const fetchCurrentUser = () => {
   return async (dispatch) => {
     try {
-      const response = await fetch("/api/users/current"); 
+      const response = await fetch("/api/users/current");
       const user = await response.json();
       dispatch({ type: "SET_CURRENT_USER", payload: user }); // update the Redux store with the current user's information
-    } catch (error) {
-      console.log(error);
-    }
+    } catch (error) {}
   };
 };
 

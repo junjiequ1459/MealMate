@@ -1,17 +1,37 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import Dropdown from "./DropDown";
 import { reviewStar } from "../../utils";
-import { useState } from "react";
+import { editReview, removeReview } from "../../store/review";
+import { useDispatch } from "react-redux";
 
 function ReviewConainer({ showReview }) {
+  const dispatch = useDispatch();
+
+  const handleEditReview = (review) => {
+    dispatch(editReview(review));
+  };
+
+  const handleRemoveReview = (reviewId) => {
+    dispatch(removeReview(reviewId));
+  };
+
   return (
     <div className="reviews-form-container">
       {showReview &&
         showReview.map((review) => {
           return (
-            <div className="show-user-review-container">
-              <p>{review.author_id}</p>
-              <Dropdown options={["Edit", "Delete"]} />
+            <div className="show-user-review-container" key={review.id}>
+              <div className="dropdown-container">
+                <Dropdown
+                  options={["Edit review", "Remove review"]}
+                  onOptionSelected={(option) =>
+                    option === "Edit review"
+                      ? handleEditReview(review)
+                      : handleRemoveReview(review.id)
+                  }
+                />
+              </div>
+              <div className="author-name">{review.author_name}</div>
               <div className="show-review-container">
                 <img
                   className="bussiness-review"
@@ -20,9 +40,9 @@ function ReviewConainer({ showReview }) {
                   }}
                   src="https://s3-media0.fl.yelpcdn.com/assets/public/stars_v2.yji-59bbc2cf8e3d4be04fcc.png"
                   alt=""
-                ></img>
+                />
               </div>
-              <p key={review.id}>{review.content}</p>
+              <p>{review.content}</p>
             </div>
           );
         })}

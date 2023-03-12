@@ -4,7 +4,7 @@ class Api::ReviewsController < ApplicationController
   end
 
   def show
-    @review = Review.where(business_id: params[:business_id])
+    @review = Review.find(params[:id])
     render json: @review
   end
 
@@ -32,6 +32,6 @@ class Api::ReviewsController < ApplicationController
   private
 
   def review_params
-    params.require(:review).permit(:content, :rating, :business_id, :author_id)
+    params.require(:review).permit(:content, :rating, :author_name, :business_id, :author_id)
   end
 end

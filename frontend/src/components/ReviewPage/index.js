@@ -20,6 +20,7 @@ const ReviewForm = () => {
       rating,
       business_id: businessId,
       author_id: currentUser.id,
+      author_name: `${currentUser.fname} ${currentUser.lname}`,
     };
     dispatch(createReview(review));
     setContent("");

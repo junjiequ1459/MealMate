@@ -7,6 +7,11 @@ function Dropdown(props) {
     setIsOpen(!isOpen);
   }
 
+  function handleOptionSelected(option) {
+    setIsOpen(false); // close the dropdown
+    props.onOptionSelected(option); // call the onOptionSelected prop with the selected option
+  }
+
   return (
     <div className="dropdown">
       <button
@@ -19,7 +24,15 @@ function Dropdown(props) {
       {isOpen && (
         <div className="dropdown-menu">
           {props.options.map((option) => (
-            <a key={option} className="dropdown-item" href="#">
+            <a
+              key={option}
+              className="dropdown-item"
+              href="#"
+              onClick={(e) => {
+                e.preventDefault(); // prevent default behavior
+                handleOptionSelected(option); // call the handleOptionSelected function with the selected option
+              }}
+            >
               {option}
             </a>
           ))}
@@ -28,4 +41,5 @@ function Dropdown(props) {
     </div>
   );
 }
+
 export default Dropdown;

@@ -54,12 +54,15 @@
 }
 
 .properties-info-container {
+  position: absolute;
+  top: 110vh;
   display: flex;
-  margin-top: 300px;
-  min-height: 100vh;
-  width: 800px;
-  margin-left: -400px;
-  /* background-color: green; */
+  justify-content: space-between;
+
+  /* background-color: gray; */
+  width: 1170px;
+  flex-direction: row;
+  height: 30vh;
 }
 
 .show-body-container {
@@ -79,28 +82,26 @@
 .amenities-list li {
   font-size: 16px;
   margin-top: 16px;
-  margin-left: -400px;
 }
 
 .amenities-list2 li {
   font-size: 16px;
   margin-top: 16px;
-  margin-left: -150px;
+}
+.amenities-list,
+.amenities-list2 {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+  list-style: none;
+  padding: 0;
+  margin: 0;
 }
 
-.amenities2-container {
-  margin-top: 20px;
+.amenities-list li,
+.amenities-list2 li {
+  width: 48%;
 }
-
-.amenities-list li {
-  font-size: 16px;
-  margin-left: -400px;
-}
-
-.amenities-list h2 {
-  margin-left: -400px;
-}
-
 .directions-style {
   color: rgb(2, 122, 151);
   font-weight: bold;
@@ -165,7 +166,7 @@
   position: flex;
   height: 70vh;
   width: 50vw;
-  margin-left: 370px;
+  margin-left: 300px;
   overflow-y: auto;
 }
 
@@ -176,8 +177,69 @@
 
 .show-user-review-container {
   /* background-color: green; */
-  width: 40vw;
-  height: 20vh;
+  width: 50vw;
+  height: 30vh;
   margin-bottom: 1vh;
   border: 1px solid black;
+  position: relative;
+}
+
+.dropdown-container {
+  display: inline;
+}
+.dropdown {
+  right: -95%;
+  position: relative;
+  display: inline;
+}
+
+.dropdown span {
+  font-size: 20px;
+}
+
+.dropdown button {
+  background-color: transparent;
+  color: inherit;
+  border: none;
+  cursor: pointer;
+}
+
+.dropdown-menu {
+  position: absolute;
+  top: 100%;
+  right: 0;
+  z-index: 1;
+  min-width: 160px;
+  padding: 8px;
+  margin: 2px 0 0;
+  font-size: 1rem;
+  list-style: none;
+  background-color: #fff;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.175);
+}
+
+.dropdown-item {
+  display: block;
+  width: 100%;
+  padding: 0.25rem 1.5rem;
+  font-weight: 400;
+  color: #212529;
+  text-align: left;
+  white-space: nowrap;
+  background-color: transparent;
+  text-decoration: none;
+  border: 0;
+}
+.dropdown-item:hover,
+.dropdown-item:focus {
+  background-color: lightgray;
+  border-radius: 5px;
+  color: #16181b;
+  text-decoration: none;
+}
+
+.author-name {
+  display: inline;
 }
