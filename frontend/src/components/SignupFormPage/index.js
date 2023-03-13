@@ -159,7 +159,8 @@ function SignupFormPage() {
           <img
             className="sign-up-image"
             src="https://s3-media0.fl.yelpcdn.com/assets/2/www/img/7922e77f338d/signup/signup_illustration.png"
-          alt="img broken"></img>
+            alt="img broken"
+          ></img>
         </div>
       </div>
     </>

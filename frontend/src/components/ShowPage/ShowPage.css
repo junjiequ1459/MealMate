@@ -178,9 +178,9 @@
 .show-user-review-container {
   /* background-color: green; */
   width: 50vw;
-  height: 30vh;
+  min-height: 15vh;
   margin-bottom: 1vh;
-  border: 1px solid black;
+  /* border: 1px solid black; */
   position: relative;
 }
 
@@ -242,4 +242,25 @@
 
 .author-name {
   display: inline;
+  font-weight: bold;
+  font-size: 18px;
+  margin-right: 20px;
+}
+
+.business-review-container {
+  margin-top: 20px;
+  /* background-color: green; */
+  margin-bottom: 15px;
+}
+
+.review-created-date {
+  /* background-color: blue; */
+  color: gray;
+  font-size: 14px;
+  display: inline;
+}
+
+.review-contents {
+  margin-left: 13px;
+  /* background-color: blue; */
 }

@@ -25,7 +25,9 @@ const ReviewForm = ({ review }) => {
       rating,
       business_id: businessId,
       author_id: currentUser.id,
-      author_name: `${currentUser.fname} ${currentUser.lname}`,
+      author_name: `${
+        currentUser.fname.charAt(0).toUpperCase() + currentUser.fname.slice(1)
+      } ${currentUser.lname[0].toUpperCase()}.`,
     };
     if (review) {
       reviewData.id = review.id;

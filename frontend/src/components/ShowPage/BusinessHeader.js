@@ -1,6 +1,6 @@
 import React from "react";
 import { timeTillClose } from "../../utils";
-import { reviewStar } from "../../utils";
+import { reviewStarBig } from "../../utils";
 import { priceRange } from "../../utils";
 
 function BusinessHeader({ showData }) {
@@ -11,7 +11,7 @@ function BusinessHeader({ showData }) {
         <img
           className="business-review"
           style={{
-            translate: `0% ${reviewStar(showData.stars)}`,
+            translate: `0% ${reviewStarBig(showData.stars)}`,
           }}
           src="https://s3-media0.fl.yelpcdn.com/assets/public/stars_v2.yji-59bbc2cf8e3d4be04fcc.png"
           alt=""

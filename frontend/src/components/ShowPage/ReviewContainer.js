@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import Dropdown from "./DropDown";
-import { reviewStar } from "../../utils";
+import { reviewStarSmall } from "../../utils";
 import { removeReview } from "../../store/review";
 import { useDispatch } from "react-redux";
 import { useHistory } from "react-router-dom";
@@ -35,17 +35,20 @@ function ReviewContainer({ showReview }) {
                 />
               </div>
               <div className="author-name">{review.authorName}</div>
-              <div className="show-review-container">
+              <div className="review-created-date">
+                {review.createdAt.substring(0, 10)}
+              </div>
+              <div className="business-review-container">
                 <img
                   className="bussiness-review"
                   style={{
-                    translate: `0% ${reviewStar(review.rating)}`,
+                    translate: `0% ${reviewStarSmall(review.rating)}`,
                   }}
                   src="https://s3-media0.fl.yelpcdn.com/assets/public/stars_v2.yji-59bbc2cf8e3d4be04fcc.png"
                   alt=""
                 />
               </div>
-              <p>{review.content}</p>
+              <div className="review-contents">{review.content}</div>
             </div>
           );
         })
