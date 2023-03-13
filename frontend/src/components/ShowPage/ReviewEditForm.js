@@ -1,50 +1,39 @@
 import React, { useState } from "react";
-import { useDispatch } from "react-redux";
-import { editReview } from "../../store/review";
 
-function ReviewEditForm({ location }) {
-  const { review } = location.state;
-  const dispatch = useDispatch();
-  const [formData, setFormData] = useState({
-    rating: review.rating,
-    content: review.content,
-  });
+function EditReview({ review, onSave }) {
+  const [rating, setRating] = useState(review.rating);
+  const [content, setContent] = useState(review.content);
 
-  const handleChange = (event) => {
-    setFormData({
-      ...formData,
-      [event.target.name]: event.target.value,
-    });
+  const handleRatingChange = (event) => {
+    setRating(event.target.value);
+  };
+
+  const handleContentChange = (event) => {
+    setContent(event.target.value);
   };
 
   const handleSubmit = (event) => {
     event.preventDefault();
-    dispatch(editReview({ ...review, ...formData }));
+    onSave({ id: review.id, rating, content });
   };
 
   return (
-    <div className="edit-review-form-container">
-      <h2>Edit Review</h2>
-      <form onSubmit={handleSubmit}>
-        <label htmlFor="rating">Rating:</label>
-        <input
-          type="number"
-          id="rating"
-          name="rating"
-          value={formData.rating}
-          onChange={handleChange}
-        />
-        <label htmlFor="content">Content:</label>
-        <textarea
-          id="content"
-          name="content"
-          value={formData.content}
-          onChange={handleChange}
-        ></textarea>
-        <button type="submit">Save</button>
-      </form>
-    </div>
+    <form onSubmit={handleSubmit}>
+      <label>
+        Rating:
+        <input type="number" value={rating} onChange={handleRatingChange} />
+      </label>
+      <br />
+      <label>
+        Content:
+        <textarea value={content} onChange={handleContentChange} />
+      </label>
+      <br />
+      <button className="edit-save-button" type="submit">
+        Save
+      </button>
+    </form>
   );
 }
 
-export default ReviewEditForm;
+export default EditReview;

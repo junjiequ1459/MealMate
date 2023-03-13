@@ -1,20 +1,31 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import Dropdown from "./DropDown";
+import EditReview from "./ReviewEditForm";
 import { reviewStarSmall } from "../../utils";
-import { removeReview } from "../../store/review";
-import { useDispatch } from "react-redux";
+import { removeReview, editReview } from "../../store/review";
+import { useDispatch, useSelector } from "react-redux";
 import { useHistory } from "react-router-dom";
 
 function ReviewContainer({ showReview }) {
   const dispatch = useDispatch();
   const history = useHistory();
+  const currentUser = useSelector((state) => state.session.user);
+  const [showEditForm, setShowEditForm] = useState(false);
+  const [reviewToEdit, setReviewToEdit] = useState(null);
 
   const handleEditReview = (review) => {
-    history.push(`/reviews/${review.id}/edit`);
+    setReviewToEdit(review);
+    setShowEditForm(true);
   };
 
   const handleRemoveReview = (reviewId) => {
     dispatch(removeReview(reviewId));
+    window.location.reload();
+  };
+
+  const handleSaveReview = (editedReview) => {
+    dispatch(editReview(editedReview));
+    setShowEditForm(false);
     window.location.reload();
   };
 
@@ -24,16 +35,18 @@ function ReviewContainer({ showReview }) {
         showReview.map((review) => {
           return (
             <div className="show-user-review-container" key={review.id}>
-              <div className="dropdown-container">
-                <Dropdown
-                  options={["Edit review", "Remove review"]}
-                  onOptionSelected={(option) =>
-                    option === "Edit review"
-                      ? handleEditReview(review)
-                      : handleRemoveReview(review.id)
-                  }
-                />
-              </div>
+              {currentUser && currentUser.id === review.authorId ? (
+                <div className="dropdown-container">
+                  <Dropdown
+                    options={["Edit review", "Remove review"]}
+                    onOptionSelected={(option) =>
+                      option === "Edit review"
+                        ? handleEditReview(review)
+                        : handleRemoveReview(review.id)
+                    }
+                  />
+                </div>
+              ) : null}
               <div className="author-name">{review.authorName}</div>
               <div className="review-created-date">
                 {review.createdAt.substring(0, 10)}
@@ -49,6 +62,9 @@ function ReviewContainer({ showReview }) {
                 />
               </div>
               <div className="review-contents">{review.content}</div>
+              {showEditForm && reviewToEdit && review.id === reviewToEdit.id ? (
+                <EditReview review={reviewToEdit} onSave={handleSaveReview} />
+              ) : null}
             </div>
           );
         })

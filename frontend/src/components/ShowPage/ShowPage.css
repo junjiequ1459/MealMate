@@ -119,6 +119,7 @@
   color: rgb(255, 255, 255);
   font-weight: bold;
   margin-top: 2vh;
+  margin-left: 300px;
 }
 
 .google-map-address {
@@ -263,4 +264,17 @@
 .review-contents {
   margin-left: 13px;
   /* background-color: blue; */
+}
+
+.edit-save-button {
+  border-radius: 4px;
+  cursor: pointer;
+  height: 40px;
+  margin-top: 10%;
+  font-size: 16px;
+  padding: 10px 13px;
+  background-color: rgb(224, 7, 7);
+  color: rgb(255, 255, 255);
+  line-height: 1.3rem;
+  font-weight: bold;
 }
