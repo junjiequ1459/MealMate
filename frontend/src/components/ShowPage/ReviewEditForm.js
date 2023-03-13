@@ -1,49 +1,49 @@
 import React, { useState } from "react";
+import { useDispatch } from "react-redux";
+import { editReview } from "../../store/review";
 
-function ReviewEditForm({ review, onSubmit }) {
-  const [authorName, setAuthorName] = useState(review.authorName);
-  const [rating, setRating] = useState(review.rating);
-  const [content, setContent] = useState(review.content);
+function ReviewEditForm({ location }) {
+  const { review } = location.state;
+  const dispatch = useDispatch();
+  const [formData, setFormData] = useState({
+    rating: review.rating,
+    content: review.content,
+  });
 
-  const handleSubmit = (event) => {
-    event.preventDefault();
-    onSubmit({
-      id: review.id,
-      authorName,
-      rating,
-      content,
+  const handleChange = (event) => {
+    setFormData({
+      ...formData,
+      [event.target.name]: event.target.value,
     });
   };
 
+  const handleSubmit = (event) => {
+    event.preventDefault();
+    dispatch(editReview({ ...review, ...formData }));
+  };
+
   return (
-    <form onSubmit={handleSubmit}>
-      <label>
-        Author Name:
-        <input
-          type="text"
-          value={authorName}
-          onChange={(event) => setAuthorName(event.target.value)}
-        />
-      </label>
-      <label>
-        Rating:
+    <div className="edit-review-form-container">
+      <h2>Edit Review</h2>
+      <form onSubmit={handleSubmit}>
+        <label htmlFor="rating">Rating:</label>
         <input
           type="number"
-          min="1"
-          max="5"
-          value={rating}
-          onChange={(event) => setRating(parseInt(event.target.value))}
+          id="rating"
+          name="rating"
+          value={formData.rating}
+          onChange={handleChange}
         />
-      </label>
-      <label>
-        Content:
+        <label htmlFor="content">Content:</label>
         <textarea
-          value={content}
-          onChange={(event) => setContent(event.target.value)}
-        />
-      </label>
-      <button type="submit">Save</button>
-    </form>
+          id="content"
+          name="content"
+          value={formData.content}
+          onChange={handleChange}
+        ></textarea>
+        <button type="submit">Save</button>
+      </form>
+    </div>
   );
 }
 

@@ -1,27 +1,26 @@
 import React, { useState, useEffect } from "react";
 import Dropdown from "./DropDown";
 import { reviewStar } from "../../utils";
-import { editReview, removeReview } from "../../store/review";
+import { removeReview } from "../../store/review";
 import { useDispatch } from "react-redux";
 import { useHistory } from "react-router-dom";
 
 function ReviewContainer({ showReview }) {
-  const [editedReview, setEditedReview] = useState(null);
   const dispatch = useDispatch();
   const history = useHistory();
 
   const handleEditReview = (review) => {
-    setEditedReview(review);
     history.push(`/reviews/${review.id}/edit`);
   };
 
   const handleRemoveReview = (reviewId) => {
     dispatch(removeReview(reviewId));
+    window.location.reload();
   };
 
   return (
     <div className="reviews-form-container">
-      {showReview &&
+      {Array.isArray(showReview) && showReview.length > 0 ? (
         showReview.map((review) => {
           return (
             <div className="show-user-review-container" key={review.id}>
@@ -49,7 +48,10 @@ function ReviewContainer({ showReview }) {
               <p>{review.content}</p>
             </div>
           );
-        })}
+        })
+      ) : (
+        <p>no reviews found</p>
+      )}
     </div>
   );
 }

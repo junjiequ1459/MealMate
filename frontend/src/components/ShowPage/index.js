@@ -27,12 +27,15 @@ const ShowPage = () => {
   }, [businessId]);
 
   useEffect(() => {
-    fetch(`/api/reviews/?business_id=${showData.id}`)
+    fetch(`/api/reviews/`)
       .then((response) => {
         return response.json();
       })
       .then((data) => {
-        setShowReview(data);
+        const filteredData = data.filter(
+          (review) => review.businessId === showData.id
+        );
+        setShowReview(filteredData);
       });
   }, [showData]);
 

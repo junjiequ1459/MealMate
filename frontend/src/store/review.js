@@ -37,10 +37,10 @@ export const createReview = (review) => async (dispatch) => {
 };
 
 export const editReview = (review) => async (dispatch) => {
-  const { id, content, rating, author_name } = review;
+  const { id, content, rating } = review;
   const response = await csrfFetch(`/api/reviews/${id}`, {
     method: "PATCH",
-    body: JSON.stringify({ content, rating, author_name }),
+    body: JSON.stringify({ content, rating }),
   });
 
   const data = await response.json();
