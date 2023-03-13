@@ -16,30 +16,21 @@ const ShowPage = () => {
 
   useEffect(() => {
     window.scrollTo(0, 0);
-    fetch(`/api/businesses/${businessId}`)
-      .then((response) => {
-        return response.json();
-      })
-      .then((data) => {
-        console.log(data);
-        setShowData(data);
-      });
-  }, [businessId]);
-
-  useEffect(() => {
-    fetch(`/api/reviews/`)
-      .then((response) => {
-        return response.json();
-      })
-      .then((data) => {
-        const filteredData = data.filter(
-          (review) => review.businessId === showData.id
+    Promise.all([
+      fetch(`/api/businesses/${businessId}`).then((response) =>
+        response.json()
+      ),
+      fetch(`/api/reviews/`).then((response) => response.json()),
+    ])
+      .then(([businessData, reviewData]) => {
+        setShowData(businessData);
+        const filteredData = reviewData.filter(
+          (review) => review.businessId === businessData.id
         );
         setShowReview(filteredData);
-      });
-  }, [showData]);
-
-  useEffect(() => {}, [showReview]);
+      })
+      .catch((error) => console.error(error));
+  }, [businessId]);
 
   const center = showData.latitude
     ? `${showData.latitude.toString()},${showData.longitude.toString()}`

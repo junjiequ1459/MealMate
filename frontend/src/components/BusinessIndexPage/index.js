@@ -6,6 +6,7 @@ import HomeIcon from "../HomePageIcon";
 import { useLocation } from "react-router-dom";
 import BusinessList from "../Business";
 import LoadingScreen from "../../LoadingScreen/LoadingScreen";
+import BusinessFilter from "./BusinessFilter";
 
 function BusinessIndexPage() {
   const location = useLocation();
@@ -45,17 +46,8 @@ function BusinessIndexPage() {
       .catch((error) => console.error(error));
   }, [searchInput, priceFilter]);
 
-  function onFilterButtonClick1() {
-    setPriceFilter("1");
-  }
-  function onFilterButtonClick2() {
-    setPriceFilter("2");
-  }
-  function onFilterButtonClick3() {
-    setPriceFilter("3");
-  }
-  function onFilterButtonClick4() {
-    setPriceFilter("4");
+  function onFilterButtonClick(priceFilter) {
+    setPriceFilter(priceFilter);
   }
 
   function resetFilter() {
@@ -93,47 +85,10 @@ function BusinessIndexPage() {
           </div>
 
           <div className="business-indexpage-flex">
-            <div className="business-filter">
-              <div>
-                <div className="filter-buttons-container">
-                  <div className="business-filter-list">
-                    <h2 className="filter-h2">Filters</h2>
-                    <button
-                      className="reset-filter-button"
-                      onClick={resetFilter}
-                    >
-                      Reset Filters
-                    </button>
-                    <div className="filter-button-list">
-                      <button
-                        className="filter-first-button filter-button"
-                        onClick={onFilterButtonClick1}
-                      >
-                        $
-                      </button>
-                      <button
-                        className="filter-second-button filter-button"
-                        onClick={onFilterButtonClick2}
-                      >
-                        $$
-                      </button>
-                      <button
-                        className="filter-third-button filter-button"
-                        onClick={onFilterButtonClick3}
-                      >
-                        $$$
-                      </button>
-                      <button
-                        className="filter-fourth-button filter-button"
-                        onClick={onFilterButtonClick4}
-                      >
-                        $$$$
-                      </button>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
+            <BusinessFilter
+              onFilterButtonClick={onFilterButtonClick}
+              resetFilter={resetFilter}
+            />
 
             <div className="business-list-container">
               <h1 className="business-header">
