@@ -1,5 +1,3 @@
-// frontend/src/App.js
-
 import React from "react";
 import { Route, Switch } from "react-router-dom";
 import LoginFormPage from "./components/LoginFormPage";
@@ -9,7 +7,12 @@ import Footer from "./components/Footer";
 import BusinessIndexPage from "./components/BusinessIndexPage";
 import ShowPage from "./components/ShowPage";
 import ReviewForm from "./components/ReviewPage";
+import ReviewEditForm from "./components/ShowPage/ReviewEditForm";
+import { useSelector } from "react-redux";
+import ReviewContainer from "./components/ShowPage/ReviewContainer";
 function App() {
+  const reviews = useSelector((state) => state.reviews);
+
   return (
     <>
       <Switch>
@@ -27,7 +30,11 @@ function App() {
         <Route exact path="/">
           <MMIndexPage />
         </Route>
-      </Switch> 
+        <Route exact path="/reviews/:id/edit" component={ReviewEditForm} />
+        <Route exact path="/reviews">
+          <ReviewContainer showReview={reviews} />
+        </Route>
+      </Switch>
       <Footer />
     </>
   );

@@ -3,12 +3,16 @@ import Dropdown from "./DropDown";
 import { reviewStar } from "../../utils";
 import { editReview, removeReview } from "../../store/review";
 import { useDispatch } from "react-redux";
+import { useHistory } from "react-router-dom";
 
-function ReviewConainer({ showReview }) {
+function ReviewContainer({ showReview }) {
+  const [editedReview, setEditedReview] = useState(null);
   const dispatch = useDispatch();
+  const history = useHistory();
 
   const handleEditReview = (review) => {
-    dispatch(editReview(review));
+    setEditedReview(review);
+    history.push(`/reviews/${review.id}/edit`);
   };
 
   const handleRemoveReview = (reviewId) => {
@@ -31,7 +35,7 @@ function ReviewConainer({ showReview }) {
                   }
                 />
               </div>
-              <div className="author-name">{review.author_name}</div>
+              <div className="author-name">{review.authorName}</div>
               <div className="show-review-container">
                 <img
                   className="bussiness-review"
@@ -50,4 +54,4 @@ function ReviewConainer({ showReview }) {
   );
 }
 
-export default ReviewConainer;
+export default ReviewContainer;

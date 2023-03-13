@@ -1,28 +1,38 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 import Navigation from "../Navigation";
 import HomeIcon from "../HomePageIcon";
-import { createReview } from "../../store/review";
+import { createReview, editReview } from "../../store/review";
 import "./ReviewPage.css";
 
-const ReviewForm = () => {
+const ReviewForm = ({ review }) => {
   const { businessId } = useParams();
   const dispatch = useDispatch();
-  const currentUser = useSelector((state) => state.session.user); // get the current user from the store
-  const [content, setContent] = useState("");
-  const [rating, setRating] = useState(0);
+  const currentUser = useSelector((state) => state.session.user);
+  const [content, setContent] = useState(review ? review.content : "");
+  const [rating, setRating] = useState(review ? review.rating : 0);
+
+  useEffect(() => {
+    setContent(review ? review.content : "");
+    setRating(review ? review.rating : 0);
+  }, [review]);
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    const review = {
+    const reviewData = {
       content,
       rating,
       business_id: businessId,
       author_id: currentUser.id,
       author_name: `${currentUser.fname} ${currentUser.lname}`,
     };
-    dispatch(createReview(review));
+    if (review) {
+      reviewData.id = review.id;
+      dispatch(editReview(reviewData));
+    } else {
+      dispatch(createReview(reviewData));
+    }
     setContent("");
     setRating(0);
   };
@@ -53,7 +63,7 @@ const ReviewForm = () => {
               />
             </label>
             <button className="review-submit-button" type="submit">
-              Submit
+              {review ? "Update" : "Submit"}
             </button>
           </form>
         </div>
