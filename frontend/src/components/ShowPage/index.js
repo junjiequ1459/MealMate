@@ -10,7 +10,7 @@ import ReviewConainer from "./ReviewContainer";
 import BusinessImageHeader from "./BusinessImageHeader";
 
 const ShowPage = () => {
-  const history = useHistory()
+  const history = useHistory();
   const { businessId } = useParams();
   const [showData, setShowData] = useState({});
   const [showReview, setShowReview] = useState([]);
@@ -47,7 +47,7 @@ const ShowPage = () => {
   const handleReviewClick = () => {
     history.push({
       pathname: `/reviews/${showData.id}`,
-      state: { showData },
+      state: { showData, showReview },
     });
   };
   return (

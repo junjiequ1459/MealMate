@@ -10,7 +10,6 @@ function ReviewContainer({ showReview }) {
   const currentUser = useSelector((state) => state.session.user);
   const [showEditForm, setShowEditForm] = useState(false);
   const [reviewToEdit, setReviewToEdit] = useState(null);
-  const [removeButtonClick, setRemoveButtonClick] = useState(false);
 
   useEffect(() => {}, [showEditForm]);
 
@@ -21,11 +20,13 @@ function ReviewContainer({ showReview }) {
 
   const handleRemoveReview = (reviewId) => {
     dispatch(removeReview(reviewId));
+    window.location.reload();
   };
 
   const handleSaveReview = (editedReview) => {
     dispatch(editReview(editedReview));
     setShowEditForm(false);
+    window.location.reload();
   };
 
   return (
