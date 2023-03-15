@@ -39,7 +39,7 @@ function LoginFormPage() {
   const errorName = "errors";
   const signup = (
     <NavLink to="/signup">
-      <button className="anchor-style-button">Sign Up</button>
+      <a className="anchor-style-button">Sign Up</a>
     </NavLink>
   );
   return (
@@ -50,7 +50,7 @@ function LoginFormPage() {
         <div className="business-background-color"></div>
 
         <div className="login-flex-container">
-          <div class="login-form-flex">
+          <div className="login-form-flex">
             <div className="login-form-container">
               <form onSubmit={handleSubmit}>
                 {errors.length > 0 && (

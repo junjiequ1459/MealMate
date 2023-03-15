@@ -10,7 +10,7 @@ function BusinessImageHeader({ showData }) {
   return (
     <div className="show-page-container">
       <img
-        class="show-image"
+        className="show-image"
         src={`https://meal-mate-seeds.s3.amazonaws.com/testfolder/${showData.business_id}_photos/1.jpg`}
         onError={handleImageError}
         alt="img"

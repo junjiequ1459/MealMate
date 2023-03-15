@@ -29,11 +29,9 @@
   position: absolute;
   top: 36vh;
   /* background-color: royalblue; */
-  height: 20vh;
-  min-height: 200px;
-  width: 63vw;
   z-index: 1;
-  left: 20vw;
+  left: 300px;
+  /* overflow: hidden; */
 }
 
 .show-review-container {
@@ -173,7 +171,7 @@
 
 .location-and-hours-title {
   margin-left: 300px;
-  margin-top: 100px;
+  margin-top: 20px;
 }
 
 .show-user-review-container {
@@ -270,7 +268,7 @@
   border-radius: 4px;
   cursor: pointer;
   height: 40px;
-  margin-top: 10%;
+  margin-top: 2%;
   font-size: 16px;
   padding: 10px 13px;
   background-color: rgb(224, 7, 7);

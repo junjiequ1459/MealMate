@@ -37,15 +37,23 @@ const ReviewForm = ({ review }) => {
         currentUser.fname.charAt(0).toUpperCase() + currentUser.fname.slice(1)
       } ${currentUser.lname[0].toUpperCase()}.`,
     };
-    if (review) {
-      reviewData.id = review.id;
-      dispatch(editReview(reviewData));
+    const existingReview = showReview.find(
+      (review) => review.authorId === currentUser.id
+    );
+    if (existingReview) {
+      // User has already submitted a review for this business, show error message
+      alert("You have already submitted a review for this business.");
     } else {
-      dispatch(createReview(reviewData));
+      if (review) {
+        reviewData.id = review.id;
+        dispatch(editReview(reviewData));
+      } else {
+        dispatch(createReview(reviewData));
+      }
+      setContent("");
+      setRating(0);
+      history.push(redirectUrl);
     }
-    setContent("");
-    setRating(0);
-    history.push(redirectUrl);
   };
 
   return (

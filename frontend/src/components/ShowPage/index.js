@@ -8,9 +8,11 @@ import Amenities from "./AmenetiesAndMore";
 import BusinessHours from "./BusinessHours";
 import ReviewConainer from "./ReviewContainer";
 import BusinessImageHeader from "./BusinessImageHeader";
+import { useSelector } from "react-redux";
 
 const ShowPage = () => {
   const history = useHistory();
+  const currentUser = useSelector((state) => state.session.user);
   const { businessId } = useParams();
   const [showData, setShowData] = useState({});
   const [showReview, setShowReview] = useState([]);
@@ -45,10 +47,16 @@ const ShowPage = () => {
     : "";
 
   const handleReviewClick = () => {
-    history.push({
-      pathname: `/reviews/${showData.id}`,
-      state: { showData, showReview },
-    });
+    if (currentUser) {
+      history.push({
+        pathname: `/reviews/${showData.id}`,
+        state: { showData, showReview },
+      });
+    } else {
+      history.push({
+        pathname: `/login/`,
+      });
+    }
   };
   return (
     <>
@@ -58,6 +66,11 @@ const ShowPage = () => {
         <div className="business-background-color"></div>
         <HomeIcon />
         <h1 className="location-and-hours-title">Location & Hours</h1>
+        <div className="review-button-container">
+          <button className="show-button-review" onClick={handleReviewClick}>
+            Write a review
+          </button>
+        </div>
         <div className="show-image-container"></div>
         <div className="show-body-container">
           <div className="show-googlemaps">
@@ -80,11 +93,6 @@ const ShowPage = () => {
           </div>
         </div>
         <ReviewConainer showReview={showReview} />
-        <div className="review-button-container">
-          <button className="show-button-review" onClick={handleReviewClick}>
-            Write a review
-          </button>
-        </div>
       </div>
     </>
   );

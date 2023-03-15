@@ -62,7 +62,7 @@ function Navigation({ page }) {
             className="form-control"
             type="text"
             value={formInput}
-            placeholder="Tacos, cheap dinner, Max's"
+            placeholder="Tacos,Sushi,Pizza"
             onChange={(event) => setFormInput(event.target.value)}
           />
           <button className="btn" type="submit">
@@ -71,7 +71,11 @@ function Navigation({ page }) {
         </form>
       </div>
       <div className="fa-brands-container">
-        <a href="https://github.com/junjiequ1459" target="_blank" rel="noreferrer">
+        <a
+          href="https://github.com/junjiequ1459"
+          target="_blank"
+          rel="noreferrer"
+        >
           <i className={`${GithubclassName} fa-brands fa-github`}></i>
         </a>
         <a
