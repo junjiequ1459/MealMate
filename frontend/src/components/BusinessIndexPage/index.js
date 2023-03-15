@@ -21,7 +21,7 @@ function BusinessIndexPage() {
   useEffect(() => {
     window.scrollTo(0, 0);
     setIsLoading(true);
-    fetch("/api/businesses")
+    fetch("/api/businesses?cache_bust=" + Date.now())
       .then((response) => {
         return response.json();
       })
@@ -37,8 +37,10 @@ function BusinessIndexPage() {
       const categoriesArray = business.categories.split(",");
       if (priceFilter) {
         return (
-          categoriesArray.some((category) => category.includes(searchInput)) &&
-          business.properties.RestaurantsPriceRange2 === priceFilter
+          (categoriesArray.some((category) => category.includes(searchInput)) &&
+            business.properties.RestaurantsPriceRange2 === priceFilter) ||
+          (business.name.includes(searchInput) &&
+            business.properties.RestaurantsPriceRange2 === priceFilter)
         );
       }
       return (

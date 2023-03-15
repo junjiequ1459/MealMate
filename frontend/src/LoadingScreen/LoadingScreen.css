@@ -1,8 +1,8 @@
-.loading-screen-container{
+.loading-screen-container {
   width: 100vw;
   height: 100vh;
   position: fixed;
-  background-color: rgba(0,0,0,0.5);
+  background-color: rgb(224, 7, 7);
   z-index: 999;
   display: flex;
   flex-direction: column;
@@ -10,7 +10,7 @@
   align-items: center;
 }
 
-.loading-dots{
+.loading-dots {
   display: flex;
   justify-content: center;
 }
@@ -19,7 +19,6 @@
   align-items: center;
   justify-content: center;
   margin: 0px;
-
 }
 
 .loading-screen-shape {
@@ -58,12 +57,12 @@
   }
 }
 
-.loading-text{
-  color:white;
+.loading-text {
+  color: white;
   font-size: 80px;
 }
-.sorry-text{
-  color:white;
+.sorry-text {
+  color: white;
   font-size: 30px;
   margin-top: 10vh;
 }
