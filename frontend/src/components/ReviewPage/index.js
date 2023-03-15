@@ -41,7 +41,6 @@ const ReviewForm = ({ review }) => {
       (review) => review.authorId === currentUser.id
     );
     if (existingReview) {
-      // User has already submitted a review for this business, show error message
       alert("You have already submitted a review for this business.");
     } else {
       if (review) {
