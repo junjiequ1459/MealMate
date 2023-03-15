@@ -18,8 +18,6 @@
   z-index: 4;
 }
 .review-submit-button {
-  position: absolute;
-  float: right;
   border-radius: 4px;
   cursor: pointer;
   height: 40px;
@@ -34,4 +32,15 @@
 .review-submit-button:hover {
   background-color: rgb(244, 13, 21);
   transition: background-color 0.3s ease;
+}
+
+.business-review-name {
+  font-weight: bold;
+  font-size: 32px;
+  margin-bottom: 20px;
+}
+
+.rating-star-input {
+  width: 300px;
+  margin-right: 20px;
 }

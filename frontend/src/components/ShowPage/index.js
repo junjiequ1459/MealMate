@@ -1,6 +1,6 @@
 import React from "react";
 import "./ShowPage.css";
-import { useParams } from "react-router-dom";
+import { useParams, useHistory } from "react-router-dom";
 import { useState, useEffect } from "react";
 import Navigation from "../Navigation";
 import HomeIcon from "../HomePageIcon";
@@ -10,27 +10,32 @@ import ReviewConainer from "./ReviewContainer";
 import BusinessImageHeader from "./BusinessImageHeader";
 
 const ShowPage = () => {
+  const history = useHistory()
   const { businessId } = useParams();
   const [showData, setShowData] = useState({});
   const [showReview, setShowReview] = useState([]);
 
   useEffect(() => {
     window.scrollTo(0, 0);
-    Promise.all([
-      fetch(`/api/businesses/${businessId}`).then((response) =>
-        response.json()
-      ),
-      fetch(`/api/reviews/`).then((response) => response.json()),
-    ])
-      .then(([businessData, reviewData]) => {
+    fetch(`/api/businesses/${businessId}`)
+      .then((response) => response.json())
+      .then((businessData) => {
         setShowData(businessData);
+      })
+      .catch((error) => console.error(error));
+  }, [businessId]);
+
+  useEffect(() => {
+    fetch(`/api/reviews/`)
+      .then((response) => response.json())
+      .then((reviewData) => {
         const filteredData = reviewData.filter(
-          (review) => review.businessId === businessData.id
+          (review) => review.businessId === showData.id
         );
         setShowReview(filteredData);
       })
       .catch((error) => console.error(error));
-  }, [businessId]);
+  }, [showData]);
 
   const center = showData.latitude
     ? `${showData.latitude.toString()},${showData.longitude.toString()}`
@@ -40,9 +45,11 @@ const ShowPage = () => {
     : "";
 
   const handleReviewClick = () => {
-    window.location.href = `/reviews/${showData.id}`;
+    history.push({
+      pathname: `/reviews/${showData.id}`,
+      state: { showData },
+    });
   };
-
   return (
     <>
       <div className="show-page-and-body-container">

@@ -1,17 +1,18 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import Dropdown from "./DropDown";
 import EditReview from "./ReviewEditForm";
 import { reviewStarSmall } from "../../utils";
 import { removeReview, editReview } from "../../store/review";
 import { useDispatch, useSelector } from "react-redux";
-import { useHistory } from "react-router-dom";
 
 function ReviewContainer({ showReview }) {
   const dispatch = useDispatch();
-  const history = useHistory();
   const currentUser = useSelector((state) => state.session.user);
   const [showEditForm, setShowEditForm] = useState(false);
   const [reviewToEdit, setReviewToEdit] = useState(null);
+  const [removeButtonClick, setRemoveButtonClick] = useState(false);
+
+  useEffect(() => {}, [showEditForm]);
 
   const handleEditReview = (review) => {
     setReviewToEdit(review);
@@ -20,13 +21,11 @@ function ReviewContainer({ showReview }) {
 
   const handleRemoveReview = (reviewId) => {
     dispatch(removeReview(reviewId));
-    window.location.reload();
   };
 
   const handleSaveReview = (editedReview) => {
     dispatch(editReview(editedReview));
     setShowEditForm(false);
-    window.location.reload();
   };
 
   return (
