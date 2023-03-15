@@ -50,43 +50,48 @@ const ReviewForm = ({ review }) => {
 
   return (
     <>
-      <div className="white-text-div"></div>
+      {/* <div className="white-text-div"></div> */}
       <div className="form-page-container">
         <Navigation />
         <div className="business-background-color"></div>
         <HomeIcon />
-        <div className="form-container">
-          <div className="business-review-name">
-            {showData.name} - {showData.city}
-          </div>
-          <form onSubmit={handleSubmit}>
-            <div className="flex-form-container">
-              <label>
-                <textarea
-                  rows="25"
-                  cols="80"
-                  placeholder="Doesn’t look like much when you walk past, but I was practically dying of hunger so I popped in. The definition of a hole-in-the-wall. I got the regular hamburger and wow…  there are no words. A classic burger done right. Crisp bun, juicy patty, stuffed with all the essentials (ketchup, shredded lettuce, tomato, and pickles). There’s about a million options available between the menu board and wall full of specials, so it can get a little overwhelming, but you really can’t go wrong. Not much else to say besides go see for yourself! You won’t be disappointed."
-                  value={content}
-                  onChange={(e) => setContent(e.target.value)}
-                />
-              </label>
-              <div>
+        <div className="form-container-flex">
+          <div className="form-container">
+            <div className="business-review-name">
+              {showData.name} - {showData.city}
+            </div>
+            <form onSubmit={handleSubmit}>
+              <div className="flex-form-container">
                 <label>
-                  <input
-                    className="rating-star-input"
-                    type="number"
-                    value={rating}
-                    onChange={(e) => setRating(e.target.value)}
+                  <textarea
+                    rows="25"
+                    cols="80"
+                    placeholder="Doesn’t look like much when you walk past, but I was practically dying of hunger so I popped in. The definition of a hole-in-the-wall. I got the regular hamburger and wow…  there are no words. A classic burger done right. Crisp bun, juicy patty, stuffed with all the essentials (ketchup, shredded lettuce, tomato, and pickles). There’s about a million options available between the menu board and wall full of specials, so it can get a little overwhelming, but you really can’t go wrong. Not much else to say besides go see for yourself! You won’t be disappointed."
+                    value={content}
+                    onChange={(e) => setContent(e.target.value)}
                   />
                 </label>
-                <button className="review-submit-button" type="submit">
-                  {"Submit"}
-                </button>
+                <div>
+                  <label>
+                    <input
+                      className="rating-star-input"
+                      type="number"
+                      value={rating}
+                      onChange={(e) => setRating(e.target.value)}
+                    />
+                  </label>
+                  <button className="review-submit-button" type="submit">
+                    {"Submit"}
+                  </button>
+                </div>
               </div>
+            </form>
+            <div className="recent-reviews">
+              <h2 className="recent-reviews-header">Recent Reviews</h2>
+              <ReviewContainer showReview={showReview} />
             </div>
-          </form>
+          </div>
         </div>
-        <ReviewContainer showReview={showReview} />
       </div>
     </>
   );

@@ -4,6 +4,15 @@
   left: 25vw;
 }
 
+.recent-reviews {
+  position: absolute;
+  top: 0vh;
+  left: 400px;
+  height: 100vh;
+  width: 20vw;
+  /* background-color: gainsboro; */
+  z-index: -1;
+}
 .form-page-container {
   min-height: 100vh;
 }
@@ -48,4 +57,10 @@
 .flex-form-container {
   display: flex;
   flex-direction: column;
+}
+
+.recent-reviews-header {
+  width: 200px;
+  margin-left: 340px;
+  margin-bottom: 30px;
 }
