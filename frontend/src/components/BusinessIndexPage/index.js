@@ -1,7 +1,7 @@
 import Navigation from "../Navigation";
 import "./BusinessIndexPage.css";
 import GoogleMap from "../GoogleMap";
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useMemo } from "react";
 import HomeIcon from "../HomePageIcon";
 import { useLocation } from "react-router-dom";
 import BusinessList from "../Business";
@@ -16,6 +16,7 @@ function BusinessIndexPage() {
   const searchInput = data.category;
   const [priceFilter, setPriceFilter] = useState(null);
   const [isLoading, setIsLoading] = useState(true);
+  const [originalData, setOriginalData] = useState([]);
 
   useEffect(() => {
     window.scrollTo(0, 0);
@@ -25,26 +26,31 @@ function BusinessIndexPage() {
         return response.json();
       })
       .then((datas) => {
-        const filteredData = datas.filter((business) => {
-          const categoriesArray = business.categories.split(",");
-          if (priceFilter) {
-            return (
-              categoriesArray.some((category) =>
-                category.includes(searchInput)
-              ) && business.properties.RestaurantsPriceRange2 === priceFilter
-            );
-          }
-          return (
-            categoriesArray.some((category) =>
-              category.includes(searchInput)
-            ) || business.name.includes(searchInput)
-          );
-        });
-        setBusinesses(filteredData);
+        setOriginalData(datas);
         setIsLoading(false);
       })
       .catch((error) => console.error(error));
-  }, [searchInput, priceFilter]);
+  }, []);
+
+  const filteredData = useMemo(() => {
+    return originalData.filter((business) => {
+      const categoriesArray = business.categories.split(",");
+      if (priceFilter) {
+        return (
+          categoriesArray.some((category) => category.includes(searchInput)) &&
+          business.properties.RestaurantsPriceRange2 === priceFilter
+        );
+      }
+      return (
+        categoriesArray.some((category) => category.includes(searchInput)) ||
+        business.name.includes(searchInput)
+      );
+    });
+  }, [originalData, searchInput, priceFilter]);
+
+  useEffect(() => {
+    setBusinesses(filteredData);
+  }, [filteredData]);
 
   function onFilterButtonClick(priceFilter) {
     setPriceFilter(priceFilter);
@@ -52,6 +58,7 @@ function BusinessIndexPage() {
 
   function resetFilter() {
     setPriceFilter(null);
+    setBusinesses(originalData);
   }
 
   function nextPage() {
