@@ -81,6 +81,7 @@ function SignupFormPage() {
         <div className="flex">
           <div className="signup-form-container">
             <form onSubmit={handleSubmit}>
+              {console.log(errors)}
               {errors.length > 0 && (
                 <div className="errors">
                   <ul>

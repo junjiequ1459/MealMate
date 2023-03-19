@@ -23,7 +23,6 @@ input {
   font-weight: bold;
 }
 
-
 .red-text {
   color: #d32323;
   font-weight: bold;
@@ -78,18 +77,19 @@ hr {
   padding-bottom: 15px;
   border-radius: 5px;
   background-color: rgba(255, 0, 0, 0.1);
+  z-index: 10;
 }
 
 .errors li {
   margin-left: 20px;
 }
 
-.flex{
+.flex {
   display: flex;
   justify-content: center;
   align-items: center;
 }
 
-input{
- width: 94.5%;
+input {
+  width: 94.5%;
 }
