@@ -64,3 +64,25 @@
   margin-left: 340px;
   margin-bottom: 30px;
 }
+
+select {
+  background-color: white;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  color: #333;
+  font-size: 16px;
+  width: 80px;
+  margin-left: 10px;
+}
+
+select:hover {
+  border-color: #aaa;
+}
+
+
+label {
+  display: block;
+  margin-bottom: 8px;
+}
+
+

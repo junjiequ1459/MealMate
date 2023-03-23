@@ -80,12 +80,18 @@ const ReviewForm = ({ review }) => {
                 </label>
                 <div>
                   <label>
-                    <input
-                      className="rating-star-input"
-                      type="number"
+                    Rating:
+                    <select
                       value={rating}
                       onChange={(e) => setRating(e.target.value)}
-                    />
+                    >
+                      <option value="0">0</option>
+                      <option value="1">1</option>
+                      <option value="2">2</option>
+                      <option value="3">3</option>
+                      <option value="4">4</option>
+                      <option value="5">5</option>
+                    </select>
                   </label>
                   <button className="review-submit-button" type="submit">
                     {"Submit"}

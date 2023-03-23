@@ -17,6 +17,8 @@ export function timeTillClose(input, date, close = "") {
 
 export function reviewStarBig(input) {
   switch (input) {
+    case 0:
+      return "0%";
     case 1:
       return "-9.4%";
     case 1.5:
@@ -42,6 +44,8 @@ export function reviewStarBig(input) {
 
 export function reviewStarSmall(input) {
   switch (input) {
+    case 0:
+      return "-47.1%";
     case 1:
       return "-53%";
     case 1.5:

@@ -276,3 +276,7 @@
   line-height: 1.3rem;
   font-weight: bold;
 }
+
+.edit-form {
+  margin-top: 20px;
+}

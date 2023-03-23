@@ -18,14 +18,20 @@ function EditReview({ review, onSave }) {
   };
 
   return (
-    <form onSubmit={handleSubmit}>
+    <form className="edit-form"onSubmit={handleSubmit}>
       <label>
         Rating:
-        <input type="number" value={rating} onChange={handleRatingChange} />
+        <select value={rating} onChange={handleRatingChange}>
+          <option value="0">0</option>
+          <option value="1">1</option>
+          <option value="2">2</option>
+          <option value="3">3</option>
+          <option value="4">4</option>
+          <option value="5">5</option>
+        </select>
       </label>
       <br />
       <label>
-        Content:
         <textarea value={content} onChange={handleContentChange} />
       </label>
       <br />
