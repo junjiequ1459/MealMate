@@ -1,16 +1,18 @@
-import React, { useEffect, useRef, useMemo } from "react";
+import React, { useEffect, useRef, useMemo, useState } from "react";
+import { GoogleMap as Map, LoadScript } from "@react-google-maps/api";
 
 const GoogleMap = ({ businesses }) => {
-  const mapContainer = useRef(null);
   const center = useMemo(() => {
     return { lat: 34.4144445, lng: -119.6906718 };
   }, []);
-  useEffect(() => {
-    const map = new window.google.maps.Map(mapContainer.current, {
-      zoom: 13,
-      center: center,
-    });
 
+  const [businessesId, setBusinessesId] = useState("");
+
+  useEffect(() => {
+    setBusinessesId(Date.now().toString());
+  }, [businesses]);
+
+  const onLoad = (map) => {
     businesses.forEach((business, i) => {
       const marker = new window.google.maps.Marker({
         position: {
@@ -25,27 +27,20 @@ const GoogleMap = ({ businesses }) => {
         },
         map: map,
       });
-      marker.addListener("mouseover", () => {
-        marker.setLabel({
-          text: (i + 1).toString(),
-          color: "red",
-          fontSize: "16px",
-          fontWeight: "bold",
-        });
-      });
-
-      marker.addListener("mouseout", () => {
-        marker.setLabel({
-          text: (i + 1).toString(),
-          color: "white",
-          fontSize: "16px",
-          fontWeight: "bold",
-        });
-      });
     });
-  }, [businesses, center]);
+  };
 
-  return <div ref={mapContainer} style={{ height: "100vh", width: "34vw" }} />;
+  return (
+    <LoadScript googleMapsApiKey={process.env.REACT_APP_GOOGLE_MAPS_API_KEY}>
+      <Map
+        key={businessesId}
+        mapContainerStyle={{ height: "100vh", width: "34vw" }}
+        zoom={13}
+        center={center}
+        onLoad={onLoad}
+      />
+    </LoadScript>
+  );
 };
 
 export default GoogleMap;

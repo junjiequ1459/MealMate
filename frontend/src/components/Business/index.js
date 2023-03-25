@@ -50,9 +50,7 @@ const BusinessList = ({ businesses }) => {
   const handleDescriptionClick = (input) => {
     window.open(`/business/${input.business_id}`, "_blank");
   };
-  function handleImageError(event) {
-    event.target.src = TempImage;
-  }
+
   return (
     <>
       <div className="business-component-container">
@@ -60,16 +58,23 @@ const BusinessList = ({ businesses }) => {
           <div
             className="business-component"
             key={business.id}
-            onClick={() => handleDescriptionClick(business)}
+            onClick={(e) => {
+              e.preventDefault();
+              handleDescriptionClick(business);
+            }}
           >
             <div className="business-flex-container">
               <div className="business-image-container">
                 <img
                   className="business-image"
+                  key={business.business_id}
                   src={`https://meal-mate-seeds.s3.amazonaws.com/testfolder/${business.business_id}_photos/1.jpg`}
-                  onError={handleImageError}
-                  alt="img"
-                ></img>
+                  onError={(event) => {
+                    event.preventDefault();
+                    event.target.src =
+                      "https://meal-mate-seeds.s3.amazonaws.com/testfolder/ifjluUv4VASwmFqEp8cWlQ_photos/1.jpg";
+                  }}
+                />
               </div>
               <div>
                 <div className="business-text-container">
@@ -90,8 +95,8 @@ const BusinessList = ({ businesses }) => {
                     {business.categories
                       .split(",")
                       .splice(0, 3)
-                      .map((category) => (
-                        <button className="business-button" key={category.id}>
+                      .map((category, index) => (
+                        <button className="business-button" key={index}>
                           {category}
                         </button>
                       ))}

@@ -10,47 +10,32 @@ import ReviewForm from "./components/ReviewPage";
 import ReviewEditForm from "./components/ShowPage/ReviewEditForm";
 import { useSelector } from "react-redux";
 import ReviewContainer from "./components/ShowPage/ReviewContainer";
-import { useEffect, useState } from "react";
-import LoadingScreen from "./LoadingScreen/LoadingScreen";
-
 function App() {
   const reviews = useSelector((state) => state.reviews);
-  const [loaded, setLoaded] = useState(false);
-
-  useEffect(() => {
-    setTimeout(() => {
-      setLoaded(true);
-    }, 500);
-  }, []);
 
   return (
     <>
-      {!loaded && <LoadingScreen />}
-      {loaded && (
-        <>
-          <Switch>
-            <Route path="/login">
-              <LoginFormPage />
-            </Route>
-            <Route path="/signup">
-              <SignupFormPage />
-            </Route>
-            <Route exact path="/business">
-              <BusinessIndexPage />
-            </Route>
-            <Route path="/business/:businessId" component={ShowPage}></Route>
-            <Route path="/reviews/:businessId" component={ReviewForm}></Route>
-            <Route exact path="/">
-              <MMIndexPage />
-            </Route>
-            <Route exact path="/reviews/:id/edit" component={ReviewEditForm} />
-            <Route exact path="/reviews">
-              <ReviewContainer showReview={reviews} />
-            </Route>
-          </Switch>
-          <Footer />
-        </>
-      )}
+      <Switch>
+        <Route path="/login">
+          <LoginFormPage />
+        </Route>
+        <Route path="/signup">
+          <SignupFormPage />
+        </Route>
+        <Route exact path="/business">
+          <BusinessIndexPage />
+        </Route>
+        <Route path="/business/:businessId" component={ShowPage}></Route>
+        <Route path="/reviews/:businessId" component={ReviewForm}></Route>
+        <Route exact path="/">
+          <MMIndexPage />
+        </Route>
+        <Route exact path="/reviews/:id/edit" component={ReviewEditForm} />
+        <Route exact path="/reviews">
+          <ReviewContainer showReview={reviews} />
+        </Route>
+      </Switch>
+      <Footer />
     </>
   );
 }

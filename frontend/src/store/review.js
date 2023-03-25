@@ -57,7 +57,10 @@ export const removeReview = (reviewId) => async (dispatch) => {
   return response;
 };
 
-const reviewReducer = (state = [], action) => {
+const initialState = {
+  reviews: [],
+};
+const reviewReducer = (state = initialState, action) => {
   Object.freeze(state);
   switch (action.type) {
     case ADD_REVIEW:

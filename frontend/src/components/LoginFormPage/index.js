@@ -38,8 +38,8 @@ function LoginFormPage() {
 
   const errorName = "errors";
   const signup = (
-    <NavLink to="/signup">
-      <a className="anchor-style-button">Sign Up</a>
+    <NavLink to="/signup" className="anchor-style-button">
+      Sign Up
     </NavLink>
   );
   return (
@@ -75,6 +75,7 @@ function LoginFormPage() {
                     value={credential}
                     onChange={(e) => setCredential(e.target.value)}
                     required
+                    autoComplete="current-email"
                   />
                 </label>
                 <label>
@@ -84,6 +85,7 @@ function LoginFormPage() {
                     value={password}
                     onChange={(e) => setPassword(e.target.value)}
                     required
+                    autoComplete="current-password"
                   />
                 </label>
                 <button className="login-button" type="submit">

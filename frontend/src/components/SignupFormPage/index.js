@@ -81,7 +81,6 @@ function SignupFormPage() {
         <div className="flex">
           <div className="signup-form-container">
             <form onSubmit={handleSubmit}>
-              {console.log(errors)}
               {errors.length > 0 && (
                 <div className="errors">
                   <ul>
@@ -124,6 +123,7 @@ function SignupFormPage() {
                   value={email}
                   onChange={(e) => setEmail(e.target.value)}
                   required
+                  autoComplete="current-email"
                 />
               </label>
               <label>
@@ -133,6 +133,7 @@ function SignupFormPage() {
                   value={password}
                   onChange={(e) => setPassword(e.target.value)}
                   required
+                  autoComplete="current-password"
                 />
               </label>
               <label>

@@ -4,6 +4,7 @@ import TempImage from "../../assets/tempimage.png";
 
 function BusinessImageHeader({ showData }) {
   function handleImageError(event) {
+    event.preventDefault();
     event.target.src = TempImage;
   }
 
