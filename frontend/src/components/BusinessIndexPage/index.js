@@ -21,7 +21,7 @@ function BusinessIndexPage() {
   useEffect(() => {
     window.scrollTo(0, 0);
     setIsLoading(true);
-    fetch("/api/businesses?cache_bust=" + Date.now())
+    fetch("/api/businesses")
       .then((response) => {
         return response.json();
       })

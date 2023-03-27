@@ -48,7 +48,7 @@ const BusinessList = ({ businesses }) => {
     return endTime24;
   }
   const handleDescriptionClick = (input) => {
-    window.open(`/business/${input.business_id}`, "_blank");
+    window.open(`/business/${input.business_id}`);
   };
 
   return (
@@ -71,8 +71,15 @@ const BusinessList = ({ businesses }) => {
                   src={`https://meal-mate-seeds.s3.amazonaws.com/testfolder/${business.business_id}_photos/1.jpg`}
                   onError={(event) => {
                     event.preventDefault();
-                    event.target.src =
-                      "https://meal-mate-seeds.s3.amazonaws.com/testfolder/ifjluUv4VASwmFqEp8cWlQ_photos/1.jpg";
+                    if (
+                      event.target.src ===
+                      `https://meal-mate-seeds.s3.amazonaws.com/testfolder/${business.business_id}_photos/1.jpg`
+                    ) {
+                      console.error(
+                        `Failed to load image for business ID ${business.business_id}.`
+                      );
+                    }
+                    event.target.style.display = "none";
                   }}
                 />
               </div>
