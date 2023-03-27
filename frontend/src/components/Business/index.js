@@ -48,7 +48,7 @@ const BusinessList = ({ businesses }) => {
     return endTime24;
   }
   const handleDescriptionClick = (input) => {
-    window.open(`/business/${input.business_id}`);
+    window.location.href = `/business/${input.business_id}`;
   };
 
   return (
