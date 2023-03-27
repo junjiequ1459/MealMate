@@ -120,7 +120,7 @@ function Amenities({ showData }) {
           </li>
         </ul>
       </div>
-    </div>
+    </div >
   );
 }
 

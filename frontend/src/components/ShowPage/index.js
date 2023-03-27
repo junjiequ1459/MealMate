@@ -1,4 +1,4 @@
-    import React from "react";
+import React from "react";
 import "./ShowPage.css";
 import { useParams, useHistory } from "react-router-dom";
 import { useState, useEffect } from "react";
@@ -82,15 +82,16 @@ const ShowPage = () => {
             {showData.city} {showData.state} {showData.postal_code}
           </div>
           <BusinessHours showData={showData} />
-          <div className="properties-info-container">
-            <Amenities showData={showData} />
-          </div>
           <div className="direction-container">
             <h2 className="directions-style" style={{ marginLeft: "20px" }}>
               Get Directions
             </h2>
             <div className="direction-address">{showData.address}</div>
           </div>
+        </div>
+
+        <div className="properties-info-container">
+          <Amenities showData={showData} />
         </div>
         <ReviewConainer showReview={showReview} />
       </div>
