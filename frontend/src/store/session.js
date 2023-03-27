@@ -57,7 +57,7 @@ export const signup = (user) => async (dispatch) => {
       zipcode,
     }),
   });
-  
+
   const data = await response.json();
   storeCurrentUser(data.user);
   dispatch(setCurrentUser(data.user));
@@ -68,7 +68,7 @@ export const logout = () => async (dispatch) => {
   const response = await csrfFetch("/api/session", {
     method: "DELETE",
   });
-  
+
   storeCurrentUser(null);
   dispatch(removeCurrentUser());
   return response;
