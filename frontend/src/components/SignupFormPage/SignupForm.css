@@ -1,4 +1,6 @@
 .signup-form-container {
+  display: flex;
+  flex-direction: column;
   min-width: 250px;
   max-width: 250px;
   margin-right: 10vw;
@@ -48,11 +50,9 @@ input {
 }
 
 #first-name {
-  width: 43%;
   margin-right: 7px;
 }
 #last-name {
-  width: 43%;
 }
 
 hr {

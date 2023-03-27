@@ -69,17 +69,9 @@ const BusinessList = ({ businesses }) => {
                   className="business-image"
                   key={business.business_id}
                   src={`https://meal-mate-seeds.s3.amazonaws.com/testfolder/${business.business_id}_photos/1.jpg`}
-                  onError={(event) => {
-                    event.preventDefault();
-                    if (
-                      event.target.src ===
-                      `https://meal-mate-seeds.s3.amazonaws.com/testfolder/${business.business_id}_photos/1.jpg`
-                    ) {
-                      console.error(
-                        `Failed to load image for business ID ${business.business_id}.`
-                      );
-                    }
-                    event.target.style.display = "none";
+                  onError={(e) => {
+                    e.target.onerror = null;
+                    e.target.src = TempImage;
                   }}
                 />
               </div>

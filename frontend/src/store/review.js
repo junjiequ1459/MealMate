@@ -39,7 +39,7 @@ export const createReview = (review) => async (dispatch) => {
 export const editReview = (review) => async (dispatch) => {
   const { id, content, rating } = review;
   const response = await csrfFetch(`/api/reviews/${id}`, {
-    method: "PATCH",
+    method: "put",
     body: JSON.stringify({ content, rating }),
   });
 
@@ -61,7 +61,6 @@ const initialState = {
   reviews: [],
 };
 const reviewReducer = (state = initialState, action) => {
-  Object.freeze(state);
   switch (action.type) {
     case ADD_REVIEW:
       const review = action.payload;
