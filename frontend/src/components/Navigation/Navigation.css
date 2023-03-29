@@ -80,7 +80,6 @@
   margin-bottom: 0.5rem;
   font-weight: 600;
   min-width: 80px;
-
 }
 
 .sign-up-button:hover {
@@ -94,6 +93,9 @@
   position: absolute;
   left: 90.2vw;
   top: 0.5vh;
+}
+.profile-icon:hover {
+  cursor: pointer;
 }
 
 .fa-user-circle {
@@ -191,6 +193,11 @@
 .fa-user-circle {
   display: flexbox;
   position: relative;
+  margin-left: -1vw;
+}
+
+.fa-user-circle:hover {
+  cursor: pointer;
 }
 
 .logout-text {

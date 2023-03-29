@@ -130,3 +130,8 @@ hr {
   justify-content: flex-start;
   margin-bottom: 300px;
 }
+
+.no-business-found {
+  margin-left: 10vw;
+  margin-top: 5vh;
+}

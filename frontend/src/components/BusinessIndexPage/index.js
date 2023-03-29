@@ -104,27 +104,33 @@ function BusinessIndexPage() {
                 Browsing Stata Barbara, CA business
               </h1>
 
-              <BusinessList
-                businesses={businesses.slice(currentPage, currentPage + 10)}
-              />
-              <div className="page-buttons">
-                <div>
-                  <button
-                    className="next-page-button prev-button"
-                    onClick={prevPage}
-                  >
-                    Prev Page
-                  </button>
-                </div>
-                <div>
-                  <button
-                    className="next-page-button next-button"
-                    onClick={nextPage}
-                  >
-                    Next Page
-                  </button>
-                </div>
-              </div>
+              {businesses.length > 0 ? (
+                <>
+                  <BusinessList
+                    businesses={businesses.slice(currentPage, currentPage + 10)}
+                  />
+                  <div className="page-buttons">
+                    <div>
+                      <button
+                        className="next-page-button prev-button"
+                        onClick={prevPage}
+                      >
+                        Prev Page
+                      </button>
+                    </div>
+                    <div>
+                      <button
+                        className="next-page-button next-button"
+                        onClick={nextPage}
+                      >
+                        Next Page
+                      </button>
+                    </div>
+                  </div>
+                </>
+              ) : (
+                <p className="no-business-found">No businesses found.</p>
+              )}
             </div>
           </div>
         </>

@@ -32,7 +32,9 @@ function Navigation({ page }) {
       pathname: "/business",
       state: {
         data: {
-          category: formInput.charAt(0).toUpperCase() + formInput.slice(1),
+          category:
+            formInput.charAt(0).toUpperCase() +
+            formInput.toLowerCase().slice(1),
         },
       },
     });
@@ -62,7 +64,7 @@ function Navigation({ page }) {
             className="form-control"
             type="text"
             value={formInput}
-            placeholder="Tacos,Sushi,Pizza"
+            placeholder="Tacos, Sushi, Pizza"
             onChange={(event) => setFormInput(event.target.value)}
           />
           <button className="btn" type="submit">
@@ -85,7 +87,11 @@ function Navigation({ page }) {
         >
           <i className={`${GithubclassName} fa-brands fa-linkedin`}></i>
         </a>
-        <a href="https://angel.co/jobs" target="_blank" rel="noreferrer">
+        <a
+          href="https://wellfound.com/u/junjie-qu"
+          target="_blank"
+          rel="noreferrer"
+        >
           <i className={`${GithubclassName} fa-brands fa-angellist`}></i>
         </a>
       </div>
