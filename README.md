@@ -18,7 +18,7 @@ To bring MealMate to life, I utilized React for the frontend and Ruby on Rails f
     HTML
     CSS
     Render
-    Font Awesome
+    FontAwesome
     Webpack
 
 # Setup
